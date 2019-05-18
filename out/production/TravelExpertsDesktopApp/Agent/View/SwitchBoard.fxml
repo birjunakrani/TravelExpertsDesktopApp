@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox prefHeight="67.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </top>
+   <left>
+      <VBox prefHeight="333.0" prefWidth="129.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="switchButton" mnemonicParsing="false" prefHeight="63.0" prefWidth="129.0" text="Customers">
+               <stylesheets>
+                  <URL value="@../Main/StylesSheet.css" />
+                  <URL value="@../Main/StylesSheet.css" />
+               </stylesheets>
+            </Button>
+            <Button id="switchButton" mnemonicParsing="false" prefHeight="63.0" prefWidth="129.0" stylesheets="@../Main/StylesSheet.css" text="Bookings" />
+            <Button id="switchButton" mnemonicParsing="false" prefHeight="63.0" prefWidth="129.0" stylesheets="@../Main/StylesSheet.css" text="Packages" />
+            <Button id="switchButton" mnemonicParsing="false" prefHeight="63.0" prefWidth="129.0" stylesheets="@../Main/StylesSheet.css" text="Agent" />
+            <Button id="switchButton" mnemonicParsing="false" prefHeight="63.0" prefWidth="129.0" stylesheets="@../Main/StylesSheet.css" text="Suppliers" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField layoutX="209.0" layoutY="103.0" stylesheets="@../Main/StylesSheet.css" />
+            <TextField layoutX="209.0" layoutY="154.0" stylesheets="@../Main/StylesSheet.css" />
+            <Label id="switchBoardLabel" layoutX="89.0" layoutY="103.0" prefHeight="27.0" prefWidth="82.0" stylesheets="@../Main/StylesSheet.css" text="Log In" />
+            <Label id="switchBoardLabel" layoutX="89.0" layoutY="153.0" prefHeight="27.0" prefWidth="82.0" stylesheets="@../Main/StylesSheet.css" text="Password" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
