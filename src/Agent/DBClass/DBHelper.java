@@ -1,5 +1,5 @@
 package TravelExperts.Agent.DBClass;
-
+// adnan has added the comments in dbclass at 1158 am
 import javax.swing.*;
 import java.sql.*;
 import java.util.logging.Level;
