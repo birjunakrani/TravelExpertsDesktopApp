@@ -8,6 +8,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="java" level="project" />
+    <orderEntry type="library" name="commons-codec-1.4" level="project" />
+    <orderEntry type="library" name="fontawesomefx-commons-8.15" level="project" />
+    <orderEntry type="library" name="fontawesomefx-fontawesome-4.7.0-5" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.17-bin" level="project" />
   </component>
 </module>
