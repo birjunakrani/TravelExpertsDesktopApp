@@ -229,7 +229,7 @@ public class AgentController {
         tblAgent.setItems(null);
         cmbAgtId.setItems(null);
          dbhelper = DBHelper.getInstance();
-        //  ObservableList<Agent> agentList= FXCollections.observableArrayList();
+
         String query = "SELECT * FROM agents ORDER BY agtLastName ASC";
         ResultSet rs = dbhelper.executeQuery(query);
         try {
