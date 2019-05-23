@@ -9,11 +9,11 @@ public class Validator {
     //method to check if the value exists in the textfield
     public static boolean IsProvided(TextField textField, String msg) {
         boolean result = true;
-        if (textField == null){
+        if (textField.getText() == null || textField.equals("")){
             result = false;
-            JOptionPane.showMessageDialog(null, msg, "Empty Fields Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, msg + "can't be empty", "Empty Fields Error",JOptionPane.ERROR_MESSAGE);
             textField.requestFocus();
-        }
+        } else { result = true; }
 
         return result;
     }
@@ -22,11 +22,12 @@ public class Validator {
     public static boolean IsInt(TextField textField, String msg) {
         boolean result = true;
         try{
-            int i = Integer.parseInt(textField.toString());
+            int i = Integer.parseInt(textField.getText());
+            result = true;
 
         }catch (NumberFormatException | NullPointerException ex){
             result = false;
-            JOptionPane.showMessageDialog(null, msg, "Empty Fields Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, msg + "must be whole number", "Empty Fields Error",JOptionPane.ERROR_MESSAGE);
             textField.requestFocus();
         }
         return result;
@@ -36,14 +37,14 @@ public class Validator {
     public static boolean IsNonNegative(TextField textField, String msg) {
         boolean result = true;
         try{
-            int i = Integer.parseInt(textField.toString());
+            int i = Integer.parseInt(textField.getText());
             if(i<0)
             {
                 result = false;
-            }
+            } else result = true;
         }catch (NumberFormatException | NullPointerException ex){
             result = false;
-            JOptionPane.showMessageDialog(null, msg, "Empty Fields Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, msg + "must be positive whole number", "Empty Fields Error",JOptionPane.ERROR_MESSAGE);
             textField.requestFocus();
         }
         return result;

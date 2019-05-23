@@ -1,4 +1,4 @@
-package TravelExperts.Agent.DBClass;
+package Resources.DBClass;
 
 import javax.swing.*;
 import java.sql.*;
@@ -93,25 +93,28 @@ public class DBHelper {
     }
 
     public boolean updateAgent(TravelExperts.Agent.Model.Agent agent) {
+        boolean result=true;
 
         try {
             String query = "UPDATE agents SET agtFirstName = ?, agtMiddleInitial = ?, agtLastName = ?,agtBusPhone = ?, agtEmail = ?, agtPosition = ?, AgencyId = ? WHERE agentId = ?";
             PreparedStatement stmt = con.prepareStatement(query);
-            stmt.setInt(1, agent.getAgentId());
-            stmt.setString(2, agent.getAgtFirstName());
-            stmt.setString(3, agent.getAgtMiddleInital());
-            stmt.setString(4, agent.getAgtLastName());
-            stmt.setString(5, agent.getAgtBusPhone());
-            stmt.setString(6, agent.getAgtEmail());
-            stmt.setString(7, agent.getAgtPosition());
+            stmt.setString(1, agent.getAgtFirstName());
+            stmt.setString(2, agent.getAgtMiddleInital());
+            stmt.setString(3, agent.getAgtLastName());
+            stmt.setString(4, agent.getAgtBusPhone());
+            stmt.setString(5, agent.getAgtEmail());
+            stmt.setString(6, agent.getAgtPosition());
+            stmt.setInt(7, agent.getAgencyId());
             stmt.setInt(8, agent.getAgentId());
             int res = stmt.executeUpdate();
-            return (res>0);
+            if (res == 1){
+                result = true;
+            }else result = false;
 
         } catch (SQLException ex) {
             Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return false;
+        return result;
     }
 
 

@@ -7,7 +7,7 @@ import java.util.ResourceBundle;
 import java.util.function.Predicate;
 
 import Resources.AlertCreator;
-import TravelExperts.Agent.DBClass.DBHelper;
+import Resources.DBClass.DBHelper;
 import TravelExperts.Agent.Model.Agent;
 import Resources.Validator;
 import javafx.beans.value.ChangeListener;
@@ -40,8 +40,8 @@ public class AgentController {
     @FXML
     private ComboBox<Agent> cmbAgtId;
 
-    @FXML
-    private ComboBox<Agent> cmbAgencyId;
+    /*@FXML
+    private ComboBox<Agent> cmbAgencyId;*/
 
     @FXML
     private Button btnInsert;
@@ -113,22 +113,22 @@ public class AgentController {
     }
 
     @FXML
+    void btnSaveClick(MouseEvent event) {
+
+        addAgent();
+    }
+
+    @FXML
     void btnAddClick(MouseEvent event) {
 
-        agtFirstName.clear(); agtLastName.clear(); agtMI.clear();agtEmail.clear();agtPhone.clear();agtPosition.clear();
-        cmbAgencyId.setValue(null);cmbAgtId.setValue(null);
-
+        cmbAgtId.setValue(null); agtFirstName.setText(null); agtLastName.clear(); agtMI.clear();agtEmail.clear();
+        agtPhone.clear();agtPosition.clear();agtAgency.clear();
     }
 
     @FXML
     void btnDelete(MouseEvent event) {
 
         Agent selectedAgentForDelete = cmbAgtId.getSelectionModel().getSelectedItem();
-        if(cmbAgtId.getSelectionModel().getSelectedItem() == null){
-
-            AlertCreator.FailedAlert("Please select item to delete");
-            return;
-        }
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Deleting Agent");
@@ -138,10 +138,9 @@ public class AgentController {
         if(response.get() == ButtonType.OK){
             Boolean result = DBHelper.getInstance().deleteAgent(selectedAgentForDelete);
             if(result){
-                AlertCreator.SuccessAlert("Agent" + " " +  selectedAgentForDelete.getAgtLastName() + " " + "has Successfully Deleted");
+                AlertCreator.SuccessAlert(selectedAgentForDelete.getAgtFirstName()+" " + selectedAgentForDelete.getAgtLastName() + " " + "has Successfully Deleted");
                 agents.remove(selectedAgentForDelete);
-                loadAgents();
-                fillAgentTable();
+                tblAgent.setItems(agents);
             } else { AlertCreator.FailedAlert("Delete operation has been failed, Please try Again!");}
         }else {
             AlertCreator.FailedAlert("Delete operation has been cancelled by user");
@@ -149,19 +148,16 @@ public class AgentController {
 
     }
 
-    @FXML
-    void btnSaveClick(MouseEvent event) {
-            addAgent();
-    }
 
     @FXML
     void btnUpdateClick(MouseEvent event) {
-  //      Agent selectedAgentForUpdate = cmbAgtId.getSelectionModel().getSelectedItem();
-        Agent agent = new Agent(cmbAgtId.getSelectionModel().getSelectedItem().getAgentId(),agtFirstName.toString(),agtMI.toString(),
-                agtLastName.toString(),agtPhone.toString(),agtEmail.toString(),agtPosition.toString(),cmbAgencyId.getSelectionModel().getSelectedItem().getAgencyId());
+
+        int selectedAgentForUpdate = cmbAgtId.getSelectionModel().getSelectedItem().getAgentId();
+        Agent agent = new Agent(selectedAgentForUpdate, agtFirstName.getText(),agtMI.getText(),
+                agtLastName.getText(),agtPhone.getText(),agtEmail.getText(),agtPosition.getText(),Integer.parseInt(agtAgency.getText()));
 
         if (Validator.IsProvided(agtFirstName, "First Name") && Validator.IsProvided(agtLastName, "Last Name")
-                && Validator.IsProvided(agtEmail, "Email") && Validator.IsProvided(agtPosition, "Position"))
+                && Validator.IsProvided(agtEmail, "Email") && Validator.IsProvided(agtPosition, "Position") && Validator.IsProvided(agtAgency,"Agency"))
         {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Update Agent");
@@ -173,10 +169,9 @@ public class AgentController {
                     Boolean result = DBHelper.getInstance().updateAgent(agent);
 
                     if (result) {
-                        AlertCreator.SuccessAlert("Agent" + " " + agent.getAgtLastName() + " " + "has Successfully Deleted");
-                        agents.remove(agent);
+                        AlertCreator.SuccessAlert(agent.getAgtLastName() + " " + "has Successfully Updated");
                         loadAgents();
-                        fillAgentTable();
+
                     } else {
 
                         AlertCreator.FailedAlert("Update operation has been failed, Please try Again!");
@@ -195,12 +190,12 @@ public class AgentController {
     @FXML
     public  void initialize() {
 
-        DBHelper dbhelper = DBHelper.getInstance();
         dbhelper = DBHelper.getInstance();
         loadAgents();
         fillAgentTable();
         selectionInTableChanged();
         selectionInComboChanged();
+        searchByAgent();
     }
 
     private void searchByAgent() {
@@ -232,6 +227,7 @@ public class AgentController {
     public  void loadAgents() {
 
         tblAgent.setItems(null);
+        cmbAgtId.setItems(null);
          dbhelper = DBHelper.getInstance();
         //  ObservableList<Agent> agentList= FXCollections.observableArrayList();
         String query = "SELECT * FROM agents ORDER BY agtLastName ASC";
@@ -272,9 +268,7 @@ public class AgentController {
 
     private void selectionInTableChanged() {
 
-        //   if(!tblAgent.getSelectionModel().isEmpty()) {
-
-        tblAgent.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Agent>() {
+         tblAgent.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Agent>() {
             @Override
             public void changed(ObservableValue<? extends Agent> observable, Agent oldValue, Agent newValue) {
 
@@ -282,8 +276,7 @@ public class AgentController {
                     //     int agentId = cmbAgtId.getSelectionModel().getSelectedIndex();
                     for (Agent agent : agents) {
                         if (agent.getAgentId() == newValue.getAgentId()) {
-                            cmbAgtId.getSelectionModel().select(agent);
-                            cmbAgencyId.getSelectionModel().select(agent);
+                          cmbAgtId.getSelectionModel().select(agent);
                         }
                     }
                     agtFirstName.setText(newValue.getAgtFirstName());
@@ -292,15 +285,15 @@ public class AgentController {
                     agtPhone.setText(newValue.getAgtBusPhone());
                     agtEmail.setText(newValue.getAgtEmail());
                     agtPosition.setText(newValue.getAgtPosition());
+                    agtAgency.setText(newValue.getAgencyId()+"");
                 }
             }
         });
-        // }
+
     }
 
     private void selectionInComboChanged() {
 
-        //    if (!cmbAgtId.getSelectionModel().isEmpty()) {
         cmbAgtId.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Agent>() {
             @Override
             public void changed(ObservableValue<? extends Agent> observable, Agent oldValue, Agent newValue) {
@@ -310,7 +303,7 @@ public class AgentController {
                 agtPhone.setText(newValue.getAgtBusPhone());
                 agtEmail.setText(newValue.getAgtEmail());
                 agtPosition.setText(newValue.getAgtPosition());
-                cmbAgencyId.getSelectionModel().getSelectedItem();
+                agtAgency.setText(newValue.getAgencyId()+"");
             }
         });
 
@@ -320,9 +313,8 @@ public class AgentController {
 
         DBHelper dbhelper = DBHelper.getInstance();
 
-
         if(Validator.IsProvided(agtFirstName,"First Name") && Validator.IsProvided(agtLastName,"Last Name")
-                && Validator.IsProvided(agtEmail,"Email") && Validator.IsProvided(agtPosition,"Position"))
+                && Validator.IsProvided(agtEmail,"Email") && Validator.IsProvided(agtPosition,"Position") && Validator.IsProvided(agtAgency,"Agency"))
 
         {
             //     int agentId = cmbAgtId.getSelectionModel().getSelectedIndex(); auto-increment in database.
@@ -346,21 +338,16 @@ public class AgentController {
             System.out.print(query);
             try{
                 if(dbhelper.execNonQuery(query)){
-                    JOptionPane.showMessageDialog(null,"Insert succeeded");
+                    JOptionPane.showMessageDialog(null,"Agent has been successfully added");
 
                 } else {
-                    JOptionPane.showMessageDialog(null,"Insert Failed");
+                    JOptionPane.showMessageDialog(null,"Failed to insert agent, Please try again");
                 }
             }catch (SQLException ex){
                 ex.printStackTrace();
             }
         }
     }
-
-
-
-
-
 
 }
 
