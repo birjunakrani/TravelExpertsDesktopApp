@@ -2,9 +2,8 @@ package TravelExperts.Agent.Model;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-
+// mahda test.May 23
 public class Agent {
-
     private SimpleIntegerProperty AgentId;
     private SimpleIntegerProperty AgencyId;
     private SimpleStringProperty AgtBusPhone;
