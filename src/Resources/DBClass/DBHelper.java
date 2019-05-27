@@ -76,7 +76,6 @@ public class DBHelper {
     }
 
     public boolean deleteAgent(TravelExperts.Agent.Model.Agent agent) {
-
         try {
             String query = "DELETE FROM agents where agentId = ?";
             PreparedStatement stmt = con.prepareStatement(query);
