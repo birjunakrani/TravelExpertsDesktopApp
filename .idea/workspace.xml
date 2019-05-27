@@ -2,13 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Commit Test">
+      <change afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Controller/Controller.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Controller/PackageDataLayer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Model/Package.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/View/PackageDisplay.fxml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Packages/Model/Package.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Packages/View/PackageDisplay.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/META-INF/TravelExpertsDesktopApp.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Packages/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Packages/Controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Packages/Package.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Packages/PackageDataLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Packages/Controller/PackageDataLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Packages/PackageDisplay.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Packages/View/PackageDisplay.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Packages/PackageDisplay.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SwitchBoard/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SwitchBoard/Main.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,7 +78,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SwitchBoard/SwitchBoard.fxml">
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="198">
               <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
             </state>
           </provider>
@@ -82,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/src/Booking/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4268">
-              <caret line="213" column="40" lean-forward="true" selection-start-line="213" selection-start-column="40" selection-end-line="213" selection-end-column="40" />
+              <caret line="213" column="40" selection-start-line="213" selection-start-column="40" selection-end-line="213" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -99,7 +106,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Agent/Controller/AgentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1240">
+            <state relative-caret-position="2728">
               <caret line="145" column="54" selection-start-line="145" selection-start-column="54" selection-end-line="145" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -121,12 +128,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Packages/Model/Package.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="83" column="13" lean-forward="true" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+            <state relative-caret-position="1166">
+              <caret line="83" column="13" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1924#1925#0" expanded="true" />
-                <element signature="e#1964#1965#0" expanded="true" />
+                <element signature="e#1963#1964#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -134,19 +141,15 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Packages/View/PackageDisplay.fxml">
-          <provider editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
-            </state>
-          </provider>
+          <provider editor-type-id="text-editor" />
           <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Packages/Controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="66">
+              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -154,8 +157,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SwitchBoard/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="23">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -163,11 +166,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SwitchBoard/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2552">
-              <caret line="118" column="54" lean-forward="true" selection-start-line="118" selection-start-column="54" selection-end-line="118" selection-end-column="54" />
+            <state relative-caret-position="153">
+              <caret line="141" column="43" selection-start-line="141" selection-start-column="43" selection-end-line="141" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -210,7 +213,21 @@
         <option value="Matthew" />
       </list>
     </option>
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/development" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -240,7 +257,6 @@
         <option value="$PROJECT_DIR$/src/Agent/Main/AgentForm.java" />
         <option value="$PROJECT_DIR$/src/TravelExperts/SwitchBoard/MainController.java" />
         <option value="$PROJECT_DIR$/src/TravelExperts/SwitchBoard/Main.java" />
-        <option value="$PROJECT_DIR$/src/SwitchBoard/Main.java" />
         <option value="$PROJECT_DIR$/src/Agent/LogIn/AgentLogIn.java" />
         <option value="$PROJECT_DIR$/src/Agent/Model/AgentLogIn.java" />
         <option value="$PROJECT_DIR$/src/SwitchBoard/AlerCreator.java" />
@@ -266,6 +282,7 @@
         <option value="$PROJECT_DIR$/src/Packages/Package.java" />
         <option value="$PROJECT_DIR$/src/Packages/Model/Package.java" />
         <option value="$PROJECT_DIR$/src/Packages/View/PackageDisplay.fxml" />
+        <option value="$PROJECT_DIR$/src/SwitchBoard/Main.java" />
       </list>
     </option>
   </component>
@@ -286,7 +303,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -303,12 +319,34 @@
               <item name="FinalProj" type="b2602c69:ProjectViewProjectNode" />
               <item name="FinalProj" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="SwitchBoard" type="462c0819:PsiDirectoryNode" />
+              <item name="Packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FinalProj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FinalProj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Packages" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FinalProj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FinalProj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Packages" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FinalProj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FinalProj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Packages" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -333,6 +371,7 @@
     <property name="project.structure.proportion" value="0.15332031" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -488,7 +527,8 @@
       <workItem from="1558569520081" duration="1355000" />
       <workItem from="1558578746033" duration="604000" />
       <workItem from="1558634842826" duration="1498000" />
-      <workItem from="1558974443038" duration="3191000" />
+      <workItem from="1558974443038" duration="3686000" />
+      <workItem from="1558978161853" duration="5919000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Test">
       <created>1558974745417</created>
@@ -504,11 +544,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558975895369</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added Files and basic start code for packages">
+      <created>1558977851075</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1558977851075</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182920000" />
+    <option name="totallyTimeSpent" value="189334000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -521,9 +568,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2246596" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22768533" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -539,7 +585,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32890365" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32405892" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.27332243" />
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
@@ -607,7 +653,8 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="Commit Test" />
     <MESSAGE value="Commit Test part 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit Test part 2" />
+    <MESSAGE value="Added Files and basic start code for packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Files and basic start code for packages" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -773,9 +820,7 @@
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Packages/Package/Controller.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Packages/Package/Controller.java" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4884" />
@@ -788,20 +833,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Agent/Controller/AgentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1240">
-          <caret line="145" column="54" selection-start-line="145" selection-start-column="54" selection-end-line="145" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/src/SwitchBoard/SwitchBoard.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Packages/Controller/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/Booking/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="4268">
+          <caret line="213" column="40" selection-start-line="213" selection-start-column="40" selection-end-line="213" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -812,21 +855,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Booking/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/Agent/Controller/AgentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4268">
-          <caret line="213" column="40" lean-forward="true" selection-start-line="213" selection-start-column="40" selection-end-line="213" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Packages/Model/Package.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="83" column="13" lean-forward="true" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+        <state relative-caret-position="2728">
+          <caret line="145" column="54" selection-start-line="145" selection-start-column="54" selection-end-line="145" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1924#1925#0" expanded="true" />
-            <element signature="e#1964#1965#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -839,39 +873,46 @@
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Packages/View/PackageDisplay.fxml">
-      <provider editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SwitchBoard/SwitchBoard.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SwitchBoard/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Packages/Model/Package.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="1166">
+          <caret line="83" column="13" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1924#1925#0" expanded="true" />
+            <element signature="e#1963#1964#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Packages/View/PackageDisplay.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SwitchBoard/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2552">
-          <caret line="118" column="54" lean-forward="true" selection-start-line="118" selection-start-column="54" selection-end-line="118" selection-end-column="54" />
+        <state relative-caret-position="153">
+          <caret line="141" column="43" selection-start-line="141" selection-start-column="43" selection-end-line="141" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SwitchBoard/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Packages/Controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
         </state>
       </provider>
     </entry>

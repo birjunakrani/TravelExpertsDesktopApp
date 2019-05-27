@@ -12,7 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
  //       FXMLLoader loader = new FXMLLoader();
-    //    loader.setLocation(Main.class.getResource("SwitchBoard.fxml"));
+   //     loader.setLocation(Main.class.getResource("SwitchBoard.fxml"));
         Parent root = FXMLLoader.load(getClass().getResource("SwitchBoard.fxml"));
         Scene scene = new Scene(root, 800, 500);
         primaryStage.setTitle("SwitchBoard");
