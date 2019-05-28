@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Base connections created and add package page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/View/PackageDisplay.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/View/PackageDisplay.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Resources/DBClass/DBHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Resources/DBClass/DBHelper.class" afterDir="false" />
-    </list>
-    <ignored path="JavaFxApplication.iws" />
-    <ignored path=".idea/workspace.xml" />
-    <ignored path="$PROJECT_DIR$/out/" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Base connections created and add package page" />
+    <manually-removed-from-ignored>
+      <directory path="$PROJECT_DIR$/out/" />
+    </manually-removed-from-ignored>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,7 +302,7 @@
     <property name="project.structure.proportion" value="0.15332031" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -480,7 +476,7 @@
       <workItem from="1558974443038" duration="3686000" />
       <workItem from="1558978161853" duration="11304000" />
       <workItem from="1559051206769" duration="2107000" />
-      <workItem from="1559054675173" duration="1565000" />
+      <workItem from="1559054675173" duration="1916000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Test">
       <created>1558974745417</created>
@@ -531,11 +527,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559059787081</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Base connections created and add package page">
+      <created>1559060004652</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1559060004652</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198391000" />
+    <option name="totallyTimeSpent" value="198742000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -548,6 +551,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.23146747" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -565,7 +569,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32890365" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.27332243" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.27332243" />
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
