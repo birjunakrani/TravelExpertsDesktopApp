@@ -63,8 +63,8 @@ public class MainController {
         }
 
         @FXML
-        void btnPackages(MouseEvent event) {
-
+        void btnPackages(MouseEvent event) {loadWindow("../Packages/View/PackageDisplay.fxml","Packages");
+        //Open Packages Source
         }
         @FXML
         void btnBookings(MouseEvent event) {
