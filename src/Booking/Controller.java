@@ -79,13 +79,6 @@ public class Controller {
     void saveNewBookingAction(ActionEvent event) {
         // connect to DB
         Connection conn = DBHelper.getConnection();
-       /* String Bdate = tfBookDate.getText();
-        String Bnum = tfBookNum.getText();
-        Integer Traveler = Integer.parseInt(tfTraveler.getText());
-        Integer CustID = Integer.parseInt(tfCustId.getText());
-        String  Trip = tfTripType.getText();
-        Integer Pckg = Integer.parseInt(tfPackegeId.getText());*/
-
 
         /*if (Validator.IsProvided(tfBookDate, "Booking Date is required to be filled.") &&
                 Validator.IsProvided(tfBookNum, "Booking Number is required to be filled.") &&
