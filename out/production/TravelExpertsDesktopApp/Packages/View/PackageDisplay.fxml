@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="Startbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="ActivityPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Packages.Controller.Controller">
    <children>
-      <Button fx:id="Editbtn" layoutX="444.0" layoutY="66.0" mnemonicParsing="false" styleClass="formButton" stylesheets="@../../Resources/StylesSheet.css" text="Edit" />
-      <Button fx:id="Savebtn" layoutX="521.0" layoutY="66.0" mnemonicParsing="false" styleClass="formButton" stylesheets="@../../Resources/StylesSheet.css" text="Save" />
-      <Button fx:id="Deletebtn" layoutX="358.0" layoutY="463.0" mnemonicParsing="false" styleClass="formButton" stylesheets="@../../Resources/StylesSheet.css" text="Delete" />
+      <Button fx:id="Editbtn" layoutX="21.0" layoutY="61.0" mnemonicParsing="false" onAction="#EditbtnClick" styleClass="formButton" stylesheets="@../../Resources/StylesSheet.css" text="Edit" />
+      <Button fx:id="Savebtn" disable="true" layoutX="101.0" layoutY="61.0" mnemonicParsing="false" onAction="#SavebtnClick" styleClass="formButton" stylesheets="@../../Resources/StylesSheet.css" text="Save" />
+      <Button fx:id="Deletebtn" layoutX="359.0" layoutY="463.0" mnemonicParsing="false" onAction="#DeletebtnClick" styleClass="formButton" stylesheets="@../../Resources/StylesSheet.css" text="Delete" />
       <ComboBox fx:id="IDbox" layoutX="283.0" layoutY="66.0" prefHeight="25.0" prefWidth="149.0" />
       <Label layoutX="182.0" layoutY="126.0" text="Package Name">
          <font>
@@ -45,11 +45,11 @@
          </font></Label>
       <TextArea fx:id="Descbox" editable="false" layoutX="284.0" layoutY="256.0" prefHeight="105.0" prefWidth="149.0" wrapText="true" />
       <TextField fx:id="PkgNamebox" editable="false" layoutX="283.0" layoutY="122.0" />
-      <TextField editable="false" layoutX="285.0" layoutY="164.0" />
+      <TextField fx:id="Startbox" editable="false" layoutX="285.0" layoutY="164.0" />
       <TextField fx:id="Endbox" editable="false" layoutX="284.0" layoutY="211.0" />
       <TextField fx:id="Basebox" editable="false" layoutX="285.0" layoutY="380.0" />
       <TextField fx:id="Combox" editable="false" layoutX="284.0" layoutY="422.0" />
-      <Button fx:id="Addbtn" layoutX="216.0" layoutY="463.0" mnemonicParsing="false" styleClass="formButton" stylesheets="@../../Resources/StylesSheet.css" text="Add" />
+      <Button fx:id="Addbtn" layoutX="223.0" layoutY="463.0" mnemonicParsing="false" onAction="#AddbtnClick" styleClass="formButton" stylesheets="@../../Resources/StylesSheet.css" text="Add" />
       <BorderPane prefHeight="48.0" prefWidth="613.0" styleClass="header-section" stylesheets="@../../Resources/StylesSheet.css">
          <center>
             <Label alignment="BASELINE_LEFT" prefHeight="27.0" prefWidth="193.0" styleClass="formlabel" stylesheets="@../../Resources/StylesSheet.css" text="Packages" BorderPane.alignment="CENTER">

@@ -1,5 +1,7 @@
 package Resources.DBClass;
 
+import Packages.Model.PackageType;
+
 import javax.swing.*;
 import java.sql.*;
 import java.util.logging.Level;
@@ -31,7 +33,7 @@ public class DBHelper {
         return dbHelper;
     }
 
-    void createConnection() {
+   public void createConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con=DriverManager.getConnection(DB_URL,"root","");
@@ -117,5 +119,37 @@ public class DBHelper {
     }
 
 
+    //Packages DB stuff
+    public boolean deletePkg(PackageType pkg) {
+        try {
+            String query = "DELETE FROM packages where PackageId =" + pkg.getPkgId();
+            PreparedStatement stmt = con.prepareStatement(query);
+            int res = stmt.executeUpdate();
+            if (res == 1) {
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return false;
+    }
+
+    public boolean EditPkg(PackageType pkg) {
+        try {
+            String query = "Update packages set (PkgName = "+pkg.getPkgName()+",PkgStartDate="+pkg.getPkgStartDate()+"," +
+                    "PkgEndDate="+pkg.getPkgEndDate()+",PkgDesc="+ pkg.getPkgDesc()+",BasePrice="+pkg.getPkgBasePrice()
+                    +",PkgAgencyCommision="+pkg.getPkgAgencyCom()+") where PackageId =" + pkg.getPkgId();
+            PreparedStatement stmt = con.prepareStatement(query);
+            int res = stmt.executeUpdate();
+            if (res == 1) {
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return false;
+    }
 }//class
 

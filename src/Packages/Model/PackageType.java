@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.text.DecimalFormat;
 
-public class Package {
+public class PackageType {
     private int PkgId;
     private String PkgName;
     private java.sql.Date PkgStartDate;
@@ -13,9 +13,8 @@ public class Package {
     private java.math.BigDecimal PkgBasePrice;
     private java.math.BigDecimal PkgAgencyCom;
 
-
-    public Package(int pkgId, String pkgName, Date pkgStartDate, Date pkgEndDate,
-                   String pkgDesc, BigDecimal pkgBasePrice, BigDecimal pkgAgencyCom) {
+    public PackageType(int pkgId, String pkgName, Date pkgStartDate, Date pkgEndDate,
+                       String pkgDesc, BigDecimal pkgBasePrice, BigDecimal pkgAgencyCom) {
         PkgId = pkgId;
         PkgName = pkgName;
         PkgStartDate = pkgStartDate;
