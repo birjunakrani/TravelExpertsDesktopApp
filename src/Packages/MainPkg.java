@@ -13,7 +13,7 @@ public class MainPkg extends Application {
         //       FXMLLoader loader = new FXMLLoader();
         //    loader.setLocation(Main.class.getResource("SwitchBoard.fxml"));
         Parent root = FXMLLoader.load(getClass().getResource("View/PackageDisplay.fxml"));
-        Scene scene = new Scene(root, 800, 500);
+        Scene scene = new Scene(root, 612, 512);
         primaryStage.setTitle("Package Form");
         primaryStage.setScene(scene);
         scene.getStylesheets().add("StylesSheet.css");
