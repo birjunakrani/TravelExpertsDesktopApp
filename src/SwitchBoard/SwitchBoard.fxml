@@ -2,6 +2,7 @@
 
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -11,9 +12,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SwitchBoard.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SwitchBoard.MainController">
    <top>
-      <HBox prefHeight="40.0" prefWidth="600.0" styleClass="header-section" stylesheets="@../Resources/StylesSheet.css" BorderPane.alignment="CENTER">
+      <HBox prefHeight="35.0" prefWidth="609.0" styleClass="header-section" stylesheets="@../Resources/StylesSheet.css" BorderPane.alignment="CENTER">
          <children>
             <Label stylesheets="@../Resources/StylesSheet.css" text="TravelExperts">
                <HBox.margin>
@@ -34,7 +35,7 @@
    <left>
       <VBox prefHeight="333.0" prefWidth="129.0" styleClass="root" stylesheets="@../Resources/StylesSheet.css" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnCustomers" alignment="CENTER_RIGHT" mnemonicParsing="false" onMouseClicked="#btnCustomers" prefHeight="63.0" prefWidth="129.0" styleClass="switchButton" stylesheets="@../Resources/StylesSheet.css" text="Customers" textAlignment="RIGHT">
+            <Button fx:id="btnCustomers" alignment="CENTER_RIGHT" mnemonicParsing="false" onMouseClicked="#btnCustomers" prefHeight="63.0" prefWidth="128.0" styleClass="switchButton" stylesheets="@../Resources/StylesSheet.css" text="Customers" textAlignment="RIGHT">
                <VBox.margin>
                   <Insets bottom="2.0" top="15.0" />
                </VBox.margin>
@@ -42,7 +43,7 @@
                   <Glow />
                </effect>
             </Button>
-            <Button id="switchButton" fx:id="btnBookings" mnemonicParsing="false" onMouseClicked="#btnBookings" prefHeight="63.0" prefWidth="129.0" styleClass="switchButton" stylesheets="@../Resources/StylesSheet.css" text="Bookings">
+            <Button id="switchButton" fx:id="btnBookings" mnemonicParsing="false" onMouseClicked="#btnBookings" prefHeight="63.0" prefWidth="128.0" styleClass="switchButton" stylesheets="@../Resources/StylesSheet.css" text="Bookings">
                <VBox.margin>
                   <Insets bottom="2.0" top="15.0" />
                </VBox.margin></Button>
@@ -50,7 +51,7 @@
                <VBox.margin>
                   <Insets bottom="2.0" top="15.0" />
                </VBox.margin></Button>
-            <Button id="switchButton" fx:id="btnAgents" mnemonicParsing="false" onMouseClicked="#btnAgents" prefHeight="63.0" prefWidth="129.0" styleClass="switchButton" stylesheets="@../Resources/StylesSheet.css" text="Agents">
+            <Button id="switchButton" fx:id="btnAgents" mnemonicParsing="false" onAction="#btnAgents" prefHeight="63.0" prefWidth="129.0" styleClass="switchButton" stylesheets="@../Resources/StylesSheet.css" text="Agents">
                <VBox.margin>
                   <Insets bottom="2.0" top="15.0" />
                </VBox.margin></Button>
@@ -58,14 +59,20 @@
       </VBox>
    </left>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="root" stylesheets="@../Resources/StylesSheet.css" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="apLogin" prefHeight="324.0" prefWidth="421.0" styleClass="root" stylesheets="@../Resources/StylesSheet.css">
          <children>
-            <TextField fx:id="txtLogin" layoutX="209.0" layoutY="103.0" stylesheets="@../Resources/StylesSheet.css" />
-            <TextField fx:id="txtPassword" layoutX="209.0" layoutY="154.0" stylesheets="@../Resources/StylesSheet.css" />
-            <Label id="switchBoardLabel" layoutX="89.0" layoutY="103.0" prefHeight="27.0" prefWidth="82.0" stylesheets="@../Resources/StylesSheet.css" text="Log In" />
-            <Label id="switchBoardLabel" layoutX="89.0" layoutY="153.0" prefHeight="27.0" prefWidth="82.0" stylesheets="@../Resources/StylesSheet.css" text="Password" />
-            <Button fx:id="btnLogIn" layoutX="203.0" layoutY="203.0" mnemonicParsing="false" onAction="#btnLoginAction" styleClass="formButton" stylesheets="@../Resources/StylesSheet.css" text="LogIn" />
-            <Button fx:id="btnCancel" layoutX="306.0" layoutY="203.0" mnemonicParsing="false" onAction="#btnCancelAction" styleClass="formButton" stylesheets="@../Resources/StylesSheet.css" text="Cancel" />
+            <TextField fx:id="txtLogin" layoutX="102.0" layoutY="94.0" stylesheets="@../Resources/StylesSheet.css" />
+            <TextField fx:id="txtPassword" layoutX="102.0" layoutY="145.0" stylesheets="@../Resources/StylesSheet.css" />
+            <Label id="switchBoardLabel" layoutX="29.0" layoutY="94.0" prefHeight="27.0" prefWidth="82.0" stylesheets="@../Resources/StylesSheet.css" text="Log In" />
+            <Label id="switchBoardLabel" layoutX="29.0" layoutY="144.0" prefHeight="27.0" prefWidth="82.0" stylesheets="@../Resources/StylesSheet.css" text="Password" />
+            <Button fx:id="btnLogIn" layoutX="96.0" layoutY="194.0" mnemonicParsing="false" onAction="#btnLoginAction" styleClass="formButton" stylesheets="@../Resources/StylesSheet.css" text="LogIn" />
+            <Button fx:id="btnCancel" layoutX="199.0" layoutY="194.0" mnemonicParsing="false" onAction="#btnCancelAction" styleClass="formButton" stylesheets="@../Resources/StylesSheet.css" text="Cancel" />
+            <VBox layoutX="290.0" layoutY="-1.0" prefHeight="222.0" prefWidth="179.0">
+               <children>
+                  <PieChart fx:id="pcAgent" prefHeight="129.0" prefWidth="90.0" />
+               </children>
+            </VBox>
+            <VBox layoutX="291.0" layoutY="213.0" prefHeight="199.0" prefWidth="178.0" />
          </children>
       </AnchorPane>
    </center>

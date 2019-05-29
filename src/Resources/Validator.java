@@ -13,8 +13,7 @@ public class Validator {
             result = false;
             JOptionPane.showMessageDialog(null, msg + "can't be empty", "Empty Fields Error",JOptionPane.ERROR_MESSAGE);
             textField.requestFocus();
-        } else { result = true; }
-
+        }
         return result;
     }
 

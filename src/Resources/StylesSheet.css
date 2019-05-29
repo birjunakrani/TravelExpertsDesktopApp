@@ -117,3 +117,14 @@ Labels{
     -fx-font-weight: bold;
     -fx-font-size: 1.1em;
 }
+
+VBox {
+    -fx-background-color: white;
+}
+
+/* chart styling */
+.chart-legend{
+    -fx-text-fill: blue;
+}
+
+

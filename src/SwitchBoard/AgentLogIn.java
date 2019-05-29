@@ -10,7 +10,8 @@ public class AgentLogIn {
 
     public AgentLogIn(String username, String password) {
         this.username = username;
-        this.password = DigestUtils.shaHex(password);
+       // this.password = DigestUtils.shaHex(password);
+        this.password = password;
     }
 
     public String getUsername() {
