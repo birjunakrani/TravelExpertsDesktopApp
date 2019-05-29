@@ -15,7 +15,7 @@ public class Package extends Application {
     public void start(Stage primaryStage) throws Exception {
           //     FXMLLoader loader = new FXMLLoader();
            // loader.setLocation(Package.class.getResource("PackageDisplay.fxml"));
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("View/PackageDisplay.java"));
+        Parent root = FXMLLoader.load(getClass().getResource("View/PackageDisplay.java"));
         Scene scene = new Scene(root, 612, 512);
         primaryStage.setTitle("Package Form");
         primaryStage.setScene(scene);
