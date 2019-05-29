@@ -70,7 +70,12 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <ComboBox fx:id="cbBookingId" layoutX="350.0" layoutY="19.0" onAction="#comboAction" onMouseClicked="#comboSelect" prefHeight="21.0" prefWidth="128.0" />
+            <ComboBox fx:id="cbBookingId" layoutX="432.0" layoutY="21.0" onAction="#comboAction" onMouseClicked="#comboSelect" prefHeight="25.0" prefWidth="67.0" />
+            <Label fx:id="lblBookingId" layoutX="344.0" layoutY="21.0" text="Booking Id">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
          </children>
          <BorderPane.margin>
             <Insets bottom="5.0" left="5.0" right="10.0" top="10.0" />

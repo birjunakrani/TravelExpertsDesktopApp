@@ -8,18 +8,22 @@ purpose: Controller class to get Booking info from DB,edit info,add new booking,
 
 package Booking;
 
+import Resources.Validator;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
-import javax.swing.*;
-import java.sql.*;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Controller {
     //Resources.DBClass.DBHelper dbhelper = null;
@@ -47,6 +51,9 @@ public class Controller {
 
     @FXML
     private ComboBox<Package> cbPkgName;
+    @FXML
+
+    private Label lblBookingId;
 
     @FXML
     private Button btnEdit;
@@ -95,10 +102,22 @@ public class Controller {
     @FXML
     void saveBooking(ActionEvent event) {
         //connect to DB
-       Connection conn = DBHelper.getConnection();
-       // dbhelper = Resources.DBClass.DBHelper.getInstance();
+        Connection conn = DBHelper.getConnection();
+        //dbhelper = Resources.DBClass.DBHelper.getInstance();
+
+        if (Validator.IsProvided(tfBookDate, "Booking Date ") &&
+                Validator.IsProvided(tfBookNum, "Booking ") &&
+                Validator.IsLetter(tfBookNum, "Booking Number ") &&
+                Validator.IsProvided(tfTraveler, "Traveler Count ") &&
+                Validator.IsInt(tfTraveler, "Traveler Count ")&&
+                Validator.IsProvided(tfCustId, "CustomerId ") &&
+                Validator.IsInt(tfCustId, "Customer Id ")&&
+                Validator.IsProvided(tfTripType, "Trip Type ")&&
+                Validator.IsProvided(tfBookNum, "Trip Type "))
+        {
 
             String sql = " update bookings set BookingDate=?,BookingNo=?,TravelerCount=?,CustomerId=?,TripTypeId=?,PackageId=? where BookingId=?";
+
             try {
                 // get inputs from text fields and make them as string to insert in DB
                 PreparedStatement stmt = conn.prepareStatement(sql);
@@ -127,7 +146,7 @@ public class Controller {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-
+        }//end of validation
     }//end of saveBooking
 
 //////////////////////////////////////////////ADD New Booking Part/////////////////////////////////////////////////
@@ -150,6 +169,7 @@ public class Controller {
         tfTripType.setText("");
         tfPackageId.setVisible(false);
         cbPkgName.setVisible(true);
+        lblBookingId.setVisible(false);
         enableEdit();
     }
 
@@ -164,13 +184,19 @@ public class Controller {
     void saveNewBookingAction(ActionEvent event) {
         // connect to DB
         Connection conn = DBHelper.getConnection();
+        //validation for textFields
+        if (Validator.IsProvided(tfBookDate, "Booking Date ") &&
+                Validator.IsProvided(tfBookNum, "Booking Number ") &&
+                Validator.IsLetter(tfBookNum, "Booking Number ") &&
+                Validator.IsProvided(tfTraveler, "Traveler Count ") &&
+                Validator.IsInt(tfTraveler, "Traveler Count ")&&
+                Validator.IsProvided(tfCustId, "CustomerId ") &&
+                Validator.IsInt(tfCustId, "Customer Id ")&&
+                Validator.IsProvided(tfTripType, "Trip Type ")&&
+                Validator.IsProvided(tfBookNum, "Trip Type ")&&
+                Validator.IsSelected(cbPkgName, "Package Name "))
+        {
 
-       /* if (Validator.IsProvided(tfBookDate, "Booking Date is required to be filled.") &&
-                Validator.IsProvided(tfBookNum, "Booking Number is required to be filled.") &&
-                Validator.IsProvided(tfTraveler, "Traveler Count is required to be filled.") &&
-                Validator.IsProvided(tfCustId, "CustomerId is required to be filled.") &&
-                Validator.IsProvided(tfTripType, "Trip Type is required to be filled.") &&
-                Validator.IsProvided(tfPackageId, "PackageId is required to be filled.")) {*/
 
         // create a table to show the invoice of new booking
         String[] cols = {"BookingDate", "BookingNo", "TravelerCount", "CustomerId", "TripTypeId", "PackageName"};
@@ -207,7 +233,7 @@ public class Controller {
             e.printStackTrace();
         }
 
-        // }//end of validator
+         }//end of validator
     }// end of saveNewBookingAction
 
 ////////////////////////////////////////////required methods/////////////////////////////////////////////////
