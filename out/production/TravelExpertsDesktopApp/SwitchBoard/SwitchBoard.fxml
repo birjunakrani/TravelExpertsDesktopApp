@@ -12,7 +12,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
+
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SwitchBoard.MainController">
+
+<!--<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SwitchBoard.MainController"> -->
+
    <top>
       <HBox prefHeight="35.0" prefWidth="609.0" styleClass="header-section" stylesheets="@../Resources/StylesSheet.css" BorderPane.alignment="CENTER">
          <children>
@@ -47,7 +51,7 @@
                <VBox.margin>
                   <Insets bottom="2.0" top="15.0" />
                </VBox.margin></Button>
-            <Button id="switchButton" fx:id="btnPackages" mnemonicParsing="false" onMouseClicked="#btnPackages" prefHeight="63.0" prefWidth="129.0" styleClass="switchButton" stylesheets="@../Resources/StylesSheet.css" text="Packages">
+            <Button id="switchButton" fx:id="btnPackages" mnemonicParsing="false" onAction="#btnPackages" onMouseClicked="#btnPackages" prefHeight="63.0" prefWidth="129.0" styleClass="switchButton" stylesheets="@../Resources/StylesSheet.css" text="Packages">
                <VBox.margin>
                   <Insets bottom="2.0" top="15.0" />
                </VBox.margin></Button>

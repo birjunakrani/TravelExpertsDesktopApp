@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Booking.Controller">
+   <center>
+      <AnchorPane prefHeight="289.0" prefWidth="470.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="26.0" layoutY="21.0" text="Booking Date">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="61.0" text="Booking Number">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="103.0" text="Traveler Count">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="24.0" layoutY="145.0" text="Customer Id">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="186.0" text="Trip TypeId">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="228.0" text="Package Name">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfBookDate" editable="false" layoutX="161.0" layoutY="19.0" prefHeight="11.0" prefWidth="149.0" />
+            <TextField fx:id="tfBookNum" editable="false" layoutX="161.0" layoutY="59.0" prefHeight="8.0" prefWidth="150.0" />
+            <TextField fx:id="tfTraveler" editable="false" layoutX="161.0" layoutY="101.0" prefHeight="19.0" prefWidth="152.0" />
+            <TextField fx:id="tfCustId" editable="false" layoutX="161.0" layoutY="143.0" prefHeight="3.0" prefWidth="152.0" />
+            <TextField fx:id="tfTripType" editable="false" layoutX="161.0" layoutY="184.0" prefHeight="0.0" prefWidth="153.0" />
+            <ComboBox fx:id="cbPkgName" layoutX="161.0" layoutY="224.0" onMouseClicked="#comboPkgSelect" prefHeight="28.0" prefWidth="153.0" visible="false" />
+            <TextField fx:id="tfPackageId" editable="false" layoutX="162.0" layoutY="224.0" prefHeight="30.0" prefWidth="35.0" />
+            <Button fx:id="btnEdit" layoutX="48.0" layoutY="309.0" mnemonicParsing="false" onAction="#editBooking" styleClass="formButton" stylesheets="@../Resources/StylesSheet.css" text="Edit">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnSave" disable="true" layoutX="131.0" layoutY="309.0" mnemonicParsing="false" onAction="#saveBooking" styleClass="formButton" stylesheets="@../Resources/StylesSheet.css" text="Save">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAdd" layoutX="218.0" layoutY="309.0" mnemonicParsing="false" onAction="#addAction" styleClass="formButton" stylesheets="@../Resources/StylesSheet.css" text="Add">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnSaveNewBooking" layoutX="346.0" layoutY="309.0" mnemonicParsing="false" onAction="#saveNewBookingAction" styleClass="formButton" stylesheets="@../Resources/StylesSheet.css" text="Save" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <ComboBox fx:id="cbBookingId" layoutX="432.0" layoutY="21.0" onAction="#comboAction" onMouseClicked="#comboSelect" prefHeight="25.0" prefWidth="67.0" />
+            <Label fx:id="lblBookingId" layoutX="344.0" layoutY="21.0" text="Booking Id">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </AnchorPane>
+   </center>
+   <left>
+      <AnchorPane prefHeight="331.0" prefWidth="109.0" styleClass="bluepane" stylesheets="@../Resources/StylesSheet.css" BorderPane.alignment="CENTER" />
+   </left>
+   <top>
+      <AnchorPane prefHeight="87.0" prefWidth="583.0" styleClass="header-section" stylesheets="@../Resources/StylesSheet.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="38.0" layoutY="27.0" prefHeight="26.0" prefWidth="209.0" styleClass="travelexpertslabel" stylesheets="@../Resources/StylesSheet.css" text="Travel Experts" />
+            <Label layoutX="400.0" layoutY="36.0" styleClass="formlabel" stylesheets="@../Resources/StylesSheet.css" text="Booking Form" textFill="#170101" />
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>
