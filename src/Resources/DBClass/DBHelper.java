@@ -19,7 +19,7 @@ public class DBHelper {
     private  Connection con = null;
     private  Statement stmt = null;
 
-    private DBHelper()  {
+    public DBHelper()  {
         createConnection();
     }
 

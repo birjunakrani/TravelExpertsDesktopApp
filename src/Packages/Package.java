@@ -31,9 +31,11 @@ public class Package extends Application {
 
     public static void main(String[] args) {
         launch(args);
-        Controller Boot = new Controller();
-        Boot.LoadPacks();
-
+       //DBHelper db = new DBHelper();
+       //Controller Controller = new Controller();
+      //Controller db.getPackages();
+        Controller Con = new Controller();
+        Con.LoadPacks();
 
 
 

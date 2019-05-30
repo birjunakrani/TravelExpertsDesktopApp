@@ -55,7 +55,8 @@ public class Controller {
     public void LoadPacks(){
 
         try {
-            AllPacks = DBHelper.dbHelper.getPackages();
+            DBHelper db = new DBHelper();
+            AllPacks = db.getPackages();
         } catch (SQLException e) {
             e.printStackTrace();
         }
