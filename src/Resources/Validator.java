@@ -1,6 +1,7 @@
 package Resources;
 
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
 import javax.swing.*;
@@ -15,8 +16,7 @@ public class Validator {
             result = false;
             JOptionPane.showMessageDialog(null, msg + "can't be empty", "Empty Fields Error",JOptionPane.ERROR_MESSAGE);
             textField.requestFocus();
-        } else { result = true; }
-
+        }
         return result;
     }
 
@@ -80,6 +80,20 @@ public class Validator {
             result = false;
             JOptionPane.showMessageDialog(null, msg + "can't be empty", "Empty Error", JOptionPane.ERROR_MESSAGE);
             comboBox.requestFocus();
+        }
+
+        return result;
+    }
+
+///method to check the DatePicker is not null
+
+    public static boolean DatePicked(DatePicker datePicker, String msg) {
+        boolean result = true;
+
+        if (datePicker.getValue()== null){
+            result = false;
+            JOptionPane.showMessageDialog(null, msg + "can't be empty", "Empty Error", JOptionPane.ERROR_MESSAGE);
+            datePicker.requestFocus();
         }
 
         return result;

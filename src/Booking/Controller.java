@@ -15,7 +15,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-
+import javafx.scene.control.DatePicker;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -24,9 +24,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 
 public class Controller {
-    //Resources.DBClass.DBHelper dbhelper = null;
+
 
     @FXML
     private TextField tfBookDate;
@@ -49,8 +50,16 @@ public class Controller {
     @FXML
     private ComboBox<Booking> cbBookingId;
 
+
+    @FXML
+    private ComboBox<TripType> cbTripType;
+
     @FXML
     private ComboBox<Package> cbPkgName;
+
+    @FXML
+    private DatePicker dpBookingDate;
+
     @FXML
 
     private Label lblBookingId;
@@ -80,14 +89,17 @@ public class Controller {
 
         if (cbBookingId.getSelectionModel().getSelectedItem() != null)
         {
-            tfBookDate.setText(cbBookingId.getSelectionModel().getSelectedItem().getBookingDate());
+            dpBookingDate.setValue(LocalDate.parse(cbBookingId.getSelectionModel().getSelectedItem().getBookingDate()));
+            //tfBookDate.setText(cbBookingId.getSelectionModel().getSelectedItem().getBookingDate());
             tfBookNum.setText(cbBookingId.getSelectionModel().getSelectedItem().getBookingNo());
             tfTraveler.setText(cbBookingId.getSelectionModel().getSelectedItem().getTravelerCount()+"");
             tfCustId.setText(cbBookingId.getSelectionModel().getSelectedItem().getCustomerId()+"");
             tfTripType.setText(cbBookingId.getSelectionModel().getSelectedItem().getTripTypeId());
             tfPackageId.setText(cbBookingId.getSelectionModel().getSelectedItem().getPackageId()+"");
-            //cbPkgName.setItems(cbBookingId.getSelectionModel().getSelectedItem().getPackageId());
         }
+        //dpBookingDate.setStyle("-fx-opacity: 1;");
+        dpBookingDate.setOpacity(1);
+
     }
 
     //make textFields editable and save button enabled after clicking the Edit Button
@@ -95,6 +107,8 @@ public class Controller {
     void editBooking(ActionEvent event) {
 
         enableEdit();
+        tfTripType.setEditable(true);
+        dpBookingDate.setDisable(false);
         btnSave.setDisable(false);
     }
 
@@ -103,17 +117,14 @@ public class Controller {
     void saveBooking(ActionEvent event) {
         //connect to DB
         Connection conn = DBHelper.getConnection();
-        //dbhelper = Resources.DBClass.DBHelper.getInstance();
 
-        if (Validator.IsProvided(tfBookDate, "Booking Date ") &&
-                Validator.IsProvided(tfBookNum, "Booking ") &&
-                Validator.IsLetter(tfBookNum, "Booking Number ") &&
+        if (//Validator.IsProvided(tfBookDate, "Booking Date ") &&
+                Validator.IsProvided(tfBookNum, "Booking number ") &&
                 Validator.IsProvided(tfTraveler, "Traveler Count ") &&
                 Validator.IsInt(tfTraveler, "Traveler Count ")&&
                 Validator.IsProvided(tfCustId, "CustomerId ") &&
                 Validator.IsInt(tfCustId, "Customer Id ")&&
-                Validator.IsProvided(tfTripType, "Trip Type ")&&
-                Validator.IsProvided(tfBookNum, "Trip Type "))
+                Validator.IsProvided(tfTripType, "Trip Type "))
         {
 
             String sql = " update bookings set BookingDate=?,BookingNo=?,TravelerCount=?,CustomerId=?,TripTypeId=?,PackageId=? where BookingId=?";
@@ -121,7 +132,8 @@ public class Controller {
             try {
                 // get inputs from text fields and make them as string to insert in DB
                 PreparedStatement stmt = conn.prepareStatement(sql);
-                stmt.setString(1, tfBookDate.getText());
+                stmt.setString(1, dpBookingDate.getValue().toString());
+                //stmt.setString(1, tfBookDate.getText());
                 stmt.setString(2, tfBookNum.getText());
                 stmt.setInt(3, Integer.parseInt(tfTraveler.getText()));
                 stmt.setInt(4, Integer.parseInt(tfCustId.getText()));
@@ -161,22 +173,31 @@ public class Controller {
         btnSave.setVisible(false);
         btnEdit.setVisible(false);
         btnAdd.setVisible(false);
+        dpBookingDate.setDisable(false);
         cbPkgName.setVisible(true);
-        tfBookDate.setText("");
+        cbTripType.setVisible(true);
+        //tfBookDate.setText("");
         tfBookNum.setText("");
         tfTraveler.setText("");
         tfCustId.setText("");
-        tfTripType.setText("");
+        //tfTripType.setText("");
         tfPackageId.setVisible(false);
-        cbPkgName.setVisible(true);
+        tfTripType.setVisible(false);
         lblBookingId.setVisible(false);
         enableEdit();
     }
 
+    //comboTripTypeSelect to load the TripType name after clicking on combobox
+    @FXML
+    void comboTripTypeSelect(MouseEvent event) {
+        loadTripType();
+    }
+
+
     //comboPkgSelect to load the package name after clicking on combobox
     @FXML
     void comboPkgSelect(MouseEvent event) {
-        //loadPackage();
+        loadPackage();
     }
 
     //(second save button)saveNewBookingAction to insert new booking in DB and create an invoice for new booking
@@ -185,25 +206,23 @@ public class Controller {
         // connect to DB
         Connection conn = DBHelper.getConnection();
         //validation for textFields
-        if (Validator.IsProvided(tfBookDate, "Booking Date ") &&
+        if (//Validator.IsProvided(tfBookDate, "Booking Date ") &&
+                Validator.DatePicked(dpBookingDate, "Booking Date ")&&
                 Validator.IsProvided(tfBookNum, "Booking Number ") &&
-                Validator.IsLetter(tfBookNum, "Booking Number ") &&
                 Validator.IsProvided(tfTraveler, "Traveler Count ") &&
                 Validator.IsInt(tfTraveler, "Traveler Count ")&&
                 Validator.IsProvided(tfCustId, "CustomerId ") &&
                 Validator.IsInt(tfCustId, "Customer Id ")&&
-                Validator.IsProvided(tfTripType, "Trip Type ")&&
-                Validator.IsProvided(tfBookNum, "Trip Type ")&&
+                Validator.IsSelected(cbTripType, "Trip Type ")&&
                 Validator.IsSelected(cbPkgName, "Package Name "))
         {
 
 
         // create a table to show the invoice of new booking
         String[] cols = {"BookingDate", "BookingNo", "TravelerCount", "CustomerId", "TripTypeId", "PackageName"};
-          /* Object[][] row = {{tfBookDate.getText(), tfBookNum.getText(), tfTraveler.getText(),
-                    tfCustId.getText(), tfTripType.getText(), tfPackageId.getText()}};*/
-        Object[][] row = {{tfBookDate.getText(), tfBookNum.getText(), tfTraveler.getText(),
-                tfCustId.getText(), tfTripType.getText()}};//, cbPkgName.getSelectionModel().getSelectedItem().getPkgName()}};
+
+        Object[][] row = {{dpBookingDate.getValue().toString(), tfBookNum.getText(), tfTraveler.getText(),
+                tfCustId.getText(), cbTripType.getSelectionModel().getSelectedItem().getTripTypeId(), cbPkgName.getSelectionModel().getSelectedItem().getPkgName()}};
 
         JTable table = new JTable(row, cols);
 
@@ -212,13 +231,15 @@ public class Controller {
         try {
             // get inputs from text fields and make them as string to insert in DB
             PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, tfBookDate.getText());
+            //stmt.setString(1, tfBookDate.getText());
+            stmt.setString(1, dpBookingDate.getValue().toString());
             stmt.setString(2, tfBookNum.getText());
             stmt.setInt(3, Integer.parseInt(tfTraveler.getText()));
             stmt.setInt(4, Integer.parseInt(tfCustId.getText()));
-            stmt.setString(5, tfTripType.getText());
+            stmt.setString(5, cbTripType.getSelectionModel().getSelectedItem().getTripTypeId());
+            //stmt.setString(5, tfTripType.getText());
             //stmt.setInt(6, Integer.parseInt(tfPackageId.getText()));
-         //   stmt.setInt(6, cbPkgName.getSelectionModel().getSelectedItem().getPackageId());
+            stmt.setInt(6, cbPkgName.getSelectionModel().getSelectedItem().getPackageId());
 
             int numberRows = stmt.executeUpdate();
             if (numberRows == 0) {
@@ -263,17 +284,42 @@ public class Controller {
             e.printStackTrace();
         }
     }//end of loadCombo
-/*
-// LoadPackage to load package info from DB
+
+
+    // loadTripType to load tripType info from DB
+    private void loadTripType() {
+
+        ObservableList<TripType> data = FXCollections.observableArrayList();
+        Connection conn = DBHelper.getConnection();
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("select TripTypeId,TTName from triptypes");
+            while (rs.next()) {
+                data.add(new TripType(
+                        rs.getString(1),
+                        rs.getString(2)));
+            }
+            conn.close();
+            cbTripType.setItems(data);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }//end of loadTripType
+
+
+
+
+    // LoadPackage to load package info from DB
     private void loadPackage() {
 
-        ObservableList<PackageType> data = FXCollections.observableArrayList();
+        ObservableList<Package> data = FXCollections.observableArrayList();
         Connection conn = DBHelper.getConnection();
         try {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("select PkgName,PackageId from Packages");
             while (rs.next()) {
-                data.add(new PackageType(
+                data.add(new Package(
                         rs.getString(1),
                         rs.getInt(2)));
             }
@@ -285,22 +331,23 @@ public class Controller {
             e.printStackTrace();
         }
     }//end of loadPackage
-*/
+
+
     //enableEdit method to make textfield editable
     private void enableEdit()
     {
-        tfBookDate.setEditable(true);
+        //tfBookDate.setEditable(true);
         tfBookNum.setEditable(true);
         tfTraveler.setEditable(true);
         tfCustId.setEditable(true);
-        tfTripType.setEditable(true);
+        //tfTripType.setEditable(true);
        // tfPackageId.setEditable(true);
     }
 
     //disableEdit method to make textfield non-editable
     private void disableEdit()
     {
-        tfBookDate.setEditable(false);
+        //tfBookDate.setEditable(false);
         tfBookNum.setEditable(false);
         tfTraveler.setEditable(false);
         tfCustId.setEditable(false);

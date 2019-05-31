@@ -1,5 +1,11 @@
 package Resources.DBClass;
 
+import Agency.Model.Agency;
+import SwitchBoard.AgentLogIn;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.chart.PieChart;
+
 import Packages.Model.PackageType;
 
 import javax.swing.*;
@@ -92,7 +98,7 @@ public class DBHelper {
         }
 
         return false;
-    }
+    }//deleteAgent method
 
     public boolean updateAgent(TravelExperts.Agent.Model.Agent agent) {
         boolean result=true;
@@ -117,7 +123,145 @@ public class DBHelper {
             Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
         return result;
+    }//updateAgent method
+
+    public boolean deleteAgency(Agency agency) {
+
+        try {
+            String query = "DELETE FROM agencies where AgencyId = ?";
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setInt(1, agency.getAgencyId());
+            int res = stmt.executeUpdate();
+            if (res == 0) {
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return false;
+    }//deleteAgency method
+
+    public int checkBeforedeleteAgency(Agency agency) {
+
+        int result = 0;
+        try {
+            String query = "SELECT COUNT(*) FROM agencies WHERE AgencyId in (SELECT AgencyId FROM agents WHERE AgencyId = ?)";
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setInt(1, agency.getAgencyId());
+            result = stmt.executeUpdate();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return result;
+    }//deleteAgency method
+
+    public boolean updateAgency(Agency agency) {
+        boolean result=true;
+
+        try {
+            String query = "UPDATE agencies SET AgncyAddress = ?, AgncyCity = ?, AgncyProv = ?,AgncyPostal = ?, AgncyCountry = ?, AgncyPhone = ?, AgncyFax = ? WHERE AgencyId = ?";
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setString(1, agency.getAgncyAddress());
+            stmt.setString(2, agency.getAgncyCity());
+            stmt.setString(3, agency.getAgncyProv());
+            stmt.setString(4, agency.getAgncyPostal());
+            stmt.setString(5, agency.getAgncyCountry());
+            stmt.setString(6, agency.getAgncyPhone());
+            stmt.setString(7, agency.getAgncyFax());
+            stmt.setInt(8, agency.getAgencyId());
+            int res = stmt.executeUpdate();
+            if (res == 1){
+                result = true;
+            }else result = false;
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return result;
+    } //udateAgency method
+
+    public boolean AgentLogIn(AgentLogIn agentLogIn) throws SQLException {
+
+        boolean IsLoggedIn = false;
+        Resources.DBClass.DBHelper dbhelper = Resources.DBClass.DBHelper.getInstance();
+        ObservableList<AgentLogIn> agentAccount = FXCollections.observableArrayList();
+        String query = "SELECT Username,Password FROM Agents WHERE Username = ? and Password = ? ";
+        PreparedStatement ps = con.prepareStatement(query);
+        try {
+            ps.setString(1,agentLogIn.getUsername());
+            ps.setString(2,agentLogIn.getPassword());
+            ResultSet rs = ps.executeQuery();
+
+            if(rs.next()){ //if agent has username/password
+                IsLoggedIn = true;
+            } else IsLoggedIn = false;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return IsLoggedIn;
+    } //agentlogin method
+
+
+    public ObservableList<PieChart.Data> getAgentGraphicStats()
+    {
+
+        Resources.DBClass.DBHelper dbhelper = Resources.DBClass.DBHelper.getInstance();
+        ObservableList<PieChart.Data> data = FXCollections.observableArrayList();
+        String agentquery = "SELECT COUNT(*) FROM agents";
+        String agencyquery = "SELECT COUNT(*) FROM agencies";
+
+        ResultSet rs = executeQuery(agentquery);
+        try {
+            if (rs.next()){
+                int count = rs.getInt(1);
+                data.add(new PieChart.Data("Total Agents",count));
+            }
+            rs = executeQuery(agencyquery);
+            if (rs.next()){
+                int count = rs.getInt(1);
+                data.add(new PieChart.Data("Total Agencies",count));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return data;
     }
+
+    public ObservableList<PieChart.Data> getPackageGraphicStats()
+    {
+
+        DBHelper dbhelper = DBHelper.getInstance();
+        ObservableList<PieChart.Data> data = FXCollections.observableArrayList();
+        String packagequery = "SELECT COUNT(*) FROM packages";
+        String productquery = "SELECT COUNT(*) FROM products";
+
+        ResultSet rs = executeQuery(packagequery);
+        try {
+            if (rs.next()){
+                int count = rs.getInt(1);
+                data.add(new PieChart.Data("Packages",count));
+            }
+            rs = executeQuery(productquery);
+            if (rs.next()){
+                int count = rs.getInt(1);
+                data.add(new PieChart.Data("Products",count));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return data;
+    }
+
 
 
     //Packages DB stuff
