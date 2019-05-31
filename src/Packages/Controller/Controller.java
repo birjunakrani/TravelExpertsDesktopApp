@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Controller {
 
@@ -49,21 +50,25 @@ public class Controller {
     @FXML
     ComboBox IDbox;
 
-    ArrayList<PackageType> AllPacks;
+
 
 
     public void LoadPacks(){
-
+        List<PackageType> AllPacks;
+        AllPacks = new ArrayList<>();
         try {
-            DBHelper db = new DBHelper();
-            AllPacks = db.getPackages();
+          PackageDataLayer Data = new PackageDataLayer();
+            AllPacks = Data.getPackages();
+            System.out.print(AllPacks.indexOf(2));
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        ObservableList<PackageType> ObList = FXCollections.observableList(AllPacks);
-
-        IDbox.setItems(ObList);
+            ObservableList<PackageType> ObList = FXCollections.observableArrayList(AllPacks);
+        //Testing Array
+      //  Descbox.setText(Integer.toString(ObList.size()));
+        //System.out.print(AllPacks.indexOf(1));
+       IDbox.setItems(ObList);
     }
     @FXML
     void AddbtnClick(ActionEvent event) {

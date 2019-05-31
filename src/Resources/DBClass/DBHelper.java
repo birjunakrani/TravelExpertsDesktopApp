@@ -11,6 +11,7 @@ import Packages.Model.PackageType;
 import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -264,55 +265,6 @@ public class DBHelper {
 
 
 
-    //Packages DB stuff
-    public ArrayList<PackageType> getPackages() throws SQLException {
-        ArrayList<PackageType> AllPacks = new ArrayList<>();
-        String query = "SELECT * from packages";
-        Statement stmt = null;
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/travelexperts", "root", "");
-        stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(query);
 
-        while(rs.next()){
-            AllPacks.add(new PackageType(rs.getInt(1),rs.getString(2),
-                    rs.getDate(3),rs.getDate(4),rs.getString(5),
-                    rs.getBigDecimal(6),rs.getBigDecimal(7)));
-        }
-        return AllPacks;
-    }
-
-
-
-    public boolean deletePkg(PackageType pkg) {
-        try {
-            String query = "DELETE FROM packages where PackageId =" + pkg.getPkgId();
-            PreparedStatement stmt = con.prepareStatement(query);
-            int res = stmt.executeUpdate();
-            if (res == 1) {
-                return true;
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        return false;
-    }
-
-    public boolean EditPkg(PackageType pkg) {
-        try {
-            String query = "Update packages set (PkgName = "+pkg.getPkgName()+",PkgStartDate="+pkg.getPkgStartDate()+"," +
-                    "PkgEndDate="+pkg.getPkgEndDate()+",PkgDesc="+ pkg.getPkgDesc()+",BasePrice="+pkg.getPkgBasePrice()
-                    +",PkgAgencyCommision="+pkg.getPkgAgencyCom()+") where PackageId =" + pkg.getPkgId();
-            PreparedStatement stmt = con.prepareStatement(query);
-            int res = stmt.executeUpdate();
-            if (res == 1) {
-                return true;
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        return false;
-    }
 }//class
 

@@ -10,8 +10,8 @@ public class PackageType {
     private java.sql.Date PkgStartDate;
     private java.sql.Date PkgEndDate;
     private String PkgDesc;
-    private java.math.BigDecimal PkgBasePrice;
-    private java.math.BigDecimal PkgAgencyCom;
+    private long PkgBasePrice;
+    private long PkgAgencyCom;
 
     public PackageType(String pkgName, int pkgId) {
         PkgId = pkgId;
@@ -19,7 +19,7 @@ public class PackageType {
     }
 
     public PackageType(int pkgId, String pkgName, Date pkgStartDate, Date pkgEndDate,
-                       String pkgDesc, BigDecimal pkgBasePrice, BigDecimal pkgAgencyCom) {
+                       String pkgDesc, long pkgBasePrice, long pkgAgencyCom) {
         PkgId = pkgId;
         PkgName = pkgName;
         PkgStartDate = pkgStartDate;
@@ -69,19 +69,19 @@ public class PackageType {
         PkgDesc = pkgDesc;
     }
 
-    public BigDecimal getPkgBasePrice() {
+    public long getPkgBasePrice() {
         return PkgBasePrice;
     }
 
-    public void setPkgBasePrice(BigDecimal pkgBasePrice) {
+    public void setPkgBasePrice(long pkgBasePrice) {
         PkgBasePrice = pkgBasePrice;
     }
 
-    public BigDecimal getPkgAgencyCom() {
+    public long getPkgAgencyCom() {
         return PkgAgencyCom;
     }
 
-    public void setPkgAgencyCom(BigDecimal pkgAgencyCom) {
+    public void setPkgAgencyCom(long pkgAgencyCom) {
         PkgAgencyCom = pkgAgencyCom;
     }
 
