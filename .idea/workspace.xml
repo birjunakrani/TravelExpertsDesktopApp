@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Add datePicker-mahda">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jxdatepicker_support_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Booking/TripType.java" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Add opacity command-mahda">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelExpertsDesktopApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TravelExpertsDesktopApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Booking/Booking.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Booking/Booking.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Booking/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Booking/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Resources/Validator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Resources/Validator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Booking/Booking.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Booking/Booking.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Booking/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Booking/Controller.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,10 +66,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Booking/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="120" column="64" selection-start-line="120" selection-start-column="64" selection-end-line="120" selection-end-column="64" />
+            <state relative-caret-position="332">
+              <caret line="99" column="8" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1631#1632#0" expanded="true" />
+                <element signature="e#1658#1659#0" expanded="true" />
                 <element signature="e#6575#6576#0" expanded="true" />
                 <element signature="e#6605#6606#0" expanded="true" />
                 <element signature="e#6430#6431#0" expanded="true" />
@@ -89,14 +84,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Booking/TripType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-122" />
+            <state relative-caret-position="-162">
+              <caret lean-forward="true" />
+              <folding>
+                <element signature="e#0#1030#0" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Resources/Validator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1476">
+            <state relative-caret-position="1173">
               <caret line="86" selection-start-line="86" selection-end-line="86" />
             </state>
           </provider>
@@ -260,7 +260,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jxdatepicker-support-1.0.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -448,7 +448,7 @@
       <workItem from="1559131849816" duration="4398000" />
       <workItem from="1559270579337" duration="1425000" />
       <workItem from="1559273058655" duration="3290000" />
-      <workItem from="1559277251153" duration="4253000" />
+      <workItem from="1559277251153" duration="5910000" />
     </task>
     <task id="LOCAL-00001" summary="Commit with Agent module">
       <created>1558582565276</created>
@@ -464,11 +464,25 @@
       <option name="project" value="LOCAL" />
       <updated>1559276254708</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add TripType Class-mahda">
+      <created>1559283962015</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1559283962015</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add opacity command-mahda">
+      <created>1559285249498</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1559285249498</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207791000" />
+    <option name="totallyTimeSpent" value="209448000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -493,7 +507,7 @@
       <window_info id="UI Designer" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32890365" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.119476266" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.119476266" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.29235882" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -567,7 +581,9 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="Commit with Agent module" />
     <MESSAGE value="Add datePicker-mahda" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add datePicker-mahda" />
+    <MESSAGE value="Add TripType Class-mahda" />
+    <MESSAGE value="Add opacity command-mahda" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add opacity command-mahda" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -824,24 +840,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Booking/TripType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162">
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#0#1030#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Resources/Validator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1476">
+        <state relative-caret-position="1173">
           <caret line="86" selection-start-line="86" selection-end-line="86" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Booking/TripType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-122" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Booking/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="120" column="64" selection-start-line="120" selection-start-column="64" selection-end-line="120" selection-end-column="64" />
+        <state relative-caret-position="332">
+          <caret line="99" column="8" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1631#1632#0" expanded="true" />
+            <element signature="e#1658#1659#0" expanded="true" />
             <element signature="e#6575#6576#0" expanded="true" />
             <element signature="e#6605#6606#0" expanded="true" />
             <element signature="e#6430#6431#0" expanded="true" />

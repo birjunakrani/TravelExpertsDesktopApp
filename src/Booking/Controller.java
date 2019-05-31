@@ -27,7 +27,7 @@ import java.sql.Statement;
 import java.time.LocalDate;
 
 public class Controller {
-    //Resources.DBClass.DBHelper dbhelper = null;
+
 
     @FXML
     private TextField tfBookDate;
