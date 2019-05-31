@@ -13,29 +13,30 @@ import java.util.logging.Logger;
 public class PackageDataLayer {
 
 
-    PackDB ConnPack;
+    //PackDB ConnPack;
 
 
     //Packages DB stuff
     public List<PackageType> getPackages() throws SQLException {
-        List<PackageType> AllPacks = new ArrayList<PackageType>();
-        Connection connection = ConnPack.getConnection();
+        List<PackageType> AllPacks = new ArrayList<PackageType>(25);
+        Connection connection = PackDB.getConnection();
         String query = "SELECT * from packages";
         Statement state = null;
 
         //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/travelexperts", "root", "");
         state = connection.createStatement();
         ResultSet rs = state.executeQuery(query);
-int i=0;
+
         while(rs.next()){
             PackageType Pack = new PackageType(rs.getInt(1),rs.getString(2),
                     rs.getDate(3),rs.getDate(4),rs.getString(5),
                     rs.getLong(6),rs.getLong(7));
-            AllPacks.add(i,Pack);
-            i++;
-            //  System.out.print(Pack.toString());
+
+            AllPacks.add(Pack);
+
+
         }
-        System.out.print(AllPacks.indexOf(1));
+
         connection.close();
         return AllPacks;
 
@@ -44,7 +45,7 @@ int i=0;
 
 
     public boolean deletePkg(PackageType pkg) throws SQLException {
-        Connection connection = ConnPack.getConnection();
+        Connection connection = PackDB.getConnection();
         try {
             String query = "DELETE FROM packages where PackageId =" + pkg.getPkgId();
 
@@ -62,7 +63,7 @@ int i=0;
     }
 
     public boolean EditPkg(PackageType pkg) throws SQLException {
-        Connection connection = ConnPack.getConnection();
+        Connection connection = PackDB.getConnection();
         try {
             String query = "Update packages set (PkgName = "+pkg.getPkgName()+",PkgStartDate="+pkg.getPkgStartDate()+"," +
                     "PkgEndDate="+pkg.getPkgEndDate()+",PkgDesc="+ pkg.getPkgDesc()+",BasePrice="+pkg.getPkgBasePrice()

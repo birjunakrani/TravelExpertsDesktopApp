@@ -3,6 +3,7 @@ package Packages.Controller;
 import Packages.Model.PackageType;
 import Resources.DBClass.DBHelper;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,27 +49,31 @@ public class Controller {
     TextField Combox;
 
     @FXML
-    ComboBox IDbox;
+    ComboBox<PackageType> IDbox;
 
 
 
 
     public void LoadPacks(){
-        List<PackageType> AllPacks;
-        AllPacks = new ArrayList<>();
-        try {
+        List<PackageType> PackList = new ArrayList<>();
+
           PackageDataLayer Data = new PackageDataLayer();
-            AllPacks = Data.getPackages();
-            System.out.print(AllPacks.indexOf(2));
+
+        try {
+            PackList = Data.getPackages();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-            ObservableList<PackageType> ObList = FXCollections.observableArrayList(AllPacks);
-        //Testing Array
-      //  Descbox.setText(Integer.toString(ObList.size()));
-        //System.out.print(AllPacks.indexOf(1));
+            ObservableList<PackageType> ObList = FXCollections.observableArrayList(PackList);
+
        IDbox.setItems(ObList);
+       ObList.toString();
+       System.out.print(IDbox.getItems().toString());
+      ObservableList<PackageType> Tests = IDbox.getItems();
+      System.out.print(Tests.toString());
+
     }
     @FXML
     void AddbtnClick(ActionEvent event) {
