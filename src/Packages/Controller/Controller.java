@@ -1,6 +1,7 @@
 package Packages.Controller;
 
 import Packages.Model.PackageType;
+import Resources.AlertCreator;
 import Resources.DBClass.DBHelper;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -139,7 +140,7 @@ List<PackageType> SavedList;
     }
 
     @FXML
-    void SavebtnClick(ActionEvent event) {
+    void SavebtnClick(ActionEvent event) throws SQLException {
     //runsql
 
         PkgNamebox.setEditable(false);
@@ -149,6 +150,25 @@ List<PackageType> SavedList;
         Basebox.setEditable(false);
         Combox.setEditable(false);
         Savebtn.setDisable(true);
+
+        PackageDataLayer SqlFunc = new PackageDataLayer();
+        PackageType UpdatedPack = new PackageType();
+        UpdatedPack.setPkgId(ComboID.getValue().getPkgId());
+        UpdatedPack.setPkgName(PkgNamebox.getText());
+        UpdatedPack.setPkgDesc(Descbox.getText());
+        UpdatedPack.setPkgBasePrice(Long.parseLong(Basebox.getText()));
+        UpdatedPack.setPkgAgencyCom(Long.parseLong(Combox.getText()));
+
+        try {
+            UpdatedPack.setPkgStartDate(Date.valueOf(Startbox.getText()));
+            UpdatedPack.setPkgEndDate(Date.valueOf(Endbox.getText()));
+            SqlFunc.EditPkg(UpdatedPack);
+        }
+        catch(Exception e){
+            AlertCreator.FailedAlert(e.toString());
+        }
+
+    fill(ComboID.getValue().getPkgId()-1);
 
     }
 
@@ -161,7 +181,7 @@ List<PackageType> SavedList;
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
 
                 //List<PackageType> PackList = new ArrayList<>();
-
+               //System.out.println(ComboID.getValue().getPkgId());
                 //PackageDataLayer Data = new PackageDataLayer();
                 int FoundID = 0;
                 System.out.print(SavedList.get(2).toString());

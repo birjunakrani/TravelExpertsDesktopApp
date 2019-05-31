@@ -68,6 +68,7 @@ public class PackageDataLayer {
             String query = "Update packages set (PkgName = "+pkg.getPkgName()+",PkgStartDate="+pkg.getPkgStartDate()+"," +
                     "PkgEndDate="+pkg.getPkgEndDate()+",PkgDesc="+ pkg.getPkgDesc()+",BasePrice="+pkg.getPkgBasePrice()
                     +",PkgAgencyCommision="+pkg.getPkgAgencyCom()+") where PackageId =" + pkg.getPkgId();
+
             PreparedStatement stmt = connection.prepareStatement(query);
             int res = stmt.executeUpdate();
             if (res == 1) {

@@ -12,6 +12,9 @@ public class PackageType {
     private String PkgDesc;
     private long PkgBasePrice;
     private long PkgAgencyCom;
+    public PackageType (){
+
+    }
 
     public PackageType(String pkgName, int pkgId) {
         PkgId = pkgId;
