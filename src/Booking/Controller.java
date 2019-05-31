@@ -96,8 +96,10 @@ public class Controller {
             tfCustId.setText(cbBookingId.getSelectionModel().getSelectedItem().getCustomerId()+"");
             tfTripType.setText(cbBookingId.getSelectionModel().getSelectedItem().getTripTypeId());
             tfPackageId.setText(cbBookingId.getSelectionModel().getSelectedItem().getPackageId()+"");
-            //cbPkgName.setItems(cbBookingId.getSelectionModel().getSelectedItem().getPackageId());
         }
+        //dpBookingDate.setStyle("-fx-opacity: 1;");
+        dpBookingDate.setOpacity(1);
+
     }
 
     //make textFields editable and save button enabled after clicking the Edit Button
@@ -115,7 +117,6 @@ public class Controller {
     void saveBooking(ActionEvent event) {
         //connect to DB
         Connection conn = DBHelper.getConnection();
-        //dbhelper = Resources.DBClass.DBHelper.getInstance();
 
         if (//Validator.IsProvided(tfBookDate, "Booking Date ") &&
                 Validator.IsProvided(tfBookNum, "Booking number ") &&
@@ -124,7 +125,6 @@ public class Controller {
                 Validator.IsProvided(tfCustId, "CustomerId ") &&
                 Validator.IsInt(tfCustId, "Customer Id ")&&
                 Validator.IsProvided(tfTripType, "Trip Type "))
-
         {
 
             String sql = " update bookings set BookingDate=?,BookingNo=?,TravelerCount=?,CustomerId=?,TripTypeId=?,PackageId=? where BookingId=?";
@@ -220,8 +220,7 @@ public class Controller {
 
         // create a table to show the invoice of new booking
         String[] cols = {"BookingDate", "BookingNo", "TravelerCount", "CustomerId", "TripTypeId", "PackageName"};
-          /* Object[][] row = {{tfBookDate.getText(), tfBookNum.getText(), tfTraveler.getText(),
-                    tfCustId.getText(), tfTripType.getText(), tfPackageId.getText()}};*/
+
         Object[][] row = {{dpBookingDate.getValue().toString(), tfBookNum.getText(), tfTraveler.getText(),
                 tfCustId.getText(), cbTripType.getSelectionModel().getSelectedItem().getTripTypeId(), cbPkgName.getSelectionModel().getSelectedItem().getPkgName()}};
 
