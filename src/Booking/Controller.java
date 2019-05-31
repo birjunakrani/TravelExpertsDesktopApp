@@ -176,7 +176,7 @@ public class Controller {
     //comboPkgSelect to load the package name after clicking on combobox
     @FXML
     void comboPkgSelect(MouseEvent event) {
-        loadPackage();
+        //loadPackage();
     }
 
     //(second save button)saveNewBookingAction to insert new booking in DB and create an invoice for new booking
@@ -203,7 +203,7 @@ public class Controller {
           /* Object[][] row = {{tfBookDate.getText(), tfBookNum.getText(), tfTraveler.getText(),
                     tfCustId.getText(), tfTripType.getText(), tfPackageId.getText()}};*/
         Object[][] row = {{tfBookDate.getText(), tfBookNum.getText(), tfTraveler.getText(),
-                tfCustId.getText(), tfTripType.getText(), cbPkgName.getSelectionModel().getSelectedItem().getPkgName()}};
+                tfCustId.getText(), tfTripType.getText()}};//, cbPkgName.getSelectionModel().getSelectedItem().getPkgName()}};
 
         JTable table = new JTable(row, cols);
 
@@ -218,7 +218,7 @@ public class Controller {
             stmt.setInt(4, Integer.parseInt(tfCustId.getText()));
             stmt.setString(5, tfTripType.getText());
             //stmt.setInt(6, Integer.parseInt(tfPackageId.getText()));
-            stmt.setInt(6, cbPkgName.getSelectionModel().getSelectedItem().getPackageId());
+         //   stmt.setInt(6, cbPkgName.getSelectionModel().getSelectedItem().getPackageId());
 
             int numberRows = stmt.executeUpdate();
             if (numberRows == 0) {
@@ -263,17 +263,17 @@ public class Controller {
             e.printStackTrace();
         }
     }//end of loadCombo
-
+/*
 // LoadPackage to load package info from DB
     private void loadPackage() {
 
-        ObservableList<Package> data = FXCollections.observableArrayList();
+        ObservableList<PackageType> data = FXCollections.observableArrayList();
         Connection conn = DBHelper.getConnection();
         try {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("select PkgName,PackageId from Packages");
             while (rs.next()) {
-                data.add(new Package(
+                data.add(new PackageType(
                         rs.getString(1),
                         rs.getInt(2)));
             }
@@ -285,7 +285,7 @@ public class Controller {
             e.printStackTrace();
         }
     }//end of loadPackage
-
+*/
     //enableEdit method to make textfield editable
     private void enableEdit()
     {
