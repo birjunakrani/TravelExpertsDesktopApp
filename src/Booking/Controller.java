@@ -50,6 +50,10 @@ public class Controller {
     @FXML
     private ComboBox<Booking> cbBookingId;
 
+
+    @FXML
+    private ComboBox<TripType> cbTripType;
+
     @FXML
     private ComboBox<Package> cbPkgName;
 
@@ -101,6 +105,7 @@ public class Controller {
     void editBooking(ActionEvent event) {
 
         enableEdit();
+        tfTripType.setEditable(true);
         dpBookingDate.setDisable(false);
         btnSave.setDisable(false);
     }
@@ -113,7 +118,7 @@ public class Controller {
         //dbhelper = Resources.DBClass.DBHelper.getInstance();
 
         if (//Validator.IsProvided(tfBookDate, "Booking Date ") &&
-                Validator.IsProvided(tfBookNum, "Booking ") &&
+                Validator.IsProvided(tfBookNum, "Booking number ") &&
                 Validator.IsProvided(tfTraveler, "Traveler Count ") &&
                 Validator.IsInt(tfTraveler, "Traveler Count ")&&
                 Validator.IsProvided(tfCustId, "CustomerId ") &&
@@ -168,18 +173,26 @@ public class Controller {
         btnSave.setVisible(false);
         btnEdit.setVisible(false);
         btnAdd.setVisible(false);
-        cbPkgName.setVisible(true);
-        //tfBookDate.setText("");
         dpBookingDate.setDisable(false);
+        cbPkgName.setVisible(true);
+        cbTripType.setVisible(true);
+        //tfBookDate.setText("");
         tfBookNum.setText("");
         tfTraveler.setText("");
         tfCustId.setText("");
-        tfTripType.setText("");
+        //tfTripType.setText("");
         tfPackageId.setVisible(false);
-        cbPkgName.setVisible(true);
+        tfTripType.setVisible(false);
         lblBookingId.setVisible(false);
         enableEdit();
     }
+
+    //comboTripTypeSelect to load the TripType name after clicking on combobox
+    @FXML
+    void comboTripTypeSelect(MouseEvent event) {
+        loadTripType();
+    }
+
 
     //comboPkgSelect to load the package name after clicking on combobox
     @FXML
@@ -200,7 +213,7 @@ public class Controller {
                 Validator.IsInt(tfTraveler, "Traveler Count ")&&
                 Validator.IsProvided(tfCustId, "CustomerId ") &&
                 Validator.IsInt(tfCustId, "Customer Id ")&&
-                Validator.IsProvided(tfTripType, "Trip Type ")&&
+                Validator.IsSelected(cbTripType, "Trip Type ")&&
                 Validator.IsSelected(cbPkgName, "Package Name "))
         {
 
@@ -210,7 +223,7 @@ public class Controller {
           /* Object[][] row = {{tfBookDate.getText(), tfBookNum.getText(), tfTraveler.getText(),
                     tfCustId.getText(), tfTripType.getText(), tfPackageId.getText()}};*/
         Object[][] row = {{dpBookingDate.getValue().toString(), tfBookNum.getText(), tfTraveler.getText(),
-                tfCustId.getText(), tfTripType.getText(), cbPkgName.getSelectionModel().getSelectedItem().getPkgName()}};
+                tfCustId.getText(), cbTripType.getSelectionModel().getSelectedItem().getTripTypeId(), cbPkgName.getSelectionModel().getSelectedItem().getPkgName()}};
 
         JTable table = new JTable(row, cols);
 
@@ -224,7 +237,8 @@ public class Controller {
             stmt.setString(2, tfBookNum.getText());
             stmt.setInt(3, Integer.parseInt(tfTraveler.getText()));
             stmt.setInt(4, Integer.parseInt(tfCustId.getText()));
-            stmt.setString(5, tfTripType.getText());
+            stmt.setString(5, cbTripType.getSelectionModel().getSelectedItem().getTripTypeId());
+            //stmt.setString(5, tfTripType.getText());
             //stmt.setInt(6, Integer.parseInt(tfPackageId.getText()));
             stmt.setInt(6, cbPkgName.getSelectionModel().getSelectedItem().getPackageId());
 
@@ -272,7 +286,32 @@ public class Controller {
         }
     }//end of loadCombo
 
-// LoadPackage to load package info from DB
+
+    // loadTripType to load tripType info from DB
+    private void loadTripType() {
+
+        ObservableList<TripType> data = FXCollections.observableArrayList();
+        Connection conn = DBHelper.getConnection();
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("select TripTypeId,TTName from triptypes");
+            while (rs.next()) {
+                data.add(new TripType(
+                        rs.getString(1),
+                        rs.getString(2)));
+            }
+            conn.close();
+            cbTripType.setItems(data);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }//end of loadTripType
+
+
+
+
+    // LoadPackage to load package info from DB
     private void loadPackage() {
 
         ObservableList<Package> data = FXCollections.observableArrayList();
@@ -294,6 +333,7 @@ public class Controller {
         }
     }//end of loadPackage
 
+
     //enableEdit method to make textfield editable
     private void enableEdit()
     {
@@ -301,7 +341,7 @@ public class Controller {
         tfBookNum.setEditable(true);
         tfTraveler.setEditable(true);
         tfCustId.setEditable(true);
-        tfTripType.setEditable(true);
+        //tfTripType.setEditable(true);
        // tfPackageId.setEditable(true);
     }
 
