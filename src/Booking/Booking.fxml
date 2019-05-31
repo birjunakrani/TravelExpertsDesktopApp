@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -33,7 +34,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="26.0" layoutY="186.0" text="Trip TypeId">
+            <Label layoutX="26.0" layoutY="186.0" text="Trip Type">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -43,7 +44,6 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="tfBookDate" editable="false" layoutX="161.0" layoutY="19.0" prefHeight="11.0" prefWidth="149.0" />
             <TextField fx:id="tfBookNum" editable="false" layoutX="161.0" layoutY="59.0" prefHeight="8.0" prefWidth="150.0" />
             <TextField fx:id="tfTraveler" editable="false" layoutX="161.0" layoutY="101.0" prefHeight="19.0" prefWidth="152.0" />
             <TextField fx:id="tfCustId" editable="false" layoutX="161.0" layoutY="143.0" prefHeight="3.0" prefWidth="152.0" />
@@ -76,6 +76,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
+            <DatePicker fx:id="dpBookingDate" disable="true" layoutX="159.0" layoutY="19.0" prefHeight="25.0" prefWidth="153.0" />
          </children>
          <BorderPane.margin>
             <Insets bottom="5.0" left="5.0" right="10.0" top="10.0" />
