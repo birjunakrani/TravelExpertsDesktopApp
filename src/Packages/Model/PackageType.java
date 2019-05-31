@@ -13,6 +13,11 @@ public class PackageType {
     private java.math.BigDecimal PkgBasePrice;
     private java.math.BigDecimal PkgAgencyCom;
 
+    public PackageType(String pkgName, int pkgId) {
+        PkgId = pkgId;
+        PkgName = pkgName;
+    }
+
     public PackageType(int pkgId, String pkgName, Date pkgStartDate, Date pkgEndDate,
                        String pkgDesc, BigDecimal pkgBasePrice, BigDecimal pkgAgencyCom) {
         PkgId = pkgId;

@@ -8,6 +8,7 @@ purpose: Controller class to get Booking info from DB,edit info,add new booking,
 
 package Booking;
 
+import Packages.Model.PackageType;
 import Resources.Validator;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -55,7 +56,7 @@ public class Controller {
     private ComboBox<TripType> cbTripType;
 
     @FXML
-    private ComboBox<Package> cbPkgName;
+    private ComboBox<PackageType> cbPkgName;
 
     @FXML
     private DatePicker dpBookingDate;
@@ -239,7 +240,7 @@ public class Controller {
             stmt.setString(5, cbTripType.getSelectionModel().getSelectedItem().getTripTypeId());
             //stmt.setString(5, tfTripType.getText());
             //stmt.setInt(6, Integer.parseInt(tfPackageId.getText()));
-            stmt.setInt(6, cbPkgName.getSelectionModel().getSelectedItem().getPackageId());
+            stmt.setInt(6, cbPkgName.getSelectionModel().getSelectedItem().getPkgId());
 
             int numberRows = stmt.executeUpdate();
             if (numberRows == 0) {
@@ -313,13 +314,13 @@ public class Controller {
     // LoadPackage to load package info from DB
     private void loadPackage() {
 
-        ObservableList<Package> data = FXCollections.observableArrayList();
+        ObservableList<PackageType> data = FXCollections.observableArrayList();
         Connection conn = DBHelper.getConnection();
         try {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("select PkgName,PackageId from Packages");
             while (rs.next()) {
-                data.add(new Package(
+                data.add(new PackageType(
                         rs.getString(1),
                         rs.getInt(2)));
             }

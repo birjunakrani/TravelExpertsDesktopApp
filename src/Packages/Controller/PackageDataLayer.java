@@ -10,13 +10,7 @@ import java.util.ArrayList;
 public class PackageDataLayer {
 
     ArrayList<PackageType> AllPacks;
-
     {
-        try {
-            AllPacks = DBHelper.dbHelper.getPackages();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 
 
