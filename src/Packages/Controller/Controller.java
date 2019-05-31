@@ -7,11 +7,8 @@ import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.*;
 
-import javafx.scene.control.TextArea;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +46,7 @@ public class Controller {
     TextField Combox;
 
     @FXML
-    ComboBox<PackageType> IDbox;
+    ComboBox<PackageType> ComboID;
 
 
 
@@ -62,19 +59,17 @@ public class Controller {
         try {
             PackList = Data.getPackages();
 
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-            ObservableList<PackageType> ObList = FXCollections.observableArrayList(PackList);
-
-       IDbox.setItems(ObList);
-       ObList.toString();
-       System.out.print(IDbox.getItems().toString());
-      ObservableList<PackageType> Tests = IDbox.getItems();
-      System.out.print(Tests.toString());
+       // System.out.print(PackList.get(1).toString()); passed
+            ObservableList<PackageType> OboList = FXCollections.observableList(PackList);
+      //  System.out.print(ObList.get(1).toString()); //passed
+       ComboID.setItems(OboList); //Nothing
 
     }
+
     @FXML
     void AddbtnClick(ActionEvent event) {
     //runsql
@@ -112,6 +107,11 @@ public class Controller {
         Combox.setEditable(false);
         Savebtn.setDisable(true);
 
+    }
+
+    @FXML
+    void initialize() {
+        this.LoadPacks();
     }
 
 
