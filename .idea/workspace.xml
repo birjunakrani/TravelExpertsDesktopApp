@@ -5,9 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Controller/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Model/PackageType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Model/PackageType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/View/PackageDisplay.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/View/PackageDisplay.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Packages/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Packages/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Packages/View/PackageDisplay.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Packages/View/PackageDisplay.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Packages/Model/PackageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Packages/Model/PackageType.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,12 +84,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Packages/Controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="113" column="25" selection-start-line="113" selection-start-column="25" selection-end-line="113" selection-end-column="25" />
+            <state relative-caret-position="40">
+              <caret line="176" column="31" selection-start-line="176" selection-start-column="31" selection-end-line="176" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2175#2176#0" expanded="true" />
-                <element signature="e#2194#2195#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,7 +108,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Packages/Controller/PackageDataLayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-443">
+            <state relative-caret-position="594">
               <caret line="38" selection-start-line="38" selection-end-line="38" />
             </state>
           </provider>
@@ -129,8 +126,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Packages/Model/PackageType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="89" column="35" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
+            <state relative-caret-position="414">
+              <caret line="91" column="1" selection-start-line="91" selection-start-column="1" selection-end-line="91" selection-end-column="1" />
+              <folding>
+                <element signature="e#1976#1977#0" expanded="true" />
+                <element signature="e#2011#2012#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -223,8 +224,8 @@
         <option value="$PROJECT_DIR$/src/Resources/DBClass/DBHelper.java" />
         <option value="$PROJECT_DIR$/src/Packages/Controller/PackDB.java" />
         <option value="$PROJECT_DIR$/src/Packages/Controller/PackageDataLayer.java" />
-        <option value="$PROJECT_DIR$/src/Packages/Model/PackageType.java" />
         <option value="$PROJECT_DIR$/src/Packages/View/PackageDisplay.fxml" />
+        <option value="$PROJECT_DIR$/src/Packages/Model/PackageType.java" />
         <option value="$PROJECT_DIR$/src/Packages/Controller/Controller.java" />
       </list>
     </option>
@@ -458,7 +459,7 @@
       <workItem from="1558926922728" duration="1250000" />
       <workItem from="1558928184241" duration="48000" />
       <workItem from="1559078680085" duration="14866000" />
-      <workItem from="1559312046612" duration="11475000" />
+      <workItem from="1559312046612" duration="13831000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1559078980389</created>
@@ -537,11 +538,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559331203558</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Moved DB pack information to new file in packages folder">
+      <created>1559333541665</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1559333541665</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210713000" />
+    <option name="totallyTimeSpent" value="213069000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -556,7 +564,7 @@
     <frame x="-7" y="3" width="1378" height="732" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.13657056" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.13657056" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -936,13 +944,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Packages/Model/PackageType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="89" column="35" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Packages/View/PackageDisplay.fxml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -961,13 +962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Packages/Controller/PackageDataLayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-443">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Packages/Controller/NewPackageCon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -975,14 +969,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Packages/Model/PackageType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="91" column="1" selection-start-line="91" selection-start-column="1" selection-end-line="91" selection-end-column="1" />
+          <folding>
+            <element signature="e#1976#1977#0" expanded="true" />
+            <element signature="e#2011#2012#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Packages/Controller/PackageDataLayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Packages/Controller/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="113" column="25" selection-start-line="113" selection-start-column="25" selection-end-line="113" selection-end-column="25" />
+        <state relative-caret-position="40">
+          <caret line="176" column="31" selection-start-line="176" selection-start-column="31" selection-end-line="176" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2175#2176#0" expanded="true" />
-            <element signature="e#2194#2195#0" expanded="true" />
           </folding>
         </state>
       </provider>

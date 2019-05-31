@@ -87,6 +87,6 @@ public class PackageType {
 
     @Override
     public String toString() {
-        return "PkgName=" + PkgName;
+        return PkgName;
     }
 }

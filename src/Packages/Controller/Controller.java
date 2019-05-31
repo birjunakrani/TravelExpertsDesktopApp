@@ -2,6 +2,8 @@ package Packages.Controller;
 
 import Packages.Model.PackageType;
 import Resources.DBClass.DBHelper;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
@@ -9,7 +11,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.awt.event.ActionListener;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.text.spi.DateFormatProvider;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +55,7 @@ public class Controller {
     @FXML
     ComboBox<PackageType> ComboID;
 
-
+List<PackageType> SavedList;
 
 
     public void LoadPacks(){
@@ -59,7 +66,7 @@ public class Controller {
         try {
             PackList = Data.getPackages();
 
-
+            SavedList = PackList;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -69,7 +76,39 @@ public class Controller {
        ComboID.setItems(OboList); //Nothing
 
     }
+    public void fill(int PackID){
+        List<PackageType> PackList = new ArrayList<>();
 
+        PackageDataLayer Data = new PackageDataLayer();
+        int FoundID = 0;
+        try {
+            PackList = Data.getPackages();
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        for (PackageType pack:PackList
+             ) {
+            if(pack.getPkgId()==PackID){
+                FoundID=PackID;
+            }
+
+        }
+
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+    PkgNamebox.setText(PackList.get(FoundID).getPkgName());
+    Startbox.setText(df.format((PackList.get(FoundID).getPkgStartDate())));
+    Endbox.setText(df.format((PackList.get(FoundID).getPkgEndDate())));
+    Descbox.setText(PackList.get(FoundID).getPkgDesc());
+    Basebox.setText(Long.toString(PackList.get(FoundID).getPkgBasePrice()));
+    Combox.setText(Long.toString(PackList.get(FoundID).getPkgAgencyCom()));
+    }
+
+
+    public void selectChg(){
+
+    }
     @FXML
     void AddbtnClick(ActionEvent event) {
     //runsql
@@ -78,6 +117,10 @@ public class Controller {
 
 
     }
+
+
+
+
 
     @FXML
     void DeletebtnClick(ActionEvent event) {
@@ -112,6 +155,28 @@ public class Controller {
     @FXML
     void initialize() {
         this.LoadPacks();
+        //   ComboID.addEventHandler(selectChange);
+        ComboID.valueProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+
+                //List<PackageType> PackList = new ArrayList<>();
+
+                //PackageDataLayer Data = new PackageDataLayer();
+                int FoundID = 0;
+                System.out.print(SavedList.get(2).toString());
+                for (PackageType pack:SavedList
+                ) {
+                    if(pack.getPkgName() == newValue.toString()){
+                        FoundID=pack.getPkgId();
+
+                    }
+
+                }
+
+                fill(FoundID -1);
+            }
+        });
     }
 
 
