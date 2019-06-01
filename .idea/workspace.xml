@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Add opacity command-mahda">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Booking/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Booking/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Booking/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Booking/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/Validator.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,28 +67,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Booking/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="99" column="8" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
+            <state relative-caret-position="253">
+              <caret line="124" column="57" selection-start-line="124" selection-start-column="57" selection-end-line="124" selection-end-column="57" />
               <folding>
+                <element signature="e#0#12759#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#1631#1632#0" expanded="true" />
-                <element signature="e#1658#1659#0" expanded="true" />
-                <element signature="e#6575#6576#0" expanded="true" />
-                <element signature="e#6605#6606#0" expanded="true" />
-                <element signature="e#6430#6431#0" expanded="true" />
-                <element signature="e#6459#6460#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Booking/TripType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-162">
-              <caret lean-forward="true" />
-              <folding>
-                <element signature="e#0#1030#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Resources/Validator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="86" selection-start-line="86" selection-end-line="86" />
+            <state relative-caret-position="170">
+              <caret line="16" column="62" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -189,9 +173,9 @@
         <option value="$PROJECT_DIR$/src/Booking/Booking.fxml" />
         <option value="$PROJECT_DIR$/src/Booking/Package.java" />
         <option value="$PROJECT_DIR$/src/Booking/Main.java" />
-        <option value="$PROJECT_DIR$/src/Resources/Validator.java" />
-        <option value="$PROJECT_DIR$/src/Resources/Validator.java" />
         <option value="$PROJECT_DIR$/src/Booking/TripType.java" />
+        <option value="$PROJECT_DIR$/src/Resources/Validator.java" />
+        <option value="$PROJECT_DIR$/src/Resources/Validator.java" />
         <option value="$PROJECT_DIR$/src/Booking/Controller.java" />
       </list>
     </option>
@@ -212,6 +196,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -223,6 +208,19 @@
               <item name="TravelExpertsDesktopApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="TravelExpertsDesktopApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TravelExpertsDesktopApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TravelExpertsDesktopApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Agent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TravelExpertsDesktopApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TravelExpertsDesktopApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Agent" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TravelExpertsDesktopApp" type="b2602c69:ProjectViewProjectNode" />
@@ -244,7 +242,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -449,6 +446,7 @@
       <workItem from="1559270579337" duration="1425000" />
       <workItem from="1559273058655" duration="3290000" />
       <workItem from="1559277251153" duration="5910000" />
+      <workItem from="1559311093052" duration="2278000" />
     </task>
     <task id="LOCAL-00001" summary="Commit with Agent module">
       <created>1558582565276</created>
@@ -478,11 +476,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559285249498</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add opacity command-mahda">
+      <created>1559311179981</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1559311179981</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209448000" />
+    <option name="totallyTimeSpent" value="211726000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -497,7 +502,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.15885022" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.16111952" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -507,7 +512,7 @@
       <window_info id="UI Designer" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32890365" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.119476266" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.119476266" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.29235882" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -813,16 +818,6 @@
         <state relative-caret-position="234" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Agent/Controller/AgentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="332" column="9" selection-start-line="332" selection-start-column="9" selection-end-line="332" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Resources/DBClass/DBHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -842,33 +837,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Booking/TripType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-162">
-          <caret lean-forward="true" />
+        <state>
           <folding>
             <element signature="e#0#1030#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Agent/Controller/AgentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="479" column="6" lean-forward="true" selection-start-line="479" selection-start-column="6" selection-end-line="479" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Resources/Validator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        <state relative-caret-position="170">
+          <caret line="16" column="62" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Booking/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="99" column="8" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
+        <state relative-caret-position="253">
+          <caret line="124" column="57" selection-start-line="124" selection-start-column="57" selection-end-line="124" selection-end-column="57" />
           <folding>
+            <element signature="e#0#12759#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
-            <element signature="e#1658#1659#0" expanded="true" />
-            <element signature="e#6575#6576#0" expanded="true" />
-            <element signature="e#6605#6606#0" expanded="true" />
-            <element signature="e#6430#6431#0" expanded="true" />
-            <element signature="e#6459#6460#0" expanded="true" />
           </folding>
         </state>
       </provider>
