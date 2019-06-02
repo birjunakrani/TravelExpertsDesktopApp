@@ -3,15 +3,15 @@ package Packages.Controller;
 import Packages.Model.PackageType;
 import Resources.DBClass.DBHelper;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.*;
 
-import java.awt.*;
-import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Controller {
 
@@ -37,7 +37,7 @@ public class Controller {
     TextField Endbox;
 
     @FXML
-    TextField Descbox;
+    TextArea Descbox;
 
     @FXML
     TextField Basebox;
@@ -46,23 +46,30 @@ public class Controller {
     TextField Combox;
 
     @FXML
-    ComboBox IDbox;
+    ComboBox<PackageType> ComboID;
 
-    ArrayList<PackageType> AllPacks;
+
 
 
     public void LoadPacks(){
+        List<PackageType> PackList = new ArrayList<>();
+
+          PackageDataLayer Data = new PackageDataLayer();
 
         try {
-            AllPacks = DBHelper.dbHelper.getPackages();
+            PackList = Data.getPackages();
+
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+       // System.out.print(PackList.get(1).toString()); passed
+            ObservableList<PackageType> OboList = FXCollections.observableList(PackList);
+      //  System.out.print(ObList.get(1).toString()); //passed
+       ComboID.setItems(OboList); //Nothing
 
-        ObservableList<PackageType> ObList = FXCollections.observableList(AllPacks);
-
-        IDbox.setItems(ObList);
     }
+
     @FXML
     void AddbtnClick(ActionEvent event) {
     //runsql
@@ -85,15 +92,26 @@ public class Controller {
         Descbox.setEditable(true);
         Basebox.setEditable(true);
         Combox.setEditable(true);
-        Savebtn.setEnabled(true);
+        Savebtn.setDisable(false);
     }
 
     @FXML
     void SavebtnClick(ActionEvent event) {
     //runsql
 
+        PkgNamebox.setEditable(false);
+        Startbox.setEditable(false);
+        Endbox.setEditable(false);
+        Descbox.setEditable(false);
+        Basebox.setEditable(false);
+        Combox.setEditable(false);
+        Savebtn.setDisable(true);
 
+    }
 
+    @FXML
+    void initialize() {
+        this.LoadPacks();
     }
 
 

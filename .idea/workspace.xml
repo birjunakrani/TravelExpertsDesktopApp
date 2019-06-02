@@ -4,24 +4,13 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Commit with Agent module">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_codec_1_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/commons_codec_1_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_17_bin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_17_bin.xml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Moved DB pack information to new file in packages folder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agent/Controller/AgentController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agent/Controller/AgentController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agent/Controller/AgentController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agent/Controller/AgentController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agent/Controller/AgentController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agent/Controller/AgentController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agent/Controller/AgentController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agent/Controller/AgentController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agent/Controller/AgentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agent/Controller/AgentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agent/View/Agents.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Resources/DBClass/DBHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Resources/DBClass/DBHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/SwitchBoard/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/SwitchBoard/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/SwitchBoard/SwitchBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/SwitchBoard/SwitchBoard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Agent/Controller/AgentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent/Controller/AgentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Agent/View/Agents.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Resources/DBClass/DBHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/DBClass/DBHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SwitchBoard/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SwitchBoard/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SwitchBoard/SwitchBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/SwitchBoard/SwitchBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Model/PackageType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Model/PackageType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/View/PackageDisplay.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/View/PackageDisplay.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Packages/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Packages/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Packages/View/PackageDisplay.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Packages/View/PackageDisplay.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,6 +20,11 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -91,7 +85,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Resources/DBClass/DBHelper.java">
+        <entry file="file://$PROJECT_DIR$/src/Packages/Controller/PackageDataLayer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="935">
               <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
@@ -139,7 +133,6 @@
       <find>jdbc</find>
       <find>stringut</find>
       <find>Stringut</find>
-      <find>tbAgent</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -156,6 +149,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Matthew &lt;matthmac@gmail.com&gt;" />
         <option value="mahda kazemian &lt;mahda628@yahoo.com&gt;" />
       </list>
     </option>
@@ -164,6 +158,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/TravelExperts/Controller/RegistrationFormController.java" />
+        <option value="$PROJECT_DIR$/src/TravelExperts/Controller/AgentForm.java" />
+        <option value="$PROJECT_DIR$/src/TravelExperts/Main/AgentForm.java" />
+        <option value="$PROJECT_DIR$/src/TravelExperts/Model/Agent.java" />
+        <option value="$PROJECT_DIR$/src/TravelExperts/Validator/Validator.java" />
+        <option value="$PROJECT_DIR$/src/TravelExperts/View/SwitchBoard.fxml" />
+        <option value="$PROJECT_DIR$/src/TravelExperts/Main/StylesSheet.css" />
+        <option value="$PROJECT_DIR$/src/TravelExperts/DBClass/DBHelper.java" />
+        <option value="$PROJECT_DIR$/src/TravelExperts/Controller/AgentCtrl.java" />
+        <option value="$PROJECT_DIR$/src/TravelExperts/View/agent.fxml" />
+        <option value="$PROJECT_DIR$/src/TravelExperts/Agent/DBClass/DBHelper.java" />
+        <option value="$PROJECT_DIR$/src/Bookings/bookings.fxml" />
         <option value="$PROJECT_DIR$/src/Bookings/Controller/Bookings.java" />
         <option value="$PROJECT_DIR$/src/Packages/package.fxml" />
         <option value="$PROJECT_DIR$/src/Packages/View/package.fxml" />
@@ -172,6 +178,7 @@
         <option value="$PROJECT_DIR$/src/Agent/Main/AgentForm.java" />
         <option value="$PROJECT_DIR$/src/TravelExperts/SwitchBoard/MainController.java" />
         <option value="$PROJECT_DIR$/src/TravelExperts/SwitchBoard/Main.java" />
+        <option value="$PROJECT_DIR$/src/SwitchBoard/Main.java" />
         <option value="$PROJECT_DIR$/src/Agent/LogIn/AgentLogIn.java" />
         <option value="$PROJECT_DIR$/src/Agent/Model/AgentLogIn.java" />
         <option value="$PROJECT_DIR$/src/SwitchBoard/AlerCreator.java" />
@@ -179,30 +186,16 @@
         <option value="$PROJECT_DIR$/src/Resources/AlertCreator.java" />
         <option value="$PROJECT_DIR$/src/Agent/DBClass/DBHelper.java" />
         <option value="$PROJECT_DIR$/src/Agent/Controller/AgentCtrl.java" />
-        <option value="$PROJECT_DIR$/src/Agent/View/agent.fxml" />
-        <option value="$PROJECT_DIR$/src/SwitchBoard/Main.java" />
-        <option value="$PROJECT_DIR$/src/SwitchBoard/AgentLogIn.java" />
-        <option value="$PROJECT_DIR$/src/Agency/Controller/Model.java" />
-        <option value="$PROJECT_DIR$/src/Agency/Controller/Model/Agency.java" />
-        <option value="$PROJECT_DIR$/src/Resources/Validator.java" />
-        <option value="$PROJECT_DIR$/src/Agency/Controller/View/agency.fxml" />
-        <option value="$PROJECT_DIR$/src/Agency/Controller/AgencyMain.java" />
-        <option value="$PROJECT_DIR$/src/Agency/Controller/MainAgency.java" />
-        <option value="$PROJECT_DIR$/src/Agency/MainAgency.java" />
-        <option value="$PROJECT_DIR$/src/Agency/Model/Agency.java" />
-        <option value="$PROJECT_DIR$/src/Agent/MainAgent.java" />
-        <option value="$PROJECT_DIR$/src/Agency/View/agency.fxml" />
-        <option value="$PROJECT_DIR$/src/Agency/Controller/AgencyController.java" />
         <option value="$PROJECT_DIR$/src/Resources/StylesSheet.css" />
-        <option value="$PROJECT_DIR$/src/SwitchBoard/SwitchBoard.fxml" />
-        <option value="$PROJECT_DIR$/src/Agent/View/Agents.fxml" />
+        <option value="$PROJECT_DIR$/src/Agent/View/agent.fxml" />
         <option value="$PROJECT_DIR$/src/Agent/MainAgent.java" />
+        <option value="$PROJECT_DIR$/src/SwitchBoard/MainController.java" />
+        <option value="$PROJECT_DIR$/src/Agent/Controller/AgentController.java" />
         <option value="$PROJECT_DIR$/src/Agent/Model/Agent.java" />
         <option value="$PROJECT_DIR$/src/Booking/Booking.java" />
         <option value="$PROJECT_DIR$/src/Booking/DBHelper.java" />
         <option value="$PROJECT_DIR$/src/Booking/sample.fxml" />
         <option value="$PROJECT_DIR$/src/SwitchBoard/AgentLogIn.java" />
-        <option value="$PROJECT_DIR$/src/Packages/Package.java" />
         <option value="$PROJECT_DIR$/src/Booking/Booking.fxml" />
         <option value="$PROJECT_DIR$/src/Booking/Package.java" />
         <option value="$PROJECT_DIR$/src/Booking/Main.java" />
@@ -225,9 +218,9 @@
     <option name="width" value="1378" />
     <option name="height" value="732" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectReloadState">
-    <option name="STATE" value="0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -235,36 +228,54 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="TravelExpertsDesktopApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TravelExpertsDesktopApp" type="462c0819:PsiDirectoryNode" />
+              <item name="FinalProj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FinalProj" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="TravelExpertsDesktopApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TravelExpertsDesktopApp" type="462c0819:PsiDirectoryNode" />
+              <item name="FinalProj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FinalProj" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="TravelExpertsDesktopApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TravelExpertsDesktopApp" type="462c0819:PsiDirectoryNode" />
+              <item name="FinalProj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FinalProj" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="SwitchBoard" type="462c0819:PsiDirectoryNode" />
+              <item name="Packages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="TravelExpertsDesktopApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="FinalProj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FinalProj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Packages" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FinalProj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FinalProj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Packages" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FinalProj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FinalProj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Packages" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="module&#10;directory" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -276,7 +287,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mysql-connector-java-5.1.17-bin.jar!/" />
+    <property name="last_opened_file_path" value="C:/Program Files/Java/mysql-connector-java-5.1.17-bin.jar!/" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -295,9 +306,8 @@
       <recent name="C:\Users\773649\IdeaProjects\TravelExpertsDesktopApp\src\Bookings\View" />
       <recent name="C:\Users\773649\IdeaProjects\TravelExpertsDesktopApp\src\Packages\View" />
     </key>
-    <key name="CopyFile.RECENT_KEYS" />
-    <recent name="C:\Users\773649\IdeaProjects\TravelExpertsDesktopApp\src\Agency\Controller\View" />
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Packages.Controller" />
       <recent name="Booking" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -316,7 +326,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Package">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -343,36 +353,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GlyphsBrowserApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="de.jensd.fx.glyphs.browser.GlyphsBrowserApp" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.jensd.fx.glyphs.browser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="SwitchBoard.Main" />
-      <module name="TravelExpertsDesktopApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sample.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Booking.Main" />
+    <configuration name="Package" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Packages.Package" />
       <module name="TravelExpertsDesktopApp" />
       <extension name="coverage">
         <pattern>
@@ -399,14 +381,13 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.GlyphsBrowserApp" />
+      <item itemvalue="Application.Package" />
       <item itemvalue="Application.RegistrationFormApplication" />
       <item itemvalue="Application.AgentForm" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Package" />
         <item itemvalue="Application.AgentForm" />
         <item itemvalue="Application.RegistrationFormApplication" />
       </list>
@@ -472,18 +453,88 @@
       <workItem from="1559337977137" duration="826000" />
       <workItem from="1559439012547" duration="78000" />
     </task>
-    <task id="LOCAL-00001" summary="Commit with Agent module">
-      <created>1558582565276</created>
+    <task id="LOCAL-00001" summary="test">
+      <created>1559078980389</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1558582565276</updated>
+      <updated>1559078980389</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add package class- add style- mahda">
+      <created>1559090812981</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1559090812981</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Edited db and modified functionality">
+      <created>1559232593481</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1559232593481</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Readded Changes that were merged over for some reason">
+      <created>1559233543293</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1559233543293</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Workspace">
+      <created>1559311284253</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1559311284253</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Edited Packs">
+      <created>1559311690214</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1559311690214</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Edited Packs in booking allowing use of my datatype instead of two datatypes for pkg">
+      <created>1559312828742</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1559312828743</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Moved DB pack information to new file in packages folder">
+      <created>1559328886765</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1559328886765</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Moved DB pack information to new file in packages folder">
+      <created>1559329231718</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1559329231718</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Moved DB pack information to new file in packages folder">
+      <created>1559329363713</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1559329363713</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Moved DB pack information to new file in packages folder">
+      <created>1559331203558</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1559331203558</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211490000" />
+    <option name="totallyTimeSpent" value="210713000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -495,10 +546,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-7" y="3" width="1378" height="732" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21406959" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.13657056" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -514,12 +565,12 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32733223" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.10016695" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.33722872" />
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" weight="0.061461795" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.25581396" />
+      <window_info anchor="bottom" id="Event Log" order="12" weight="0.4624374" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.25375625" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
       <window_info anchor="bottom" id="Terminal" order="16" />
@@ -537,7 +588,7 @@
       <window_info anchor="right" id="Theme Preview" order="10" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17526555" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.13657056" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -546,19 +597,19 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="UI Designer" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44186047" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.43023255" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32733223" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.42404008" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.29235882" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32890365" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.049833886" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.33722872" />
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" weight="0.4269103" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.51495016" />
+      <window_info anchor="bottom" id="Event Log" order="12" weight="0.4624374" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.25375625" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
       <window_info anchor="bottom" id="Terminal" order="16" />
@@ -578,11 +629,57 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="Commit with Agent module" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit with Agent module" />
+    <MESSAGE value="test" />
+    <MESSAGE value="Add package class- add style- mahda" />
+    <MESSAGE value="Edited db and modified functionality" />
+    <MESSAGE value="Readded Changes that were merged over for some reason" />
+    <MESSAGE value="Workspace" />
+    <MESSAGE value="Edited Packs" />
+    <MESSAGE value="Edited Packs in booking allowing use of my datatype instead of two datatypes for pkg" />
+    <MESSAGE value="Moved DB pack information to new file in packages folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved DB pack information to new file in packages folder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -606,11 +703,55 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/function/Predicate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-80">
+          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/javafx.fxml/javafx/fxml/LoadException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="e#721#722#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TravelExpertsDesktopApp.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TravelExperts/Agent/Validator/Validator.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/ClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6919">
+          <caret line="487" selection-start-line="487" selection-end-line="487" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../mysql-connector-java-5.1.17-bin.jar!/com/mysql/jdbc/StringUtils.class" />
+    <entry file="jar://$PROJECT_DIR$/../mysql-connector-java-5.1.17-bin.jar!/com/mysql/jdbc/NonRegisteringDriver.class" />
+    <entry file="jar://$PROJECT_DIR$/../mysql-connector-java-5.1.17-bin.jar!/com/mysql/jdbc/Driver.class" />
     <entry file="file://$PROJECT_DIR$/src/TravelExperts/Agent/Main/StylesSheet.css" />
-    <entry file="file://$PROJECT_DIR$/src/Bookings/View/bookings.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/Bookings/View/bookings.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TravelExperts/Agent/Model/Agent.java" />
     <entry file="file://$PROJECT_DIR$/src/TravelExperts/Agent/DBClass/DBHelper.java" />
-    <entry file="file://$PROJECT_DIR$/src/Bookings/Controller/Bookings.java" />
+    <entry file="file://$PROJECT_DIR$/src/Bookings/Controller/Bookings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TravelExperts/Agent/Controller/AgentCtrl.java" />
     <entry file="file://$PROJECT_DIR$/src/TravelExperts/Agent/View/SwitchBoard.fxml" />
     <entry file="file://$PROJECT_DIR$/src/TravelExperts/Agent/Main/AgentForm.java" />
@@ -643,35 +784,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Agency/MainAgency.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+        <state relative-caret-position="408">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Agency/Model/Agency.java">
+    <entry file="file://$PROJECT_DIR$/src/SwitchBoard/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="127" column="28" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="28" />
+        <state relative-caret-position="374">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Agent/MainAgent.java">
+    <entry file="file://$PROJECT_DIR$/src/SwitchBoard/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="73" selection-start-line="15" selection-start-column="73" selection-end-line="15" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Agency/View/agency.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/Agency/Controller/AgencyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Resources/AlertCreator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -686,117 +830,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/javafx.graphics/com/sun/glass/ui/View.java">
+    <entry file="file://$PROJECT_DIR$/src/Agent/View/agent.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="941" column="8" selection-start-line="941" selection-start-column="8" selection-end-line="941" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/javafx.graphics/javafx/scene/Scene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="1873" column="21" selection-start-line="1873" selection-start-column="21" selection-end-line="1873" selection-end-column="21" />
-          <folding>
-            <element signature="e#70522#70523#0" expanded="true" />
-            <element signature="e#70568#70569#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Agency/Controller/AgencyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5451" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Booking/Booking.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        <state relative-caret-position="378">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Packages/Package.java">
+    <entry file="file://$PROJECT_DIR$/src/SwitchBoard/SwitchBoard.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        <state relative-caret-position="153">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Resources/StylesSheet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Booking/Booking.java">
+    <entry file="file://$PROJECT_DIR$/src/Agent/Controller/AgentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#0#2726#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Packages/Model/PackageType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-454">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Packages/Controller/PackageDataLayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Packages/Controller/NewPackageCon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Packages/Controller/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Booking/Package.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        <state relative-caret-position="342">
+          <caret line="318" column="9" selection-start-line="318" selection-start-column="9" selection-end-line="318" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3798#3799#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/javafx.base/com/sun/javafx/reflect/MethodUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="274" column="26" selection-start-line="274" selection-start-column="26" selection-end-line="274" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Booking/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Booking/DBHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#749#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Resources/Validator.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -805,20 +871,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SwitchBoard/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Packages/PkgMain.java" />
+    <entry file="file://$PROJECT_DIR$/src/Booking/Booking.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        <state relative-caret-position="5">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#2726#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Booking/Package.java" />
+    <entry file="file://$PROJECT_DIR$/src/Booking/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Booking/Booking.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Booking/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1419">
+          <caret line="242" column="85" selection-start-line="242" selection-start-column="85" selection-end-line="242" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1637#1638#0" expanded="true" />
+            <element signature="e#1664#1665#0" expanded="true" />
+            <element signature="e#6460#6461#0" expanded="true" />
+            <element signature="e#6490#6491#0" expanded="true" />
+            <element signature="e#6619#6620#0" expanded="true" />
+            <element signature="e#6648#6649#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Booking/TripType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Booking/DBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#749#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Packages/Package.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Booking/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/Resources/DBClass/DBHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="103" column="23" selection-start-line="103" selection-start-column="23" selection-end-line="103" selection-end-column="23" />
+        <state relative-caret-position="339">
+          <caret line="267" selection-start-line="267" selection-end-line="267" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Packages/Model/PackageType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="89" column="35" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Packages/View/PackageDisplay.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Packages/Controller/PackDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#6161#6162#0" expanded="true" />
@@ -892,13 +1041,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Agent/Controller/AgentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="132" column="3" selection-start-line="132" selection-start-column="3" selection-end-line="132" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>
@@ -939,7 +1081,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>1.8.0_201</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -963,7 +1105,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>mysql-connector-java-5.1.17-bin</last-edited>
+          <last-edited>mysql-connector-java-5.1.17-bin1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
