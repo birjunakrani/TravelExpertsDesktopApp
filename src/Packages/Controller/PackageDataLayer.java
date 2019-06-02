@@ -28,8 +28,9 @@ public class PackageDataLayer {
         ResultSet rs = state.executeQuery(query);
 
         while(rs.next()){
+
             PackageType Pack = new PackageType(rs.getInt(1),rs.getString(2),
-                    rs.getDate(3),rs.getDate(4),rs.getString(5),
+                    rs.getDate(3).toString(),rs.getDate(4).toString(),rs.getString(5),
                     rs.getLong(6),rs.getLong(7));
 
             AllPacks.add(Pack);
@@ -44,10 +45,10 @@ public class PackageDataLayer {
 
 
 
-    public boolean deletePkg(PackageType pkg) throws SQLException {
+    public static boolean deletePkg(int ID) throws SQLException {
         Connection connection = PackDB.getConnection();
         try {
-            String query = "DELETE FROM packages where PackageId =" + pkg.getPkgId();
+            String query = "DELETE FROM packages where PackageId =" + ID;
 
             PreparedStatement stmt = connection.prepareStatement(query);
             int res = stmt.executeUpdate();
@@ -62,12 +63,18 @@ public class PackageDataLayer {
         return false;
     }
 
-    public boolean EditPkg(PackageType pkg) throws SQLException {
+    public static boolean EditPkg(PackageType pkg) throws SQLException {
         Connection connection = PackDB.getConnection();
         try {
-            String query = "Update packages set (PkgName = "+pkg.getPkgName()+",PkgStartDate="+pkg.getPkgStartDate()+"," +
-                    "PkgEndDate="+pkg.getPkgEndDate()+",PkgDesc="+ pkg.getPkgDesc()+",BasePrice="+pkg.getPkgBasePrice()
-                    +",PkgAgencyCommision="+pkg.getPkgAgencyCom()+") where PackageId =" + pkg.getPkgId();
+           System.out.println(pkg.getPkgEndDate());
+            String query = "Update packages set " +
+                    "PkgName = "+"'"+pkg.getPkgName()+"'"+
+                    ",PkgStartDate="+"'"+pkg.getPkgStartDate()+"'"+
+                    ",PkgEndDate="+"'"+pkg.getPkgEndDate()+"'"+
+                    ",PkgDesc="+"'"+pkg.getPkgDesc()+"'"+
+                    ",PkgBasePrice="+pkg.getPkgBasePrice()+
+                    ",PkgAgencyCommission="+pkg.getPkgAgencyCom()+
+                    " where PackageId =" + pkg.getPkgId();
 
             PreparedStatement stmt = connection.prepareStatement(query);
             int res = stmt.executeUpdate();

@@ -31,11 +31,11 @@
          <font>
             <Font name="Bookman Old Style" size="14.0" />
          </font></Label>
-      <Label layoutX="180.0" layoutY="385.0" text="Pkg Base Price">
+      <Label layoutX="164.0" layoutY="385.0" text="Pkg Base Price $:">
          <font>
             <Font name="Bookman Old Style" size="14.0" />
          </font></Label>
-      <Label layoutX="135.0" layoutY="427.0" text="Pkg Base Commision">
+      <Label layoutX="121.0" layoutY="427.0" text="Pkg Base Commision $:">
          <font>
             <Font name="Bookman Old Style" size="14.0" />
          </font></Label>
