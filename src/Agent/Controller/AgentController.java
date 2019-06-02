@@ -32,10 +32,9 @@ public class AgentController {
     DBHelper dbhelper = null;
     ObservableList<Agent> agents = FXCollections.observableArrayList();
     Agent agent;
-
+   // SingleSelectionModel<Tab> selectionModel;
     ObservableList<Agency> agencies = FXCollections.observableArrayList();
     Agency agency;
-
 
     @FXML
     private ResourceBundle resources;
@@ -120,20 +119,16 @@ public class AgentController {
     @FXML
     private TableColumn<Agent, Integer> colAgency;
 
-    @FXML
-    void tbAgencyAction(ActionEvent event) {
-        loadAgencies();
-        fillAgencyTable();
-        selectionInAgencyTableChanged();
-        selectionInAgencyComboChanged();
-        searchByAgency();
-
-    }
-
-    @FXML
+     @FXML
     void tbAgentAction(ActionEvent event) {
 
+        tabPane.getSelectionModel().select(tbAgent);
+}
 
+    @FXML
+    void tbAgencyAction(ActionEvent event) {
+
+        tabPane.getSelectionModel().select(tbAgency);
 
     }
 
@@ -664,14 +659,10 @@ public class AgentController {
     @FXML
     public  void initialize() {
 
-        dbhelper = DBHelper.getInstance();
-
-        SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();
-        selectionModel.select(tbAgency);
-        tabPane.getSelectionModel().select(tbAgency);
-
+     //   dbhelper = DBHelper.getInstance();
 
         if(tbAgent.isSelected()){
+
             loadAgents();
             fillAgentTable();
             selectionInTableChanged();
@@ -679,6 +670,7 @@ public class AgentController {
             searchByAgent();
         }
         if(tbAgency.isSelected()){
+
             loadAgencies();
             fillAgencyTable();
             selectionInAgencyTableChanged();

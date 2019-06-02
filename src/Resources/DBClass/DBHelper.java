@@ -71,6 +71,7 @@ public class DBHelper {
 
     public boolean execNonQuery(String nonquery) throws SQLException{
         boolean result = true;
+        createConnection();
         try   {
             stmt = con.createStatement();
             result = stmt.execute(nonquery);
@@ -186,8 +187,6 @@ public class DBHelper {
     public boolean AgentLogIn(AgentLogIn agentLogIn) throws SQLException {
 
         boolean IsLoggedIn = false;
-        Resources.DBClass.DBHelper dbhelper = Resources.DBClass.DBHelper.getInstance();
-        ObservableList<AgentLogIn> agentAccount = FXCollections.observableArrayList();
         String query = "SELECT Username,Password FROM Agents WHERE Username = ? and Password = ? ";
         PreparedStatement ps = con.prepareStatement(query);
         try {

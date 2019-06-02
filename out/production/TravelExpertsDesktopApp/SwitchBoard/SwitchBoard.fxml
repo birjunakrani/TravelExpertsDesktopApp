@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SwitchBoard.MainController">
 
 <!-- <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SwitchBoard.MainController"> -->
@@ -47,7 +46,7 @@
                   <Glow />
                </effect>
             </Button>
-            <Button id="switchButton" fx:id="btnBookings" mnemonicParsing="false" onMouseClicked="#btnBookings" prefHeight="63.0" prefWidth="128.0" styleClass="switchButton" stylesheets="@../Resources/StylesSheet.css" text="Bookings">
+            <Button id="switchButton" fx:id="btnBookings" mnemonicParsing="false" onMouseClicked="#btnBookings" prefHeight="63.0" prefWidth="166.0" styleClass="switchButton" stylesheets="@../Resources/StylesSheet.css" text="Bookings">
                <VBox.margin>
                   <Insets bottom="2.0" top="15.0" />
                </VBox.margin></Button>
@@ -77,6 +76,7 @@
                </children>
             </VBox>
             <VBox layoutX="291.0" layoutY="213.0" prefHeight="199.0" prefWidth="178.0" />
+            <Button fx:id="btnLogout" layoutX="139.0" layoutY="195.0" mnemonicParsing="false" onAction="#btnLogOutAction" prefHeight="35.0" prefWidth="83.0" styleClass="formButton" stylesheets="@../Resources/StylesSheet.css" text="Log Out" />
          </children>
       </AnchorPane>
    </center>
