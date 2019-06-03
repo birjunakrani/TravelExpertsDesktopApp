@@ -14,7 +14,7 @@ public class Validator {
         if (textField.getText() == null || textField.getLength()==0){
        // if (textField.getText() == null || textField.equals("")){
             result = false;
-            JOptionPane.showMessageDialog(null, msg + "can't be empty", "Empty Fields Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, msg + "can not be empty", "Empty Fields Error",JOptionPane.ERROR_MESSAGE);
             textField.requestFocus();
         }
         return result;
@@ -58,18 +58,18 @@ public class Validator {
     Assignment : Team1- Workshop6
     purpose: validation for textFields and comboBox*/
 
-////method to check if the value entered in the textField is letters
-    public static boolean IsLetter(TextField textField, String msg) {
-        boolean result = true;
+////method to check if the value entered in the textField is specific letter
+public static boolean IsLetter(TextField textField, String msg) {
+    boolean result = true;
 
-        if (!(textField.getText().matches("^[a-zA-Z]*$"))){
-            result = false;
-            JOptionPane.showMessageDialog(null, msg + "must be letters", "Type Error", JOptionPane.ERROR_MESSAGE);
-            textField.requestFocus();
-        }
-
-        return result;
+    if (!(textField.getText().matches("B") || textField.getText().matches("L") ||textField.getText().matches("G"))){
+        result = false;
+        JOptionPane.showMessageDialog(null, msg + "must be B ,G or L", "Type Error", JOptionPane.ERROR_MESSAGE);
+        textField.requestFocus();
     }
+
+    return result;
+}
 ////method to check the comboBox is not null
 
 
@@ -78,7 +78,7 @@ public class Validator {
 
         if (comboBox.getValue()== null){
             result = false;
-            JOptionPane.showMessageDialog(null, msg + "can't be empty", "Empty Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, msg + "can not be empty", "Empty Error", JOptionPane.ERROR_MESSAGE);
             comboBox.requestFocus();
         }
 
@@ -92,7 +92,7 @@ public class Validator {
 
         if (datePicker.getValue()== null){
             result = false;
-            JOptionPane.showMessageDialog(null, msg + "can't be empty", "Empty Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, msg + "can not be empty", "Empty Error", JOptionPane.ERROR_MESSAGE);
             datePicker.requestFocus();
         }
 

@@ -123,9 +123,10 @@ public class Controller {
                 Validator.IsProvided(tfBookNum, "Booking number ") &&
                 Validator.IsProvided(tfTraveler, "Traveler Count ") &&
                 Validator.IsInt(tfTraveler, "Traveler Count ")&&
-                Validator.IsProvided(tfCustId, "CustomerId ") &&
+                Validator.IsProvided(tfCustId, "Customer Id ") &&
                 Validator.IsInt(tfCustId, "Customer Id ")&&
-                Validator.IsProvided(tfTripType, "Trip Type "))
+                Validator.IsProvided(tfTripType, "Trip Type ")&&
+                Validator.IsLetter(tfTripType, "Trip Type "))
         {
 
             String sql = " update bookings set BookingDate=?,BookingNo=?,TravelerCount=?,CustomerId=?,TripTypeId=?,PackageId=? where BookingId=?";
