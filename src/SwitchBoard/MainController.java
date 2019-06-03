@@ -19,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -64,7 +65,7 @@ public class MainController {
         private TextField txtLogin;
 
         @FXML
-        private TextField txtPassword;
+        private PasswordField txtPassword;
 
         @FXML
         private Button btnLogIn;
@@ -152,6 +153,9 @@ public class MainController {
                 btnBookings.setDisable(true);
                 btnPackages.setDisable(true);
                 btnCustomers.setDisable(true);
+                txtPassword.setText("");
+                txtLogin.setText("");
+
             }
 
 

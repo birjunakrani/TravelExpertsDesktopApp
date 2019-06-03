@@ -59,7 +59,7 @@
             </Label>
          </center>
          <left>
-            <Label prefHeight="30.0" prefWidth="138.0" styleClass="formlabel" stylesheets="@../../Resources/StylesSheet.css" text="TravelExperts" underline="true" BorderPane.alignment="CENTER" />
+            <Label prefHeight="31.0" prefWidth="187.0" styleClass="travelexpertslabel" stylesheets="@../../Resources/StylesSheet.css" text="TravelExperts" underline="true" BorderPane.alignment="CENTER" />
          </left></BorderPane>
       <BorderPane layoutX="-6.0" layoutY="46.0" prefHeight="466.0" prefWidth="100.0" styleClass="bluepane" stylesheets="@../../Resources/StylesSheet.css" />
    </children>
