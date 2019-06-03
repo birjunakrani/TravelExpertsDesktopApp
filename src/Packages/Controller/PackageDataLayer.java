@@ -42,7 +42,26 @@ public class PackageDataLayer {
         return AllPacks;
 
     }
+    public static boolean insertPkg(PackageType Pack) throws SQLException {
+        Connection connection = PackDB.getConnection();
+        try {
+            String query = "Insert into packages (PkgName, PkgStartDate," +
+                    " PkgEndDate, PkgDesc, PkgBasePrice, PkgAgencyCommission) values" +
+                    "("+"'"+Pack.getPkgName()+"'"+","+"'"+Pack.getPkgStartDate()+"'"+","+"'"+Pack.getPkgEndDate()+"'"+
+                    ","+"'"+Pack.getPkgDesc()+"'"+","+"'"+Pack.getPkgBasePrice()+"'"+","+"'"+Pack.getPkgAgencyCom()+"'"+")";
 
+            PreparedStatement stmt = connection.prepareStatement(query);
+            boolean res = stmt.execute();
+            if (res == true) {
+                connection.close();
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        connection.close();
+        return false;
+    }
 
 
     public static boolean deletePkg(int ID) throws SQLException {

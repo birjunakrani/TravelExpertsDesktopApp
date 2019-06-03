@@ -4,17 +4,44 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Created gui for new packg">
+      <change afterPath="$PROJECT_DIR$/src/Packages/NewPackage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Controller/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Controller/PackageDataLayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Controller/PackageDataLayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Model/PackageType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Model/PackageType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agency/Controller/AgencyController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agency/Controller/AgencyController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agency/Controller/AgencyController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agency/MainAgency.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agency/Model/Agency.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agent/Controller/AgentController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agent/Controller/AgentController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agent/Controller/AgentController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agent/Controller/AgentController$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agent/Controller/AgentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Agent/MainAgent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Booking/Booking.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Booking/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Booking/DBHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Booking/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Booking/TripType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Controller/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Controller/NewPackageCon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Controller/PackDB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Controller/PackageDataLayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Model/PackageType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Package.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/View/NewPackage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/View/NewPackage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/View/PackageDisplay.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/View/PackageDisplay.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Resources/AlertCreator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Resources/DBClass/DBHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Resources/Validator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/SwitchBoard/AgentLogIn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/SwitchBoard/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/SwitchBoard/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/TravelExperts/Agent/Model/Agent.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Packages/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Packages/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Packages/Controller/NewPackageCon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Packages/Controller/NewPackageCon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Packages/Controller/PackageDataLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Packages/Controller/PackageDataLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Packages/Model/PackageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Packages/Model/PackageType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Packages/View/NewPackage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Packages/View/NewPackage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Packages/View/PackageDisplay.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Packages/View/PackageDisplay.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,26 +107,65 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Packages/View/PackageDisplay.fxml">
+        <entry file="file://$PROJECT_DIR$/src/Packages/View/NewPackage.fxml">
           <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+            <state relative-caret-position="220">
+              <caret line="10" column="254" selection-start-line="10" selection-start-column="254" selection-end-line="10" selection-end-column="254" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Packages/View/NewPackage.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-          <provider editor-type-id="text-editor" />
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Packages/Controller/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Packages/Controller/PackageDataLayer.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="682">
+              <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Packages/NewPackage.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
-              <caret line="47" column="39" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Packages/Controller/NewPackageCon.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="431">
+              <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Resources/AlertCreator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -113,13 +179,25 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Packages/Controller/PackDB.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -153,10 +231,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/TravelExperts/Controller/AgentForm.java" />
-        <option value="$PROJECT_DIR$/src/TravelExperts/Main/AgentForm.java" />
-        <option value="$PROJECT_DIR$/src/TravelExperts/Model/Agent.java" />
-        <option value="$PROJECT_DIR$/src/TravelExperts/Validator/Validator.java" />
         <option value="$PROJECT_DIR$/src/TravelExperts/View/SwitchBoard.fxml" />
         <option value="$PROJECT_DIR$/src/TravelExperts/Main/StylesSheet.css" />
         <option value="$PROJECT_DIR$/src/TravelExperts/DBClass/DBHelper.java" />
@@ -203,14 +277,18 @@
         <option value="$PROJECT_DIR$/src/Agent/Controller/AgentController.java" />
         <option value="$PROJECT_DIR$/src/Agent/Controller/AgentController.java" />
         <option value="$PROJECT_DIR$/src/Packages/View/PackageDisplay.fxml" />
+        <option value="$PROJECT_DIR$/src/Packages/Controller/PackageDataLayer.java" />
+        <option value="$PROJECT_DIR$/src/Packages/NewPackage.java" />
+        <option value="$PROJECT_DIR$/src/Packages/Controller/Controller.java" />
         <option value="$PROJECT_DIR$/src/Packages/View/NewPackage.fxml" />
+        <option value="$PROJECT_DIR$/src/Packages/Controller/NewPackageCon.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-7" />
-    <option name="y" value="3" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="11" />
+    <option name="y" value="93" />
     <option name="width" value="1378" />
     <option name="height" value="732" />
   </component>
@@ -532,11 +610,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559331203558</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Created gui for new packg">
+      <created>1559501053971</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1559501053971</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211702000" />
+    <option name="totallyTimeSpent" value="216527000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -551,7 +636,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17019667" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17019667" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -567,12 +652,12 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32733223" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.33722872" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.33722872" />
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.4624374" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.25375625" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.2536825" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
       <window_info anchor="bottom" id="Terminal" order="16" />
@@ -681,7 +766,8 @@
     <MESSAGE value="Edited Packs" />
     <MESSAGE value="Edited Packs in booking allowing use of my datatype instead of two datatypes for pkg" />
     <MESSAGE value="Moved DB pack information to new file in packages folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved DB pack information to new file in packages folder" />
+    <MESSAGE value="Created gui for new packg" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created gui for new packg" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -705,12 +791,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/../mysql-connector-java-5.1.17-bin.jar!/com/mysql/jdbc/StringUtils.class" />
-    <entry file="jar://$PROJECT_DIR$/../mysql-connector-java-5.1.17-bin.jar!/com/mysql/jdbc/NonRegisteringDriver.class" />
-    <entry file="jar://$PROJECT_DIR$/../mysql-connector-java-5.1.17-bin.jar!/com/mysql/jdbc/Driver.class" />
-    <entry file="file://$PROJECT_DIR$/src/TravelExperts/Agent/Main/StylesSheet.css" />
-    <entry file="file://$PROJECT_DIR$/src/Bookings/View/bookings.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/TravelExperts/Agent/Model/Agent.java" />
     <entry file="file://$PROJECT_DIR$/src/TravelExperts/Agent/DBClass/DBHelper.java" />
     <entry file="file://$PROJECT_DIR$/src/Bookings/Controller/Bookings.java" />
     <entry file="file://$PROJECT_DIR$/src/TravelExperts/Agent/Controller/AgentCtrl.java" />
@@ -758,13 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Resources/AlertCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -862,32 +935,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Packages/Package.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Packages/Model/PackageType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="946">
           <caret line="63" column="36" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Packages/Controller/PackDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6161#6162#0" expanded="true" />
-            <element signature="e#6190#6191#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -956,17 +1007,97 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/TravelExpertsDesktopApp/Packages/Controller/Controller$1.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-484" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Packages/Controller/NewPkgController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Packages/View/PackageDisplay.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+        <state relative-caret-position="528">
+          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Packages/Controller/PackDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Packages/View/NewPackage.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="254" selection-start-line="10" selection-start-column="254" selection-end-line="10" selection-end-column="254" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Packages/Package.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Packages/Controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Packages/Controller/PackageDataLayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Resources/AlertCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Packages/NewPackage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Packages/Controller/NewPackageCon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
