@@ -3,18 +3,27 @@ package Packages.Model;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 
 public class PackageType {
     private int PkgId;
     private String PkgName;
-    private java.sql.Date PkgStartDate;
-    private java.sql.Date PkgEndDate;
+    private String PkgStartDate;
+    private String  PkgEndDate;
     private String PkgDesc;
-    private java.math.BigDecimal PkgBasePrice;
-    private java.math.BigDecimal PkgAgencyCom;
+    private long PkgBasePrice;
+    private long PkgAgencyCom;
+    public PackageType (){
 
-    public PackageType(int pkgId, String pkgName, Date pkgStartDate, Date pkgEndDate,
-                       String pkgDesc, BigDecimal pkgBasePrice, BigDecimal pkgAgencyCom) {
+    }
+
+    public PackageType(String pkgName, int pkgId) {
+        PkgId = pkgId;
+        PkgName = pkgName;
+    }
+
+    public PackageType(int pkgId, String pkgName, String  pkgStartDate, String  pkgEndDate,
+                       String pkgDesc, long pkgBasePrice, long pkgAgencyCom) {
         PkgId = pkgId;
         PkgName = pkgName;
         PkgStartDate = pkgStartDate;
@@ -40,19 +49,19 @@ public class PackageType {
         PkgName = pkgName;
     }
 
-    public Date getPkgStartDate() {
+    public String  getPkgStartDate() {
         return PkgStartDate;
     }
 
-    public void setPkgStartDate(Date pkgStartDate) {
+    public void setPkgStartDate(String  pkgStartDate) {
         PkgStartDate = pkgStartDate;
     }
 
-    public Date getPkgEndDate() {
+    public String  getPkgEndDate() {
         return PkgEndDate;
     }
 
-    public void setPkgEndDate(Date pkgEndDate) {
+    public void setPkgEndDate(String  pkgEndDate) {
         PkgEndDate = pkgEndDate;
     }
 
@@ -64,24 +73,24 @@ public class PackageType {
         PkgDesc = pkgDesc;
     }
 
-    public BigDecimal getPkgBasePrice() {
+    public long getPkgBasePrice() {
         return PkgBasePrice;
     }
 
-    public void setPkgBasePrice(BigDecimal pkgBasePrice) {
+    public void setPkgBasePrice(long pkgBasePrice) {
         PkgBasePrice = pkgBasePrice;
     }
 
-    public BigDecimal getPkgAgencyCom() {
+    public long getPkgAgencyCom() {
         return PkgAgencyCom;
     }
 
-    public void setPkgAgencyCom(BigDecimal pkgAgencyCom) {
+    public void setPkgAgencyCom(long pkgAgencyCom) {
         PkgAgencyCom = pkgAgencyCom;
     }
 
     @Override
     public String toString() {
-        return "PkgId=" + PkgId;
+        return PkgName;
     }
 }

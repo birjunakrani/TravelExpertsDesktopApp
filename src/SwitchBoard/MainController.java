@@ -66,10 +66,20 @@ public class MainController {
         @FXML
         private TextField txtPassword;
 
+        @FXML
+        private Button btnLogIn;
+
+        @FXML
+        private Button btnCancel;
+
+
+        @FXML
+        private Button btnLogout;
+
 
         @FXML
         void btnAgents(ActionEvent event) {
-            loadWindow("../Agent/View/Agents.fxml","Agents");
+            loadWindow("../Agent/View/Agent.fxml","Agents");
         }
 
         @FXML
@@ -87,13 +97,9 @@ public class MainController {
         }
 
         @FXML
-        private Button btnLogIn;
-
-        @FXML
-        private Button btnCancel;
-
-        @FXML
         void btnCancelAction(ActionEvent event) {
+
+            txtLogin.setText("");txtPassword.setText("");
         }
 
         @FXML
@@ -106,14 +112,16 @@ public class MainController {
                 try {
                     IsLoggedIn = DBHelper.getInstance().AgentLogIn(agentLogIn);
 
-                    if(!IsLoggedIn){
+                    if(!IsLoggedIn){ //if agent is not logged in
 
                         AlertCreator.FailedAlert("Username/Password  do not Exists");
                         btnCustomers.setDisable(true);
                         btnAgents.setDisable(true);
                         btnBookings.setDisable(true);
                         btnPackages.setDisable(true);
-                        btnCustomers.setDisable(true); }
+                        btnCustomers.setDisable(true);
+                        btnLogout.setVisible(false);
+                    }
                     else{
                         AlertCreator.SuccessAlert("Login Successfull");
                         btnCustomers.setDisable(false);
@@ -121,6 +129,9 @@ public class MainController {
                         btnBookings.setDisable(false);
                         btnPackages.setDisable(false);
                         btnCustomers.setDisable(false);
+                        btnLogout.setVisible(true);
+                        btnLogIn.setVisible(false);
+                        btnCancel.setVisible(false);
 
                     }
                 } catch (SQLException e) {
@@ -130,12 +141,26 @@ public class MainController {
 
         }
 
+            @FXML
+            void btnLogOutAction(ActionEvent event) {
+
+                btnLogout.setVisible(false);
+                btnLogIn.setVisible(true);
+                btnCancel.setVisible(true);
+                btnCustomers.setDisable(true);
+                btnAgents.setDisable(true);
+                btnBookings.setDisable(true);
+                btnPackages.setDisable(true);
+                btnCustomers.setDisable(true);
+            }
+
+
     private void initGraphics() {
 
          //   agentChart = new PieChart(DBHelper.getInstance().getAgentGraphicStats());
-        agentChart = DBHelper.getInstance().getAgentGraphicStats();
+    //    agentChart = DBHelper.getInstance().getAgentGraphicStats();
          //   agentChart.setLegendSide(Side.RIGHT);
-            pcAgent.setData(agentChart);
+    //        pcAgent.setData(agentChart);
      //        vbChart.getChildren().add(agentChart);
 
 
@@ -165,7 +190,8 @@ public class MainController {
             btnBookings.setDisable(true);
             btnPackages.setDisable(true);
             btnCustomers.setDisable(true);
-            initGraphics();
+            btnLogout.setVisible(false);
+      //      initGraphics();
 
         }
 

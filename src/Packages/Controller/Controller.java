@@ -1,17 +1,26 @@
 package Packages.Controller;
 
 import Packages.Model.PackageType;
+import Packages.Package;
+import Resources.AlertCreator;
 import Resources.DBClass.DBHelper;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.*;
 
-import java.awt.*;
-import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.text.spi.DateFormatProvider;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Controller {
 
@@ -37,7 +46,7 @@ public class Controller {
     TextField Endbox;
 
     @FXML
-    TextField Descbox;
+    TextArea Descbox;
 
     @FXML
     TextField Basebox;
@@ -46,22 +55,60 @@ public class Controller {
     TextField Combox;
 
     @FXML
-    ComboBox IDbox;
+    ComboBox<PackageType> ComboID;
 
-    ArrayList<PackageType> AllPacks;
+List<PackageType> SavedList;
 
 
     public void LoadPacks(){
+        List<PackageType> PackList = new ArrayList<>();
+
+          PackageDataLayer Data = new PackageDataLayer();
 
         try {
-            AllPacks = DBHelper.dbHelper.getPackages();
+            PackList = Data.getPackages();
+
+            SavedList = PackList;
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        ObservableList<PackageType> ObList = FXCollections.observableList(AllPacks);
+            ObservableList<PackageType> OboList = FXCollections.observableList(PackList);
 
-        IDbox.setItems(ObList);
+       ComboID.setItems(OboList); //Nothing
+
+    }
+    public void fill(int PackID){
+        List<PackageType> PackList = new ArrayList<>();
+
+        PackageDataLayer Data = new PackageDataLayer();
+        int FoundID = 0;
+        try {
+            PackList = Data.getPackages();
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        for (PackageType pack:PackList
+             ) {
+            if(pack.getPkgId()==PackID){
+                FoundID=PackID;
+            }
+
+        }
+
+    PkgNamebox.setText(PackList.get(FoundID).getPkgName());
+    Startbox.setText(PackList.get(FoundID).getPkgStartDate());
+    Endbox.setText(PackList.get(FoundID).getPkgEndDate());
+    Descbox.setText(PackList.get(FoundID).getPkgDesc());
+    Basebox.setText(Long.toString(PackList.get(FoundID).getPkgBasePrice()));
+    Combox.setText(Long.toString(PackList.get(FoundID).getPkgAgencyCom()));
+    }
+
+
+    public void selectChg(){
+
     }
     @FXML
     void AddbtnClick(ActionEvent event) {
@@ -72,9 +119,21 @@ public class Controller {
 
     }
 
+
+
+
+
     @FXML
-    void DeletebtnClick(ActionEvent event) {
+    void DeletebtnClick(ActionEvent event) throws SQLException {
     //runsql
+        int ID = ComboID.getValue().getPkgId();
+       // System.out.println(ID);
+            boolean result = PackageDataLayer.deletePkg(ID);
+        if(result == false){
+            AlertCreator.FailedAlert("Cannot delete as this entry has dependencies");
+        }
+
+
     }
 
     @FXML
@@ -85,15 +144,67 @@ public class Controller {
         Descbox.setEditable(true);
         Basebox.setEditable(true);
         Combox.setEditable(true);
-        Savebtn.setEnabled(true);
+        Savebtn.setDisable(false);
     }
 
     @FXML
-    void SavebtnClick(ActionEvent event) {
+    void SavebtnClick(ActionEvent event) throws SQLException {
     //runsql
 
+        PkgNamebox.setEditable(false);
+        Startbox.setEditable(false);
+        Endbox.setEditable(false);
+        Descbox.setEditable(false);
+        Basebox.setEditable(false);
+        Combox.setEditable(false);
+        Savebtn.setDisable(true);
+
+        PackageType UpdatedPack = new PackageType();
 
 
+        UpdatedPack.setPkgId(ComboID.getValue().getPkgId());
+        UpdatedPack.setPkgName(PkgNamebox.getText());
+        UpdatedPack.setPkgDesc(Descbox.getText());
+        UpdatedPack.setPkgBasePrice(Long.parseLong(Basebox.getText()));
+        UpdatedPack.setPkgAgencyCom(Long.parseLong(Combox.getText()));
+        UpdatedPack.setPkgStartDate(Startbox.getText());
+        UpdatedPack.setPkgEndDate(Endbox.getText());
+        System.out.println(Endbox.getText());
+          boolean result =  PackageDataLayer.EditPkg(UpdatedPack);
+       if(result == false){
+            AlertCreator.FailedAlert("Update Failed");
+        }
+else {
+           fill(ComboID.getValue().getPkgId() - 1);
+       }
+    }
+
+    @FXML
+    void initialize() {
+        this.LoadPacks();
+
+        //   ComboID.addEventHandler(selectChange);
+        ComboID.valueProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+
+                //List<PackageType> PackList = new ArrayList<>();
+               //System.out.println(ComboID.getValue().getPkgId());
+                //PackageDataLayer Data = new PackageDataLayer();
+                int FoundID = 0;
+               // System.out.print(SavedList.get(2).toString());
+                for (PackageType pack:SavedList
+                ) {
+                    if(pack.getPkgName() == newValue.toString()){
+                        FoundID=pack.getPkgId();
+
+                    }
+
+                }
+
+                fill(FoundID -1);
+            }
+        });
     }
 
 
