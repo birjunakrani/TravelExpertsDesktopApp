@@ -2,6 +2,7 @@ package Packages.Controller;
 
 import Packages.Model.PackageType;
 import Packages.Package;
+import Resources.AlertCreator;
 import Resources.DBClass.DBHelper;
 
 import java.sql.*;
@@ -42,27 +43,25 @@ public class PackageDataLayer {
         return AllPacks;
 
     }
-    public static boolean insertPkg(PackageType Pack) throws SQLException {
+    public static void insertPkg(PackageType Pack) throws SQLException {
         Connection connection = PackDB.getConnection();
         try {
             String query = "Insert into packages (PkgName, PkgStartDate," +
                     " PkgEndDate, PkgDesc, PkgBasePrice, PkgAgencyCommission) values" +
-                    "("+"'"+Pack.getPkgName()+"'"+","+"'"+Pack.getPkgStartDate()+"'"+","+"'"+Pack.getPkgEndDate()+"'"+
-                    ","+"'"+Pack.getPkgDesc()+"'"+","+"'"+Pack.getPkgBasePrice()+"'"+","+"'"+Pack.getPkgAgencyCom()+"'"+")";
+                    "(" + "'" + Pack.getPkgName() + "'" + "," + "'" + Pack.getPkgStartDate() + "'" + "," + "'" + Pack.getPkgEndDate() + "'" +
+                    "," + "'" + Pack.getPkgDesc() + "'" + "," + "'" + Pack.getPkgBasePrice() + "'" + "," + "'" + Pack.getPkgAgencyCom() + "'" + ")";
 
             PreparedStatement stmt = connection.prepareStatement(query);
-            boolean res = stmt.execute();
-            if (res == true) {
-                connection.close();
-                return true;
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
+            stmt.execute();
         }
-        connection.close();
-        return false;
+        catch (Exception e) {
+        e.printStackTrace();
+            AlertCreator.FailedAlert("Insert Failed");
+        }
+            finally{
+                connection.close();
+            }
     }
-
 
     public static boolean deletePkg(int ID) throws SQLException {
         Connection connection = PackDB.getConnection();

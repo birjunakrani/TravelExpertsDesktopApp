@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.sql.SQLException;
 
@@ -36,27 +37,60 @@ public class NewPackageCon {
 
     @FXML
     TextArea PkgDesc;
+    @FXML
+    Button Exitbtn;
 
     @FXML
     void PkgAddClick(ActionEvent event){
 
         PackageType NewPack = new PackageType();
-        NewPack.setPkgName(PkgName.getText());
-        NewPack.setPkgStartDate(PkgStart.getText());
-        NewPack.setPkgEndDate(PkgEnd.getText());
-        NewPack.setPkgDesc(PkgDesc.getText());
-        NewPack.setPkgBasePrice(Integer.parseInt(PkgBase.getText()));
-        NewPack.setPkgAgencyCom(Integer.parseInt(PkgEnd.getText()));
-
+        try {
+            NewPack.setPkgName(PkgName.getText());
+            NewPack.setPkgStartDate(PkgStart.getText());
+            NewPack.setPkgEndDate(PkgEnd.getText());
+            NewPack.setPkgDesc(PkgDesc.getText());
+            NewPack.setPkgBasePrice(Integer.parseInt(PkgBase.getText()));
+            NewPack.setPkgAgencyCom(Integer.parseInt(PkgCom.getText()));
+        }
+        catch(Exception e){
+            AlertCreator.FailedAlert("Invalid Entries");
+        }
         try {
             PackageDataLayer.insertPkg(NewPack);
-        } catch (Exception e) {
-            e.printStackTrace();
-            AlertCreator.FailedAlert("Insert Failed");
-        }
 
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        Clear();
     }
 
 
+    @FXML
+    void CloseFunc (){
+        Stage stage = (Stage) Exitbtn.getScene().getWindow();
+        // do what you have to do
+        stage.close();
+    }
+
+
+
+    @FXML
+    void initialize() {
+
+    }
+    @FXML
+    void Clear(){
+        //Clears the boxes
+        PkgName.setText("");
+        PkgStart.setText("");
+        PkgEnd.setText("");
+        PkgDesc.setText("");
+        PkgBase.setText("");
+        PkgCom.setText("");
+
+
+
+
+    }
 
 }

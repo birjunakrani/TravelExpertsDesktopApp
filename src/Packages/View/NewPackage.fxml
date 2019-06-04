@@ -22,7 +22,7 @@
       <Label layoutX="225.0" layoutY="200.0" text="Pkg Desc" />
       <Label layoutX="185.0" layoutY="350.0" text="Pkg Base Price $:" />
       <Button fx:id="PkgAdd" layoutX="281.0" layoutY="438.0" mnemonicParsing="false" onAction="#PkgAddClick" text="Add" />
-      <Button fx:id="PkgClear" layoutX="377.0" layoutY="438.0" mnemonicParsing="false" text="Clear" />
+      <Button fx:id="PkgClear" layoutX="377.0" layoutY="438.0" mnemonicParsing="false" onAction="#Clear" text="Clear" />
       <AnchorPane layoutX="-3.0" layoutY="48.0" prefHeight="468.0" prefWidth="100.0" styleClass="bluepane" stylesheets="@../../Resources/StylesSheet.css" />
       <BorderPane layoutX="-3.0" prefHeight="48.0" prefWidth="620.0" styleClass="header-section" stylesheets="@../../Resources/StylesSheet.css">
          <left>
@@ -32,5 +32,8 @@
             <Label alignment="BASELINE_LEFT" prefHeight="24.0" prefWidth="250.0" styleClass="formlabel" stylesheets="@../../Resources/StylesSheet.css" text="New Package                  " BorderPane.alignment="CENTER" />
          </center></BorderPane>
       <Label layoutX="131.0" layoutY="398.0" text="Pkg Agency Commission $:" />
+      <Button fx:id="Exitbtn" layoutX="538.0" layoutY="463.0" mnemonicParsing="false" onAction="#CloseFunc" text="Exit" />
+      <Label layoutX="435.0" layoutY="117.0" opacity="0.31" text="YYYY-MM-DD" />
+      <Label layoutX="435.0" layoutY="164.0" opacity="0.31" text="YYYY-MM-DD" />
    </children>
 </Pane>
