@@ -8,21 +8,21 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Packages.Controller.NewPackageCon">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="198.0" layoutY="74.0" text="Package Name" />
       <Label layoutX="200.0" layoutY="117.0" text="Pkg Start Date" />
       <Label layoutX="202.0" layoutY="164.0" text="Pkg End Date" />
-      <TextField fx:id="PkgName" layoutX="280.0" layoutY="70.0" />
-      <TextField fx:id="PkgStart" layoutX="280.0" layoutY="113.0" />
-      <TextField fx:id="PkgEnd" layoutX="280.0" layoutY="160.0" />
-      <TextField fx:id="PkgBase" layoutX="280.0" layoutY="346.0" />
-      <TextField fx:id="PkgCom" layoutX="280.0" layoutY="394.0" />
-      <TextArea fx:id="PkgDesc" layoutX="280.0" layoutY="200.0" prefHeight="134.0" prefWidth="149.0" />
+      <TextField layoutX="280.0" layoutY="70.0" />
+      <TextField layoutX="280.0" layoutY="113.0" />
+      <TextField layoutX="280.0" layoutY="160.0" />
+      <TextField layoutX="280.0" layoutY="346.0" />
+      <TextField layoutX="280.0" layoutY="394.0" />
+      <TextArea layoutX="280.0" layoutY="200.0" prefHeight="134.0" prefWidth="149.0" />
       <Label layoutX="225.0" layoutY="200.0" text="Pkg Desc" />
       <Label layoutX="185.0" layoutY="350.0" text="Pkg Base Price $:" />
-      <Button fx:id="PkgAdd" layoutX="281.0" layoutY="438.0" mnemonicParsing="false" text="Add" />
-      <Button fx:id="PkgClear" layoutX="377.0" layoutY="438.0" mnemonicParsing="false" text="Clear" />
+      <Button layoutX="281.0" layoutY="438.0" mnemonicParsing="false" text="Add" />
+      <Button layoutX="377.0" layoutY="438.0" mnemonicParsing="false" text="Clear" />
       <AnchorPane layoutX="-3.0" layoutY="48.0" prefHeight="468.0" prefWidth="100.0" styleClass="bluepane" stylesheets="@../../Resources/StylesSheet.css" />
       <BorderPane layoutX="-3.0" prefHeight="48.0" prefWidth="620.0" styleClass="header-section" stylesheets="@../../Resources/StylesSheet.css">
          <left>

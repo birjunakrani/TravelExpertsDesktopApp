@@ -5,8 +5,11 @@
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -64,19 +67,27 @@
    <center>
       <AnchorPane fx:id="apLogin" prefHeight="324.0" prefWidth="421.0" styleClass="root" stylesheets="@../Resources/StylesSheet.css">
          <children>
-            <TextField fx:id="txtLogin" layoutX="102.0" layoutY="94.0" stylesheets="@../Resources/StylesSheet.css" />
-            <TextField fx:id="txtPassword" layoutX="102.0" layoutY="145.0" stylesheets="@../Resources/StylesSheet.css" />
-            <Label id="switchBoardLabel" layoutX="29.0" layoutY="94.0" prefHeight="27.0" prefWidth="82.0" stylesheets="@../Resources/StylesSheet.css" text="Log In" />
-            <Label id="switchBoardLabel" layoutX="29.0" layoutY="144.0" prefHeight="27.0" prefWidth="82.0" stylesheets="@../Resources/StylesSheet.css" text="Password" />
-            <Button fx:id="btnLogIn" layoutX="96.0" layoutY="194.0" mnemonicParsing="false" onAction="#btnLoginAction" styleClass="formButton" stylesheets="@../Resources/StylesSheet.css" text="LogIn" />
-            <Button fx:id="btnCancel" layoutX="199.0" layoutY="194.0" mnemonicParsing="false" onAction="#btnCancelAction" styleClass="formButton" stylesheets="@../Resources/StylesSheet.css" text="Cancel" />
+            <TextField fx:id="txtLogin" layoutX="102.0" layoutY="94.0" promptText="Enter Username" stylesheets="@../Resources/StylesSheet.css" />
+            <Button fx:id="btnLogIn" layoutX="88.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnLoginAction" styleClass="formButton" stylesheets="@../Resources/StylesSheet.css" text="LogIn" />
+            <Button fx:id="btnCancel" layoutX="191.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnCancelAction" styleClass="formButton" stylesheets="@../Resources/StylesSheet.css" text="Cancel" />
             <VBox layoutX="290.0" layoutY="-1.0" prefHeight="222.0" prefWidth="179.0">
                <children>
                   <PieChart fx:id="pcAgent" prefHeight="129.0" prefWidth="90.0" />
                </children>
             </VBox>
             <VBox layoutX="291.0" layoutY="213.0" prefHeight="199.0" prefWidth="178.0" />
-            <Button fx:id="btnLogout" layoutX="139.0" layoutY="195.0" mnemonicParsing="false" onAction="#btnLogOutAction" prefHeight="35.0" prefWidth="83.0" styleClass="formButton" stylesheets="@../Resources/StylesSheet.css" text="Log Out" />
+            <Button fx:id="btnLogout" layoutX="131.0" layoutY="253.0" mnemonicParsing="false" onAction="#btnLogOutAction" prefHeight="35.0" prefWidth="83.0" styleClass="formButton" stylesheets="@../Resources/StylesSheet.css" text="Log Out" />
+            <PasswordField fx:id="txtPassword" layoutX="102.0" layoutY="182.0" promptText="Enter Password" />
+            <ImageView fitHeight="68.0" fitWidth="57.0" layoutX="31.0" layoutY="160.0">
+               <image>
+                  <Image url="@../Resources/Images/img_password.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="68.0" fitWidth="58.0" layoutX="30.0" layoutY="73.0">
+               <image>
+                  <Image url="@../Resources/Images/img_user.jpg" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </center>

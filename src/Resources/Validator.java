@@ -99,4 +99,18 @@ public static boolean IsLetter(TextField textField, String msg) {
         return result;
     }
 
+
+    //method to check the packageId is specific number
+    public static boolean SpecificId(TextField textField, String msg) {
+        boolean result = true;
+
+        if (!(textField.getText().matches("1") || textField.getText().matches("2") ||textField.getText().matches("3")
+                ||textField.getText().matches("4") ||textField.getText().matches("5"))){
+            result = false;
+            JOptionPane.showMessageDialog(null, msg + "must be a number between 1 to 5", "Entry Error", JOptionPane.ERROR_MESSAGE);
+            textField.requestFocus();
+        }
+
+        return result;
+    }
 }
