@@ -7,22 +7,38 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Packages.Controller.NewPackageCon">
    <children>
-      <Label layoutX="198.0" layoutY="74.0" text="Package Name" />
-      <Label layoutX="200.0" layoutY="117.0" text="Pkg Start Date" />
-      <Label layoutX="202.0" layoutY="164.0" text="Pkg End Date" />
+      <Label layoutX="170.0" layoutY="75.0" styleClass="text-field" stylesheets="@../../Resources/StylesSheet.css" text="Package Name">
+         <font>
+            <Font name="Bookman Old Style" size="14.0" />
+         </font></Label>
+      <Label layoutX="170.0" layoutY="118.0" styleClass="text-field" stylesheets="@../../Resources/StylesSheet.css" text="Pkg Start Date">
+         <font>
+            <Font name="Bookman Old Style" size="14.0" />
+         </font></Label>
+      <Label layoutX="173.0" layoutY="165.0" styleClass="text-field" stylesheets="@../../Resources/StylesSheet.css" text="Pkg End Date">
+         <font>
+            <Font name="Bookman Old Style" size="14.0" />
+         </font></Label>
       <TextField fx:id="PkgName" layoutX="280.0" layoutY="70.0" />
       <TextField fx:id="PkgStart" layoutX="280.0" layoutY="113.0" />
       <TextField fx:id="PkgEnd" layoutX="280.0" layoutY="160.0" />
       <TextField fx:id="PkgBase" layoutX="280.0" layoutY="346.0" />
       <TextField fx:id="PkgCom" layoutX="280.0" layoutY="394.0" />
       <TextArea fx:id="PkgDesc" layoutX="280.0" layoutY="200.0" prefHeight="134.0" prefWidth="149.0" />
-      <Label layoutX="225.0" layoutY="200.0" text="Pkg Desc" />
-      <Label layoutX="185.0" layoutY="350.0" text="Pkg Base Price $:" />
-      <Button fx:id="PkgAdd" layoutX="281.0" layoutY="438.0" mnemonicParsing="false" onAction="#PkgAddClick" text="Add" />
-      <Button fx:id="PkgClear" layoutX="377.0" layoutY="438.0" mnemonicParsing="false" onAction="#Clear" text="Clear" />
+      <Label layoutX="204.0" layoutY="200.0" styleClass="text-field" stylesheets="@../../Resources/StylesSheet.css" text="Pkg Desc">
+         <font>
+            <Font name="Bookman Old Style" size="14.0" />
+         </font></Label>
+      <Label layoutX="161.0" layoutY="351.0" styleClass="text-field" stylesheets="@../../Resources/StylesSheet.css" text="Pkg Base Price $:">
+         <font>
+            <Font name="Bookman Old Style" size="14.0" />
+         </font></Label>
+      <Button fx:id="PkgAdd" layoutX="281.0" layoutY="438.0" mnemonicParsing="false" onAction="#PkgAddClick" styleClass="formButton" stylesheets="@../../Resources/StylesSheet.css" text="Add" />
+      <Button fx:id="PkgClear" layoutX="377.0" layoutY="438.0" mnemonicParsing="false" onAction="#Clear" styleClass="formButton" stylesheets="@../../Resources/StylesSheet.css" text="Clear" />
       <AnchorPane layoutX="-3.0" layoutY="48.0" prefHeight="468.0" prefWidth="100.0" styleClass="bluepane" stylesheets="@../../Resources/StylesSheet.css" />
       <BorderPane layoutX="-3.0" prefHeight="48.0" prefWidth="620.0" styleClass="header-section" stylesheets="@../../Resources/StylesSheet.css">
          <left>
@@ -31,9 +47,12 @@
          <center>
             <Label alignment="BASELINE_LEFT" prefHeight="24.0" prefWidth="250.0" styleClass="formlabel" stylesheets="@../../Resources/StylesSheet.css" text="New Package                  " BorderPane.alignment="CENTER" />
          </center></BorderPane>
-      <Label layoutX="131.0" layoutY="398.0" text="Pkg Agency Commission $:" />
-      <Button fx:id="Exitbtn" layoutX="538.0" layoutY="463.0" mnemonicParsing="false" onAction="#CloseFunc" text="Exit" />
-      <Label layoutX="281.0" layoutY="117.0" opacity="0.31" text="YYYY-MM-DD" />
-      <Label layoutX="281.0" layoutY="164.0" opacity="0.31" text="YYYY-MM-DD" />
+      <Label layoutX="98.0" layoutY="399.0" styleClass="text-field" stylesheets="@../../Resources/StylesSheet.css" text="Pkg Agency Commission $:">
+         <font>
+            <Font name="Bookman Old Style" size="14.0" />
+         </font></Label>
+      <Button fx:id="Exitbtn" layoutX="538.0" layoutY="463.0" mnemonicParsing="false" onAction="#CloseFunc" styleClass="formButton" stylesheets="@../../Resources/StylesSheet.css" text="Exit" />
+      <Label layoutX="435.0" layoutY="117.0" opacity="0.31" text="YYYY-MM-DD" />
+      <Label layoutX="435.0" layoutY="164.0" opacity="0.31" text="YYYY-MM-DD" />
    </children>
 </Pane>

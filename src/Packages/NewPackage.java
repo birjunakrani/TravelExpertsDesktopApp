@@ -10,19 +10,15 @@ public class NewPackage extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader();
+       // FXMLLoader loader = new FXMLLoader();
         //   loader.setLocation(Package.class.getResource("PackageDisplay.fxml"));
-        //  Parent root = FXMLLoader.load(getClass().getResource("View/PackageDisplay.java"));
-        Parent root = loader.load(getClass().getResource("View/NewPackage.fxml"));
+          Parent root = FXMLLoader.load(getClass().getResource("View/PackageDisplay.java"));
+      //  Parent root = loader.load(getClass().getResource("View/NewPackage.fxml"));
         Scene scene = new Scene(root, 612, 512);
         primaryStage.setTitle("New Package Form");
         primaryStage.setScene(scene);
         scene.getStylesheets().add("StylesSheet.css");
         primaryStage.show();
-
-
-
-
     }
 
 

@@ -89,7 +89,7 @@ public class MainController {
         }
 
         @FXML
-        void btnPackages(MouseEvent event) {loadWindow("../Packages/View/PackageDisplay.fxml","Packages");
+        void btnPackagesOpen(MouseEvent event) {loadWindow("../Packages/View/PackageDisplay.fxml","Packages");
         //Open Packages Source
         }
         @FXML
