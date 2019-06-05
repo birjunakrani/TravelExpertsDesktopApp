@@ -56,7 +56,7 @@ public class MainController {
         private Button btnBookings;
 
         @FXML
-        private Button btnPackages;
+        private Button btnPack;
 
         @FXML
         private Button btnAgents;
@@ -78,23 +78,27 @@ public class MainController {
         private Button btnLogout;
 
 
+
         @FXML
         void btnAgents(ActionEvent event) {
             loadWindow("../Agent/View/Agent.fxml","Agents");
         }
 
         @FXML
-        void btnCustomers(MouseEvent event) {
-
+        void btnCustomers(ActionEvent event) {
+            loadWindow("../Packages/View/PackageDisplay.fxml","Packages");
         }
 
         @FXML
-        void btnPackagesOpen(MouseEvent event) {loadWindow("../Packages/View/PackageDisplay.fxml","Packages");
-        //Open Packages Source
-        }
-        @FXML
-        void btnBookings(MouseEvent event) {
+        void btnPackagesOpen(ActionEvent event) {
+            loadWindow("../Packages/View/PackageDisplay.fxml","Packages");
 
+        }
+
+
+        @FXML
+        void btnBookings(ActionEvent event) {
+            loadWindow("../Packages/View/PackageDisplay.fxml","Packages");
         }
 
         @FXML
@@ -119,7 +123,7 @@ public class MainController {
                         btnCustomers.setDisable(true);
                         btnAgents.setDisable(true);
                         btnBookings.setDisable(true);
-                        btnPackages.setDisable(true);
+                        btnPack.setDisable(true);
                         btnCustomers.setDisable(true);
                         btnLogout.setVisible(false);
                     }
@@ -128,7 +132,7 @@ public class MainController {
                         btnCustomers.setDisable(false);
                         btnAgents.setDisable(false);
                         btnBookings.setDisable(false);
-                        btnPackages.setDisable(false);
+                        btnPack.setDisable(false);
                         btnCustomers.setDisable(false);
                         btnLogout.setVisible(true);
                         btnLogIn.setVisible(false);
@@ -151,7 +155,7 @@ public class MainController {
                 btnCustomers.setDisable(true);
                 btnAgents.setDisable(true);
                 btnBookings.setDisable(true);
-                btnPackages.setDisable(true);
+                btnPack.setDisable(true);
                 btnCustomers.setDisable(true);
                 txtPassword.setText("");
                 txtLogin.setText("");
@@ -187,12 +191,25 @@ public class MainController {
             }
         }
 
+    public  void loadPackWindow(String loc, String title){
+        try{
+            Parent parent = FXMLLoader.load(getClass().getResource(loc));
+            Stage stage = new Stage(StageStyle.DECORATED);
+            stage.setTitle(title);
+            stage.setScene(new Scene(parent));
+            //   stage.setFullScreen(true);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
         @FXML
         void initialize() {
             btnCustomers.setDisable(true);
             btnAgents.setDisable(true);
             btnBookings.setDisable(true);
-            btnPackages.setDisable(true);
+            btnPack.setDisable(true);
             btnCustomers.setDisable(true);
             btnLogout.setVisible(false);
       //      initGraphics();

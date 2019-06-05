@@ -53,10 +53,7 @@
                <VBox.margin>
                   <Insets bottom="2.0" top="15.0" />
                </VBox.margin></Button>
-            <Button id="switchButton" fx:id="btnPackages" mnemonicParsing="false" onAction="#btnPackagesOpen" prefHeight="63.0" prefWidth="129.0" styleClass="switchButton" stylesheets="@../Resources/StylesSheet.css" text="Packages">
-               <VBox.margin>
-                  <Insets bottom="2.0" top="15.0" />
-               </VBox.margin></Button>
+            <Button id="switchButton" fx:id="btnPack" layoutX="10.0" layoutY="105.0" mnemonicParsing="false" onAction="#btnPackagesOpen" prefHeight="63.0" prefWidth="166.0" styleClass="switchButton" stylesheets="@../Resources/StylesSheet.css" text="Packages" />
             <Button id="switchButton" fx:id="btnAgents" mnemonicParsing="false" onAction="#btnAgents" prefHeight="63.0" prefWidth="129.0" styleClass="switchButton" stylesheets="@../Resources/StylesSheet.css" text="Agents">
                <VBox.margin>
                   <Insets bottom="2.0" top="15.0" />
