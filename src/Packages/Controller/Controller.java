@@ -1,6 +1,7 @@
 package Packages.Controller;
 
 import Packages.Model.PackageType;
+import Packages.NewPackage;
 import Packages.Package;
 import Resources.AlertCreator;
 import Resources.DBClass.DBHelper;
@@ -10,10 +11,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
+import javax.swing.text.View;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.text.DateFormat;
@@ -110,14 +120,28 @@ List<PackageType> SavedList;
     public void selectChg(){
 
     }
+
     @FXML
-    void AddbtnClick(ActionEvent event) {
-    //runsql
+    void AddbtnClick(ActionEvent event){
+    //Open new window allowing for an insert on sql
+        loadWindow("/Packages/View/NewPackage.fxml","New Package");
 
+        }
+    //load window function
+    public  void loadWindow(String loc, String title){
+        try{
+            Parent parent = FXMLLoader.load(getClass().getResource(loc));
+            Stage stage = new Stage(StageStyle.DECORATED);
+            stage.setTitle(title);
+            stage.setScene(new Scene(parent));
 
+            stage.show();
 
-
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 
 
 

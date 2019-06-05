@@ -2,6 +2,7 @@ package Packages.Controller;
 
 import Packages.Model.PackageType;
 import Packages.Package;
+import Resources.AlertCreator;
 import Resources.DBClass.DBHelper;
 
 import java.sql.*;
@@ -42,8 +43,25 @@ public class PackageDataLayer {
         return AllPacks;
 
     }
+    public static void insertPkg(PackageType Pack) throws SQLException {
+        Connection connection = PackDB.getConnection();
+        try {
+            String query = "Insert into packages (PkgName, PkgStartDate," +
+                    " PkgEndDate, PkgDesc, PkgBasePrice, PkgAgencyCommission) values" +
+                    "(" + "'" + Pack.getPkgName() + "'" + "," + "'" + Pack.getPkgStartDate() + "'" + "," + "'" + Pack.getPkgEndDate() + "'" +
+                    "," + "'" + Pack.getPkgDesc() + "'" + "," + "'" + Pack.getPkgBasePrice() + "'" + "," + "'" + Pack.getPkgAgencyCom() + "'" + ")";
 
-
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.execute();
+        }
+        catch (Exception e) {
+        e.printStackTrace();
+            AlertCreator.FailedAlert("Insert Failed");
+        }
+            finally{
+                connection.close();
+            }
+    }
 
     public static boolean deletePkg(int ID) throws SQLException {
         Connection connection = PackDB.getConnection();
