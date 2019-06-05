@@ -80,10 +80,35 @@ public class DBHelper {
 
         }catch(SQLException ex){
             JOptionPane.showMessageDialog(null,"Errror:" + ex.getMessage(),"Error Occured" ,JOptionPane.ERROR_MESSAGE);
-            System.out.println("Execution at executeQuery:DataHandler" + ex.getLocalizedMessage());
-            return result;
-
+            System.out.println("Execution at executeQuery:DataHandler" + ex.getLocalizedMessage());return result;
         }
+
+    }
+
+    public ObservableList  loadAgents() {
+
+        ObservableList<TravelExperts.Agent.Model.Agent> agents = FXCollections.observableArrayList();
+        String query = "SELECT * FROM agents ORDER BY agtLastName ASC";
+        ResultSet rs = dbHelper.executeQuery(query);
+        try {
+
+            while (rs.next()) {
+                int id =  rs.getInt(1);
+                String agtFname =  rs.getString(2);
+                String agtM = rs.getString(3);
+                String agtLname = rs.getString(4);
+                String agtPhone = rs.getString(5);
+                String agtEmail = rs.getString(6);
+                String agtPos = rs.getString(7);
+                int agtagency = rs.getInt(8);
+
+                agents.add(new TravelExperts.Agent.Model.Agent(id,agtFname,agtM,agtLname,agtPhone,agtEmail,agtPos,agtagency));
+            }
+
+        }catch (SQLException ex){
+            JOptionPane.showMessageDialog(null,"Errror:" + ex.getMessage(),"Error Occured" ,JOptionPane.ERROR_MESSAGE);
+        }
+        return agents;
     }
 
     public boolean deleteAgent(TravelExperts.Agent.Model.Agent agent) {
@@ -95,6 +120,7 @@ public class DBHelper {
             if (res == 1) {
                 return true;
             }
+            con.close();
         } catch (SQLException ex) {
             Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -120,12 +146,65 @@ public class DBHelper {
             if (res == 1){
                 result = true;
             }else result = false;
-
+        con.close();
         } catch (SQLException ex) {
             Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
         return result;
     }//updateAgent method
+
+    public ObservableList loadAgencies() {
+        ObservableList<Agency> agencies = FXCollections.observableArrayList();
+        String query = "SELECT * FROM agencies";
+        ResultSet rs = dbHelper.executeQuery(query);
+        try {
+
+            while (rs.next()) {
+                int agencyId = rs.getInt(1);
+                String agncyAddress = rs.getString(2);
+                String agncyCity = rs.getString(3);
+                String agncyProv = rs.getString(4);
+                String agncyPostal = rs.getString(5);
+                String agncyCountry = rs.getString(6);
+                String agncyPhone = rs.getString(7);
+                String agncyFax = rs.getString(8);
+
+                agencies.add(new Agency(agencyId, agncyAddress, agncyCity, agncyProv, agncyPostal, agncyCountry, agncyPhone, agncyFax));
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Errror:" + ex.getMessage(), "Error Occured", JOptionPane.ERROR_MESSAGE);
+        }
+        return agencies;
+    }
+
+    public boolean addAgency(Agency agency){
+        boolean result = true;
+
+        String agncyAddress = agency.getAgncyAddress();
+        String agncyCity=agency.getAgncyCity();
+        String agncyProv=agency.getAgncyProv();
+        String agncyPostal = agency.getAgncyPostal();
+        String agncyCountry = agency.getAgncyCountry();
+        String agncyPhone = agency.getAgncyPhone();
+        String agncyFax = agency.getAgncyFax();
+
+        String query = "INSERT INTO agencies VALUES ( "+
+                "'" + agncyAddress + "'," +
+                "'" + agncyCity + "'," +
+                "'" + agncyProv + "'," +
+                "'" + agncyPostal + "'," +
+                "'" + agncyCountry + "'," +
+                "'" + agncyPhone + "'," +
+                "'" + agncyFax + "'" +
+                ")";
+        try {
+            result = execNonQuery(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
 
     public boolean deleteAgency(Agency agency) {
 
@@ -137,6 +216,7 @@ public class DBHelper {
             if (res == 0) {
                 return true;
             }
+            con.close();
         } catch (SQLException ex) {
             Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -152,7 +232,7 @@ public class DBHelper {
             PreparedStatement stmt = con.prepareStatement(query);
             stmt.setInt(1, agency.getAgencyId());
             result = stmt.executeUpdate();
-
+            con.close();
         } catch (SQLException ex) {
             Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -178,7 +258,7 @@ public class DBHelper {
             if (res == 1){
                 result = true;
             }else result = false;
-
+            con.close();
         } catch (SQLException ex) {
             Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -198,7 +278,7 @@ public class DBHelper {
             if(rs.next()){ //if agent has username/password
                 IsLoggedIn = true;
             } else IsLoggedIn = false;
-
+            con.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -226,7 +306,7 @@ public class DBHelper {
                 int count = rs.getInt(1);
                 data.add(new PieChart.Data("Total Agencies",count));
             }
-
+            con.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -253,7 +333,7 @@ public class DBHelper {
                 int count = rs.getInt(1);
                 data.add(new PieChart.Data("Products",count));
             }
-
+            con.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

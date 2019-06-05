@@ -23,7 +23,7 @@
        <AnchorPane layoutX="76.0" layoutY="73.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="363.0" prefWidth="603.0">
       <TabPane fx:id="tabPane" prefHeight="363.0" prefWidth="598.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab fx:id="tbAgent" onSelectionChanged="#tbAgentAction" text="Agent Form">
+          <Tab fx:id="tbAgent" text="Agent Form">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="328.0" prefWidth="546.0">
                      <children>
@@ -42,8 +42,8 @@
                          <TextField fx:id="agtFirstName" layoutX="101.0" layoutY="85.0" prefHeight="25.0" prefWidth="114.0" promptText="Enter First Name" styleClass="text-field" stylesheets="@../../Resources/StylesSheet.css" />
                          <TextField fx:id="agtMI" layoutX="100.0" layoutY="127.0" prefHeight="25.0" prefWidth="114.0" promptText="Enter Middle Inital" styleClass="text-field" stylesheets="@../../Resources/StylesSheet.css" />
                          <TextField fx:id="agtLastName" layoutX="100.0" layoutY="168.0" prefHeight="25.0" prefWidth="114.0" promptText="Enter Last Name" styleClass="text-field" stylesheets="@../../Resources/StylesSheet.css" />
-                         <TextField fx:id="agtEmail" layoutX="329.0" layoutY="45.0" prefHeight="25.0" prefWidth="114.0" promptText="Enter Email" styleClass="text-field" stylesheets="@../../Resources/StylesSheet.css" />
-                         <TextField fx:id="agtPhone" layoutX="329.0" layoutY="88.0" prefHeight="25.0" prefWidth="114.0" promptText="Enter Phone#" styleClass="text-field" stylesheets="@../../Resources/StylesSheet.css" />
+                         <TextField fx:id="agtEmail" layoutX="329.0" layoutY="45.0" prefHeight="25.0" prefWidth="114.0" promptText="Enter valid Email Id" styleClass="text-field" stylesheets="@../../Resources/StylesSheet.css" />
+                         <TextField fx:id="agtPhone" layoutX="329.0" layoutY="88.0" prefHeight="25.0" prefWidth="114.0" promptText="(xxx)-xxx-xxx" styleClass="text-field" stylesheets="@../../Resources/StylesSheet.css" />
                          <TextField fx:id="agtPosition" layoutX="329.0" layoutY="125.0" prefHeight="25.0" prefWidth="114.0" promptText="Enter Position" styleClass="text-field" stylesheets="@../../Resources/StylesSheet.css" />
                          <TextField fx:id="agtAgency" layoutX="329.0" layoutY="163.0" prefHeight="25.0" prefWidth="114.0" promptText="Enter Agency Id" styleClass="text-field" stylesheets="@../../Resources/StylesSheet.css" />
 
@@ -70,7 +70,7 @@
                      </children></AnchorPane>
             </content>
           </Tab>
-          <Tab fx:id="tbAgency" onSelectionChanged="#tbAgencyAction" text="Agency Form">
+          <Tab fx:id="tbAgency" text="Agency Form">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="600.0">
 

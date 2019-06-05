@@ -26,6 +26,17 @@ public class Agency {
     }
 
 
+    public Agency(String agncyAddress, String agncyCity, String agncyProv, String agncyPostal, String agncyCountry, String agncyPhone, String agncyFax) {
+        AgncyAddress = new SimpleStringProperty(agncyAddress);
+        AgncyCity= new SimpleStringProperty(agncyCity);
+        AgncyProv= new SimpleStringProperty(agncyProv);
+        AgncyPostal= new SimpleStringProperty(agncyPostal);
+        AgncyCountry= new SimpleStringProperty(agncyPhone);
+        AgncyPhone= new SimpleStringProperty(agncyCity);
+        AgncyFax= new SimpleStringProperty(agncyFax);
+    }
+
+
     public int getAgencyId() {
         return AgencyId.get();
     }

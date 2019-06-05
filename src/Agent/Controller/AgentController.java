@@ -18,6 +18,8 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.SingleSelectionModel;
@@ -29,7 +31,7 @@ import javax.swing.*;
 
 public class AgentController {
 
-    DBHelper dbhelper = null;
+    DBHelper dbHelper = null;
     ObservableList<Agent> agents = FXCollections.observableArrayList();
     Agent agent;
    // SingleSelectionModel<Tab> selectionModel;
@@ -119,18 +121,7 @@ public class AgentController {
     @FXML
     private TableColumn<Agent, Integer> colAgency;
 
-     @FXML
-    void tbAgentAction(ActionEvent event) {
 
-        tabPane.getSelectionModel().select(tbAgent);
-}
-
-    @FXML
-    void tbAgencyAction(ActionEvent event) {
-
-        tabPane.getSelectionModel().select(tbAgency);
-
-    }
 
     @FXML
     void btnSaveClick(MouseEvent event) {
@@ -190,7 +181,9 @@ public class AgentController {
 
                     if (result) {
                         AlertCreator.SuccessAlert(agent.getAgtLastName() + " " + "has Successfully Updated");
-                        loadAgents();
+                        agents = dbHelper.loadAgents();
+                        tblAgent.setItems(agents);
+                        cmbAgtId.setItems(agents);
 
                     } else {
 
@@ -233,34 +226,6 @@ public class AgentController {
         });
     } //searchByAgent()
 
-    public  void loadAgents() {
-
-        tblAgent.setItems(null);
-        cmbAgtId.setItems(null);
-         dbhelper = DBHelper.getInstance();
-
-        String query = "SELECT * FROM agents ORDER BY agtLastName ASC";
-        ResultSet rs = dbhelper.executeQuery(query);
-        try {
-
-            while (rs.next()) {
-                int id =  rs.getInt(1);
-                String agtFname =  rs.getString(2);
-                String agtM = rs.getString(3);
-                String agtLname = rs.getString(4);
-                String agtPhone = rs.getString(5);
-                String agtEmail = rs.getString(6);
-                String agtPos = rs.getString(7);
-                int agtagency = rs.getInt(8);
-
-                agents.add(new Agent(id,agtFname,agtM,agtLname,agtPhone,agtEmail,agtPos,agtagency));
-            }
-        }catch (SQLException ex){
-            JOptionPane.showMessageDialog(null,"Errror:" + ex.getMessage(),"Error Occured" ,JOptionPane.ERROR_MESSAGE);
-        }
-        tblAgent.setItems(agents);
-        cmbAgtId.setItems(agents);
-    } //loadAgents()
 
     private void fillAgentTable()
     {
@@ -320,8 +285,6 @@ public class AgentController {
 
     private void addAgent(){
 
-        DBHelper dbhelper = DBHelper.getInstance();
-
         if(Validator.IsProvided(agtFirstName,"First Name") && Validator.IsProvided(agtLastName,"Last Name")
                 && Validator.IsProvided(agtEmail,"Email") && Validator.IsProvided(agtPosition,"Position") && Validator.IsProvided(agtAgency,"Agency"))
 
@@ -333,9 +296,9 @@ public class AgentController {
             String email = agtEmail.getText();
             String phone = agtPhone.getText();
             String position = agtPosition.getText();
-            int agency = cmbAgtId.getSelectionModel().getSelectedItem().getAgencyId();
+            int agency = Integer.parseInt(agtAgency.getText());
 
-            String query = "INSERT INTO agents VALUES ( "+
+            String query = "INSERT INTO agents (AgtFirstName,AgtMiddleInitial,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId) VALUES ( "+
                     "'" + agtFname + "'," +
                     "'" + agtM + "'," +
                     "'" + agtLname + "'," +
@@ -344,9 +307,9 @@ public class AgentController {
                     "'" + position + "'," +
                     "'" + agency + "'" +
                     ")";
-            System.out.print(query);
+
             try{
-                if(dbhelper.execNonQuery(query)){
+                if(dbHelper.execNonQuery(query)){
                     JOptionPane.showMessageDialog(null,"Agent has been successfully added");
 
                 } else {
@@ -464,7 +427,9 @@ public class AgentController {
 
     @FXML
     void btnAgncySaveClick(MouseEvent event) {
-        addAgency();
+
+        //if (Validator.IsProvided(agncyAddress, "Address") && Validator.IsProvided(agncyCity, "City") && Validator.IsProvided(agncyPhone, "Phone#"))
+
     } //btnAgncySaveClick
 
     @FXML
@@ -532,34 +497,6 @@ public class AgentController {
         });
     } //searchByAgency()
 
-    public  void loadAgencies() {
-
-        tblAgency.setItems(null);
-        cmbAgencyId.setItems(null);
-        dbhelper = DBHelper.getInstance();
-
-        String query = "SELECT * FROM agencies";
-        ResultSet rs = dbhelper.executeQuery(query);
-        try {
-
-            while (rs.next()) {
-                int agencyId =  rs.getInt(1);
-                String agncyAddress =  rs.getString(2);
-                String agncyCity = rs.getString(3);
-                String agncyProv = rs.getString(4);
-                String agncyPostal = rs.getString(5);
-                String agncyCountry = rs.getString(6);
-                String agncyPhone = rs.getString(7);
-                String agncyFax = rs.getString(8);
-
-                agencies.add(new Agency(agencyId,agncyAddress,agncyCity,agncyProv,agncyPostal,agncyCountry,agncyPhone,agncyFax));
-            }
-        }catch (SQLException ex){
-            JOptionPane.showMessageDialog(null,"Errror:" + ex.getMessage(),"Error Occured" ,JOptionPane.ERROR_MESSAGE);
-        }
-        tblAgency.setItems(agencies);
-        cmbAgencyId.setItems(agencies);
-    }//loadAgencies()
 
     private void fillAgencyTable()
     {
@@ -617,14 +554,119 @@ public class AgentController {
 
     }//selectionInComboChanged()
 
-    private void addAgency(){
 
-        DBHelper dbhelper = DBHelper.getInstance();
+    @FXML
+    public  void initialize() {
+
+            dbHelper = DBHelper.getInstance();
+            agents = dbHelper.loadAgents();
+            tblAgent.setItems(agents);
+            cmbAgtId.setItems(agents);
+
+
+
+            fillAgentTable();
+            selectionInTableChanged();
+            selectionInComboChanged();
+            searchByAgent();
+
+            agencies = dbHelper.loadAgencies();
+            tblAgency.setItems(agencies);
+            cmbAgencyId.setItems(agencies);
+            fillAgencyTable();
+            selectionInAgencyTableChanged();
+            selectionInAgencyComboChanged();
+            searchByAgency();
+
+
+        tbAgent.setOnSelectionChanged(new EventHandler<Event>() {
+            @Override
+            public void handle(Event event) {
+                if (tbAgent.isSelected()) {
+                    tabPane.getSelectionModel().select(tbAgent);
+                }
+
+            }
+        });
+
+        tbAgency.setOnSelectionChanged(new EventHandler<Event>() {
+            @Override
+            public void handle(Event event) {
+                if (tbAgency.isSelected()) {
+                    tabPane.getSelectionModel().select(tbAgency);
+                }
+
+            }
+        });
+    }
+
+
+} //class
+
+
+/* public  void loadAgents() {
+
+        tblAgent.setItems(null);
+        cmbAgtId.setItems(null);
+
+        String query = "SELECT * FROM agents ORDER BY agtLastName ASC";
+        ResultSet rs = dbhelper.executeQuery(query);
+        try {
+
+            while (rs.next()) {
+                int id =  rs.getInt(1);
+                String agtFname =  rs.getString(2);
+                String agtM = rs.getString(3);
+                String agtLname = rs.getString(4);
+                String agtPhone = rs.getString(5);
+                String agtEmail = rs.getString(6);
+                String agtPos = rs.getString(7);
+                int agtagency = rs.getInt(8);
+
+                agents.add(new Agent(id,agtFname,agtM,agtLname,agtPhone,agtEmail,agtPos,agtagency));
+            }
+        }catch (SQLException ex){
+            JOptionPane.showMessageDialog(null,"Errror:" + ex.getMessage(),"Error Occured" ,JOptionPane.ERROR_MESSAGE);
+        }
+        tblAgent.setItems(agents);
+        cmbAgtId.setItems(agents);
+    } //loadAgents()*/
+
+ /* public  void loadAgencies() {
+
+        tblAgency.setItems(null);
+        cmbAgencyId.setItems(null);
+        String query = "SELECT * FROM agencies";
+        ResultSet rs = dbHelper.executeQuery(query);
+        try {
+
+            while (rs.next()) {
+                int agencyId =  rs.getInt(1);
+                String agncyAddress =  rs.getString(2);
+                String agncyCity = rs.getString(3);
+                String agncyProv = rs.getString(4);
+                String agncyPostal = rs.getString(5);
+                String agncyCountry = rs.getString(6);
+                String agncyPhone = rs.getString(7);
+                String agncyFax = rs.getString(8);
+
+                agencies.add(new Agency(agencyId,agncyAddress,agncyCity,agncyProv,agncyPostal,agncyCountry,agncyPhone,agncyFax));
+            }
+        }catch (SQLException ex){
+            JOptionPane.showMessageDialog(null,"Errror:" + ex.getMessage(),"Error Occured" ,JOptionPane.ERROR_MESSAGE);
+        }
+        tblAgency.setItems(agencies);
+        cmbAgencyId.setItems(agencies);
+    }//loadAgencies()
+*/
+
+/*private void addAgency(Agency agency){
 
         if (Validator.IsProvided(agncyAddress, "Address") && Validator.IsProvided(agncyCity, "City") && Validator.IsProvided(agncyPhone, "Phone#"))
-
         {
-            //     int agentId = cmbAgtId.getSelectionModel().getSelectedIndex(); auto-increment in database.
+
+            agency = new Agency(agncyAddress.getText(),agncyCity.getText(),agncyProv.getText(),agncyPostal.getText(),agncyCountry.getText(),agncyPhone.getText(),agncyFax.getText());
+               int agentId = cmbAgtId.getSelectionModel().getSelectedIndex(); auto-increment in database.
             String address = agncyAddress.getText();
             String city = agncyCity.getText();
             String prov = agncyProv.getText();
@@ -644,7 +686,7 @@ public class AgentController {
                     ")";
             System.out.print(query);
             try{
-                if(dbhelper.execNonQuery(query)){
+                if(dbHelper.execNonQuery(query)){
                     JOptionPane.showMessageDialog(null,"Agency has been successfully added");
 
                 } else {
@@ -655,34 +697,4 @@ public class AgentController {
             }
         }
     }//addAgency()
-
-    @FXML
-    public  void initialize() {
-
-     //   dbhelper = DBHelper.getInstance();
-
-        if(tbAgent.isSelected()){
-
-            loadAgents();
-            fillAgentTable();
-            selectionInTableChanged();
-            selectionInComboChanged();
-            searchByAgent();
-        }
-        if(tbAgency.isSelected()){
-
-            loadAgencies();
-            fillAgencyTable();
-            selectionInAgencyTableChanged();
-            selectionInAgencyComboChanged();
-            searchByAgency();
-        }
-
-    }
-
-
-
-
-} //class
-
-
+*/
