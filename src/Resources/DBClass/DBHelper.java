@@ -82,7 +82,6 @@ public class DBHelper {
             JOptionPane.showMessageDialog(null,"Errror:" + ex.getMessage(),"Error Occured" ,JOptionPane.ERROR_MESSAGE);
             System.out.println("Execution at executeQuery:DataHandler" + ex.getLocalizedMessage());return result;
         }
-
     }
 
     public ObservableList  loadAgents() {
@@ -109,6 +108,28 @@ public class DBHelper {
             JOptionPane.showMessageDialog(null,"Errror:" + ex.getMessage(),"Error Occured" ,JOptionPane.ERROR_MESSAGE);
         }
         return agents;
+    }
+
+    public int addAgent(TravelExperts.Agent.Model.Agent agent){
+        int count=0;
+        PreparedStatement stmt;
+        String query = "INSERT INTO agents (AgtFirstName,AgtMiddleInitial,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId) VALUES (?,?,?,?,?,?,?)";
+        try {
+            stmt = con.prepareStatement(query);
+            stmt.setString(1,agent.getAgtFirstName());
+            stmt.setString(2,agent.getAgtMiddleInital());
+            stmt.setString(3,agent.getAgtLastName());
+            stmt.setString(4,agent.getAgtBusPhone());
+            stmt.setString(5,agent.getAgtEmail());
+            stmt.setString(6,agent.getAgtPosition());
+            stmt.setInt(7,agent.getAgencyId());
+
+            count = stmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
     }
 
     public boolean deleteAgent(TravelExperts.Agent.Model.Agent agent) {
@@ -177,67 +198,61 @@ public class DBHelper {
         return agencies;
     }
 
-    public boolean addAgency(Agency agency){
-        boolean result = true;
+    public int addAgency(Agency agency){
 
-        String agncyAddress = agency.getAgncyAddress();
-        String agncyCity=agency.getAgncyCity();
-        String agncyProv=agency.getAgncyProv();
-        String agncyPostal = agency.getAgncyPostal();
-        String agncyCountry = agency.getAgncyCountry();
-        String agncyPhone = agency.getAgncyPhone();
-        String agncyFax = agency.getAgncyFax();
-
-        String query = "INSERT INTO agencies VALUES ( "+
-                "'" + agncyAddress + "'," +
-                "'" + agncyCity + "'," +
-                "'" + agncyProv + "'," +
-                "'" + agncyPostal + "'," +
-                "'" + agncyCountry + "'," +
-                "'" + agncyPhone + "'," +
-                "'" + agncyFax + "'" +
-                ")";
+        int count=0;
+        PreparedStatement stmt = null;
+        String query = "INSERT INTO agencies (AgncyAddress,AgncyCity,AgncyProv,AgncyPostal,AgncyCountry,AgncyPhone,AgncyFax) VALUES (?,?,?,?,?,?,?)";
         try {
-            result = execNonQuery(query);
+                stmt = con.prepareStatement(query);
+                stmt.setString(1,agency.getAgncyAddress());
+                stmt.setString(2,agency.getAgncyCity());
+                stmt.setString(3,agency.getAgncyProv());
+                stmt.setString(4,agency.getAgncyPostal());
+                stmt.setString(5,agency.getAgncyCountry());
+                stmt.setString(6,agency.getAgncyPhone());
+                stmt.setString(7,agency.getAgncyFax());
+
+            count = stmt.executeUpdate();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        return result;
+        return count;
     }
 
     public boolean deleteAgency(Agency agency) {
-
+        boolean result = true;
         try {
             String query = "DELETE FROM agencies where AgencyId = ?";
             PreparedStatement stmt = con.prepareStatement(query);
             stmt.setInt(1, agency.getAgencyId());
             int res = stmt.executeUpdate();
             if (res == 0) {
-                return true;
-            }
+                return result;
+            } else result = false;
             con.close();
         } catch (SQLException ex) {
             Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        return false;
+        return result;
     }//deleteAgency method
 
-    public int checkBeforedeleteAgency(Agency agency) {
+    public int checkBeforedeleteAgency(Agency agency) throws SQLException {
 
-        int result = 0;
+        int count = 0;
         try {
             String query = "SELECT COUNT(*) FROM agencies WHERE AgencyId in (SELECT AgencyId FROM agents WHERE AgencyId = ?)";
             PreparedStatement stmt = con.prepareStatement(query);
             stmt.setInt(1, agency.getAgencyId());
-            result = stmt.executeUpdate();
-            con.close();
+            ResultSet rs  = stmt.executeQuery();
+            while (rs.next()){
+                count = rs.getInt(1);
+            }
         } catch (SQLException ex) {
             Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        return result;
+        } finally {  con.close(); }
+        return count;
     }//deleteAgency method
 
     public boolean updateAgency(Agency agency) {

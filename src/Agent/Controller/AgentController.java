@@ -125,8 +125,21 @@ public class AgentController {
 
     @FXML
     void btnSaveClick(MouseEvent event) {
+        int result;
+        if(Validator.IsProvided(agtFirstName,"First Name") && Validator.IsProvided(agtLastName,"Last Name")
+                && Validator.IsProvided(agtEmail,"Email") && Validator.IsProvided(agtPosition,"Position") && Validator.IsProvided(agtAgency,"Agency"))
+        {
+            agent = new Agent(agtFirstName.getText(),agtMI.getText(),
+                        agtLastName.getText(),agtPhone.getText(),agtEmail.getText(),agtPosition.getText(),Integer.parseInt(agtAgency.getText()));
+            result = dbHelper.addAgent(agent);
 
-        addAgent();
+            if(result==0){
+                AlertCreator.FailedAlert("Insertion Failed, Please try again");
+            } else {AlertCreator.SuccessAlert("New Agent has been Inserted");
+                    agents = dbHelper.loadAgents();
+                    tblAgent.setItems(agents); cmbAgtId.setItems(agents); }
+        }
+
     }//btnSaveClick
 
     @FXML
@@ -143,7 +156,7 @@ public class AgentController {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Deleting Agent");
-        alert.setContentText("Are you sure you want to delete this Agent" + selectedAgentForDelete.getAgtFirstName()+" "+selectedAgentForDelete.getAgtLastName());
+        alert.setContentText("Are you sure you want to delete this Agent" + " " +selectedAgentForDelete.getAgtFirstName()+" "+selectedAgentForDelete.getAgtLastName());
         Optional<ButtonType> response = alert.showAndWait();
 
         if(response.get() == ButtonType.OK){
@@ -283,44 +296,6 @@ public class AgentController {
 
     } //selectionInComboChanged()
 
-    private void addAgent(){
-
-        if(Validator.IsProvided(agtFirstName,"First Name") && Validator.IsProvided(agtLastName,"Last Name")
-                && Validator.IsProvided(agtEmail,"Email") && Validator.IsProvided(agtPosition,"Position") && Validator.IsProvided(agtAgency,"Agency"))
-
-        {
-            //     int agentId = cmbAgtId.getSelectionModel().getSelectedIndex(); auto-increment in database.
-            String agtFname = agtFirstName.getText();
-            String agtM = agtMI.getText();
-            String agtLname = agtLastName.getText();
-            String email = agtEmail.getText();
-            String phone = agtPhone.getText();
-            String position = agtPosition.getText();
-            int agency = Integer.parseInt(agtAgency.getText());
-
-            String query = "INSERT INTO agents (AgtFirstName,AgtMiddleInitial,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId) VALUES ( "+
-                    "'" + agtFname + "'," +
-                    "'" + agtM + "'," +
-                    "'" + agtLname + "'," +
-                    "'" + phone + "'," +
-                    "'" + email + "'," +
-                    "'" + position + "'," +
-                    "'" + agency + "'" +
-                    ")";
-
-            try{
-                if(dbHelper.execNonQuery(query)){
-                    JOptionPane.showMessageDialog(null,"Agent has been successfully added");
-
-                } else {
-                    JOptionPane.showMessageDialog(null,"Failed to insert agent, Please try again");
-                }
-            }catch (SQLException ex){
-                ex.printStackTrace();
-            }
-        }
-    }//addAgent()
-
 
     //All about Agency
 
@@ -405,30 +380,47 @@ public class AgentController {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Deleting Agency");
-        alert.setContentText("Are you sure you want to delete this Agency" + SelectedAgencyForDelete.getAgencyId());
+        alert.setContentText("Are you sure you want to delete this Agency" + " " +SelectedAgencyForDelete.getAgencyId()+" "+"?");
         Optional<ButtonType> response = alert.showAndWait();
 
-        if(response.get() == ButtonType.OK){
-            int agentCount = DBHelper.getInstance().checkBeforedeleteAgency(cmbAgencyId.getValue());
-            if(agentCount == 0){
-                Boolean result = DBHelper.getInstance().deleteAgency(SelectedAgencyForDelete);
-                if(result){
-                    AlertCreator.SuccessAlert(SelectedAgencyForDelete.getAgencyId() + "has Successfully Deleted");
-                    agencies.remove(SelectedAgencyForDelete);
-                    tblAgency.setItems(agencies);
-                } else { AlertCreator.FailedAlert("Delete operation has been failed, Please try Again!");}
-            } else { AlertCreator.FailedAlert("Please delete the associated agent first"); }
+        try {
+            if(response.get() == ButtonType.OK) {
+                int agentCount = 0;
+                agentCount = DBHelper.getInstance().checkBeforedeleteAgency(SelectedAgencyForDelete);
+                if (agentCount == 0) {
+                    Boolean result = DBHelper.getInstance().deleteAgency(SelectedAgencyForDelete);
+                    if (result) {
+                        agencies.remove(SelectedAgencyForDelete);
+                        AlertCreator.SuccessAlert(SelectedAgencyForDelete.getAgencyId() + " " + "has Successfully Deleted");
+                        tblAgency.setItems(agencies);
+                    } else {
+                        AlertCreator.FailedAlert("Delete operation has been failed, Please try Again!");
+                    }
+                } else {
+                    AlertCreator.FailedAlert("Please delete the associated agent first");
+                }
+            }else{ AlertCreator.FailedAlert("Delete operation has been cancelled by user");}
+        } catch (SQLException ex) { ex.printStackTrace(); }
 
-        }else {
-            AlertCreator.FailedAlert("Delete operation has been cancelled by user");
-        }
 
     } //btnAgncyDeleteClick
 
     @FXML
     void btnAgncySaveClick(MouseEvent event) {
 
-        //if (Validator.IsProvided(agncyAddress, "Address") && Validator.IsProvided(agncyCity, "City") && Validator.IsProvided(agncyPhone, "Phone#"))
+        int result;
+        if (Validator.IsProvided(agncyAddress, "Address") && Validator.IsProvided(agncyCity, "City") && Validator.IsProvided(agncyPhone, "Phone#")){
+
+           agency = new Agency(agncyAddress.getText(),agncyCity.getText(),
+                    agncyProv.getText(),agncyPostal.getText(),agncyCountry.getText(),agncyPhone.getText(),agncyFax.getText());
+            result = dbHelper.addAgency(agency);
+            if(result==0){
+                AlertCreator.FailedAlert("Insertion Failed, Please try again");
+            } else {tblAgency.setItems(agencies); AlertCreator.SuccessAlert("New Agency has been Inserted");
+                agencies = dbHelper.loadAgencies();
+                tblAgency.setItems(agencies);
+                cmbAgencyId.setItems(agencies);}
+        }
 
     } //btnAgncySaveClick
 
@@ -443,17 +435,18 @@ public class AgentController {
                 && Validator.IsProvided(agncyPhone, "Phone#"))
         {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Update Agent");
+            alert.setTitle("Update Agency");
             alert.setHeaderText(null);
             alert.setContentText("Are you sure want to update the record for ?" + agency.getAgencyId());
             Optional<ButtonType> response = alert.showAndWait();
             try {
                 if (response.get() == ButtonType.OK) {
                     Boolean result = DBHelper.getInstance().updateAgency(agency);
-
                     if (result) {
                         AlertCreator.SuccessAlert(agency.getAgencyId() + " " + "has Successfully Updated");
-                        //     loadAgency();
+                        agencies = dbHelper.loadAgencies();
+                        tblAgency.setItems(agencies);
+                        cmbAgencyId.setItems(agencies);
 
                     } else {
 
@@ -548,7 +541,7 @@ public class AgentController {
                 agncyPostal.setText(newValue.getAgncyPostal());
                 agncyCountry.setText(newValue.getAgncyCountry());
                 agncyPhone.setText(newValue.getAgncyPhone());
-                agncyFax.setText(newValue.getAgencyId()+"");
+                agncyFax.setText(newValue.getAgncyFax());
             }
         });
 
@@ -562,9 +555,6 @@ public class AgentController {
             agents = dbHelper.loadAgents();
             tblAgent.setItems(agents);
             cmbAgtId.setItems(agents);
-
-
-
             fillAgentTable();
             selectionInTableChanged();
             selectionInComboChanged();
@@ -577,7 +567,6 @@ public class AgentController {
             selectionInAgencyTableChanged();
             selectionInAgencyComboChanged();
             searchByAgency();
-
 
         tbAgent.setOnSelectionChanged(new EventHandler<Event>() {
             @Override
@@ -698,3 +687,37 @@ public class AgentController {
         }
     }//addAgency()
 */
+
+/* private void addAgent(){
+
+    if(Validator.IsProvided(agtFirstName,"First Name") && Validator.IsProvided(agtLastName,"Last Name")
+            && Validator.IsProvided(agtEmail,"Email") && Validator.IsProvided(agtPosition,"Position") && Validator.IsProvided(agtAgency,"Agency"))
+    {
+       // int agentId = cmbAgtId.getSelectionModel().getSelectedIndex(); auto-increment in database.
+        String agtFname = agtFirstName.getText();
+        String agtM = agtMI.getText();
+        String agtLname = agtLastName.getText();
+        String email = agtEmail.getText();
+        String phone = agtPhone.getText();
+        String position = agtPosition.getText();
+        int agency = Integer.parseInt(agtAgency.getText());
+
+        String query = "INSERT INTO agents (AgtFirstName,AgtMiddleInitial,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId) VALUES ( "+
+                "'" + agtFname + "'," +
+                "'" + agtM + "'," +
+                "'" + agtLname + "'," +
+                "'" + phone + "'," +
+                "'" + email + "'," +
+                "'" + position + "'," +
+                "'" + agency + "'" +
+                ")";
+
+        try{
+            if(dbHelper.execNonQuery(query)){
+                JOptionPane.showMessageDialog(null,"Agent has been successfully added");
+
+            } else { JOptionPane.showMessageDialog(null,"Failed to insert agent, Please try again"); }
+        }catch (SQLException ex){
+            ex.printStackTrace(); }
+    }
+}//addAgent()*/

@@ -20,8 +20,8 @@ public class Agency {
         AgncyCity= new SimpleStringProperty(agncyCity);
         AgncyProv= new SimpleStringProperty(agncyProv);
         AgncyPostal= new SimpleStringProperty(agncyPostal);
-        AgncyCountry= new SimpleStringProperty(agncyPhone);
-        AgncyPhone= new SimpleStringProperty(agncyCity);
+        AgncyCountry= new SimpleStringProperty(agncyCountry);
+        AgncyPhone= new SimpleStringProperty(agncyPhone);
         AgncyFax= new SimpleStringProperty(agncyFax);
     }
 
@@ -31,8 +31,8 @@ public class Agency {
         AgncyCity= new SimpleStringProperty(agncyCity);
         AgncyProv= new SimpleStringProperty(agncyProv);
         AgncyPostal= new SimpleStringProperty(agncyPostal);
-        AgncyCountry= new SimpleStringProperty(agncyPhone);
-        AgncyPhone= new SimpleStringProperty(agncyCity);
+        AgncyCountry= new SimpleStringProperty(agncyCountry);
+        AgncyPhone= new SimpleStringProperty(agncyPhone);
         AgncyFax= new SimpleStringProperty(agncyFax);
     }
 
@@ -136,7 +136,7 @@ public class Agency {
 
     @Override
     public String toString() {
-        return  AgencyId+"";
+        return  AgencyId.getValue()+"";
 
     }
 }

@@ -89,14 +89,13 @@ public class MainController {
 
         @FXML
         void btnPackagesOpen(ActionEvent event) {
-            loadWindow("../Packages/View/PackageDisplay.fxml","Packages");
-
-        }
+            loadWindow("../Packages/View/PackageDisplay.fxml","Packages"); }
 
 
         @FXML
         void btnBookings(ActionEvent event) {
-            loadWindow("../Packages/View/PackageDisplay.fxml","Packages");
+
+            loadWindow("../Booking/Booking.fxml","Bookings");
         }
 
         @FXML
@@ -117,7 +116,6 @@ public class MainController {
 
                     if(!IsLoggedIn){ //if agent is not logged in
 
-                        AlertCreator.FailedAlert("Username/Password  do not Exists");
                         btnCustomers.setDisable(true);
                         btnAgents.setDisable(true);
                         btnBookings.setDisable(true);
@@ -157,6 +155,7 @@ public class MainController {
                 btnCustomers.setDisable(true);
                 txtPassword.setText("");
                 txtLogin.setText("");
+                txtLogin.requestFocus();
 
             }
 
@@ -168,10 +167,6 @@ public class MainController {
          //   agentChart.setLegendSide(Side.RIGHT);
     //        pcAgent.setData(agentChart);
      //        vbChart.getChildren().add(agentChart);
-
-
-
-
 
     }
 

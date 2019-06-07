@@ -25,6 +25,17 @@ public class Agent {
         AgencyId = new SimpleIntegerProperty(agencyId);
     }
 
+    public Agent(String agtFirstName, String agtMiddleInital, String agtLastName,
+                 String agtBusPhone, String agtEmail, String agtPosition, Integer agencyId) {
+        AgtFirstName = new SimpleStringProperty(agtFirstName);
+        AgtMiddleInital = new SimpleStringProperty(agtMiddleInital);
+        AgtLastName = new SimpleStringProperty(agtLastName);
+        AgtBusPhone = new SimpleStringProperty(agtBusPhone);
+        AgtEmail = new SimpleStringProperty(agtEmail);
+        AgtPosition = new SimpleStringProperty(agtPosition);
+        AgencyId = new SimpleIntegerProperty(agencyId);
+    }
+
     public int getAgentId() {
         return AgentId.get();
     }
