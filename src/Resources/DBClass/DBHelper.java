@@ -251,7 +251,7 @@ public class DBHelper {
             }
         } catch (SQLException ex) {
             Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {  con.close(); }
+        } //finally {  con.close(); }
         return count;
     }//deleteAgency method
 
