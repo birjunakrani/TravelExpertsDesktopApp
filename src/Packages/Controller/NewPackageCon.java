@@ -61,6 +61,7 @@ public class NewPackageCon {
         }catch(Exception e){
             e.printStackTrace();
         }
+        AlertCreator.SuccessAlert("Insertion Status: Success");
         Clear();
     }
 

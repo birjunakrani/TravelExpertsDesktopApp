@@ -67,6 +67,9 @@ public class Controller {
     @FXML
     ComboBox<PackageType> ComboID;
 
+    @FXML
+            Button Exitbtn;
+
 List<PackageType> SavedList;
 
 
@@ -120,7 +123,12 @@ List<PackageType> SavedList;
     public void selectChg(){
 
     }
-
+    @FXML
+    void CloseFunc (){
+        Stage stage = (Stage) Exitbtn.getScene().getWindow();
+        // do what you have to do
+        stage.close();
+    }
     @FXML
     void AddbtnClick(ActionEvent event){
     //Open new window allowing for an insert on sql
