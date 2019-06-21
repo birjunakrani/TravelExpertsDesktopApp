@@ -42,7 +42,7 @@ public class NewPackageCon {
 
     @FXML
     void PkgAddClick(ActionEvent event){
-
+        boolean result = true;
         PackageType NewPack = new PackageType();
         try {
             NewPack.setPkgName(PkgName.getText());
@@ -54,6 +54,7 @@ public class NewPackageCon {
         }
         catch(Exception e){
             AlertCreator.FailedAlert("Invalid Entries");
+           result = false;
         }
         try {
             PackageDataLayer.insertPkg(NewPack);
@@ -61,8 +62,9 @@ public class NewPackageCon {
         }catch(Exception e){
             e.printStackTrace();
         }
-        AlertCreator.SuccessAlert("Insertion Status: Success");
-        Clear();
+        if (result == true){ AlertCreator.SuccessAlert("Insertion Success");}
+
+
     }
 
 

@@ -207,6 +207,7 @@ List<PackageType> SavedList;
             AlertCreator.FailedAlert("Update Failed");
         }
 else {
+            AlertCreator.SuccessAlert("Update Success");
            fill(ComboID.getValue().getPkgId() - 1);
        }
     }
