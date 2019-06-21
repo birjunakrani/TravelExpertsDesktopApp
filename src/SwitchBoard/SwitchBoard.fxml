@@ -41,7 +41,7 @@
    <left>
       <VBox prefHeight="333.0" prefWidth="129.0" styleClass="root" stylesheets="@../Resources/StylesSheet.css" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnCustomers" alignment="CENTER_RIGHT" mnemonicParsing="false" onMouseClicked="#btnCustomers" prefHeight="63.0" prefWidth="128.0" styleClass="switchButton" stylesheets="@../Resources/StylesSheet.css" text="Customers" textAlignment="RIGHT">
+            <Button fx:id="btnCustomers" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#btnCustomers" onMouseClicked="#btnCustomers" prefHeight="63.0" prefWidth="128.0" styleClass="switchButton" stylesheets="@../Resources/StylesSheet.css" text="Customers" textAlignment="RIGHT">
                <VBox.margin>
                   <Insets bottom="2.0" top="35.0" />
                </VBox.margin>
@@ -49,7 +49,7 @@
                   <Glow />
                </effect>
             </Button>
-            <Button id="switchButton" fx:id="btnBookings" mnemonicParsing="false" onMouseClicked="#btnBookings" prefHeight="63.0" prefWidth="166.0" styleClass="switchButton" stylesheets="@../Resources/StylesSheet.css" text="Bookings">
+            <Button id="switchButton" fx:id="btnBookings" mnemonicParsing="false" onAction="#btnBookings" onMouseClicked="#btnBookings" prefHeight="63.0" prefWidth="166.0" styleClass="switchButton" stylesheets="@../Resources/StylesSheet.css" text="Bookings">
                <VBox.margin>
                   <Insets bottom="2.0" top="35.0" />
                </VBox.margin></Button>
