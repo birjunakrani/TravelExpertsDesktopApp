@@ -84,7 +84,7 @@ public class MainController {
 
         @FXML
         void btnCustomers(ActionEvent event) {
-            loadWindow("../Packages/View/PackageDisplay.fxml","Packages");
+            loadWindow("../CustomerModule/CustomerDashBoard.fxml","Customers");
         }
 
         @FXML

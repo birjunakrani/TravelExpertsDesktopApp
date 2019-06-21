@@ -69,6 +69,8 @@ public class Controller {
 
     @FXML
             Button Exitbtn;
+   @FXML
+   Button Refresh;
 
 List<PackageType> SavedList;
 
@@ -91,34 +93,22 @@ List<PackageType> SavedList;
        ComboID.setItems(OboList); //Nothing
 
     }
-    public void fill(int PackID){
-        List<PackageType> PackList = new ArrayList<>();
-
-        PackageDataLayer Data = new PackageDataLayer();
-        int FoundID = 0;
-        try {
-            PackList = Data.getPackages();
+    public void fill(PackageType Pkg){
 
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        for (PackageType pack:PackList
-             ) {
-            if(pack.getPkgId()==PackID){
-                FoundID=PackID;
-            }
-
-        }
-
-    PkgNamebox.setText(PackList.get(FoundID).getPkgName());
-    Startbox.setText(PackList.get(FoundID).getPkgStartDate());
-    Endbox.setText(PackList.get(FoundID).getPkgEndDate());
-    Descbox.setText(PackList.get(FoundID).getPkgDesc());
-    Basebox.setText(Long.toString(PackList.get(FoundID).getPkgBasePrice()));
-    Combox.setText(Long.toString(PackList.get(FoundID).getPkgAgencyCom()));
+    PkgNamebox.setText(Pkg.getPkgName());
+    Startbox.setText(Pkg.getPkgStartDate());
+    Endbox.setText(Pkg.getPkgEndDate());
+    Descbox.setText(Pkg.getPkgDesc());
+    Basebox.setText(Long.toString(Pkg.getPkgBasePrice()));
+    Combox.setText(Long.toString(Pkg.getPkgAgencyCom()));
     }
 
+    public void Refresh(){
+        ComboID.setItems(null);
+        this.LoadPacks();
+
+    }
 
     public void selectChg(){
 
@@ -208,7 +198,7 @@ List<PackageType> SavedList;
         }
 else {
             AlertCreator.SuccessAlert("Update Success");
-           fill(ComboID.getValue().getPkgId() - 1);
+           Refresh();
        }
     }
 
@@ -224,18 +214,19 @@ else {
                 //List<PackageType> PackList = new ArrayList<>();
                //System.out.println(ComboID.getValue().getPkgId());
                 //PackageDataLayer Data = new PackageDataLayer();
-                int FoundID = 0;
+
                // System.out.print(SavedList.get(2).toString());
                 for (PackageType pack:SavedList
                 ) {
                     if(pack.getPkgName() == newValue.toString()){
-                        FoundID=pack.getPkgId();
+
+                        fill(pack);
 
                     }
 
                 }
 
-                fill(FoundID -1);
+
             }
         });
     }
