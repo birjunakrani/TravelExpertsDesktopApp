@@ -52,7 +52,8 @@ public class PackageDataLayer {
                     "," + "'" + Pack.getPkgDesc() + "'" + "," + "'" + Pack.getPkgBasePrice() + "'" + "," + "'" + Pack.getPkgAgencyCom() + "'" + ")";
 
             PreparedStatement stmt = connection.prepareStatement(query);
-            stmt.execute();
+          stmt.execute();
+
         }
         catch (Exception e) {
         e.printStackTrace();
