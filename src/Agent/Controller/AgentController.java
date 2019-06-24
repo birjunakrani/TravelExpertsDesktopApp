@@ -147,7 +147,7 @@ public class AgentController {
 
         cmbAgtId.setValue(null); agtFirstName.setText(null); agtLastName.clear(); agtMI.clear();agtEmail.clear();
         agtPhone.clear();agtPosition.clear();agtAgency.clear();
-    }//btnAddClick
+    }
 
     @FXML
     void btnDeleteClick(MouseEvent event) {

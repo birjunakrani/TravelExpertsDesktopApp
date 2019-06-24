@@ -62,7 +62,7 @@ public class NewPackageCon {
         }catch(Exception e){
             e.printStackTrace();
         }
-        if (result == true){ AlertCreator.SuccessAlert("Insertion Success");}
+        if (result == true){ AlertCreator.SuccessAlert("Package Added");}
 
 
     }

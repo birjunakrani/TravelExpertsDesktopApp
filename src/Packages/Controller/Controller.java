@@ -110,9 +110,7 @@ List<PackageType> SavedList;
 
     }
 
-    public void selectChg(){
 
-    }
     @FXML
     void CloseFunc (){
         Stage stage = (Stage) Exitbtn.getScene().getWindow();
@@ -153,6 +151,11 @@ List<PackageType> SavedList;
             boolean result = PackageDataLayer.deletePkg(ID);
         if(result == false){
             AlertCreator.FailedAlert("Cannot delete as this entry has dependencies");
+        }
+        else {
+            AlertCreator.SuccessAlert("Package Deleted");
+
+            Refresh();
         }
 
 
